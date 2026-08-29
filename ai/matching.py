@@ -92,15 +92,21 @@ def match_workers(
             + experience_score * 0.2
         )
 
-        matches.append({
-            "id": worker["id"],
-            "name": worker["name"],
-            "service": worker["service"],
-            "distance_km": round(distance, 2),
-            "rating": worker["rating"],
-            "experience": worker["experience"],
-            "match_score": round(final_score, 2)
-        })
+    matches.append({
+    "id": worker["id"],
+    "name": worker["name"],
+    "service": worker["service"],
+    "distance_km": round(distance, 2),
+    "rating": worker["rating"],
+    "experience": worker["experience"],
+    "match_score": round(final_score, 2),
+
+    "match_reason": (
+        f"Recommended because they are {round(distance, 2)} km away, "
+        f"have a {worker['rating']} rating, and "
+        f"{worker['experience']} years of experience."
+    )
+})
 
     # Highest score first
     matches.sort(
