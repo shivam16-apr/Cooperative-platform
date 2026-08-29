@@ -40,7 +40,8 @@ def match_workers(
     customer_lat,
     customer_lon,
     required_service,
-    max_distance=10
+    max_distance=10,
+    worker_list=None
 ):
     """
     Find and rank workers for a customer.
@@ -48,7 +49,10 @@ def match_workers(
 
     matches = []
 
-    for worker in workers:
+    if worker_list is None:
+        worker_list = workers
+
+    for worker in worker_list:
 
         # Check service
         if worker["service"].lower() != required_service.lower():
@@ -115,8 +119,7 @@ def match_workers(
     )
 
     return matches
-
-
+    
 # --------------------------------
 # TEST
 # --------------------------------
