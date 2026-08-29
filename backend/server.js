@@ -6,6 +6,7 @@ const authRoutes = require("./auth");
 const workerRoutes = require("./worker");
 const bookingRoutes = require("./booking");
 const reviewRoutes = require("./review");
+const matchRoutes = require("./match");
 const { authenticateToken } = require("./middleware");
 const app = express();
 
@@ -21,6 +22,7 @@ app.use("/api/services", serviceRoutes);
 app.use("/api/workers", workerRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/reviews", reviewRoutes);
+app.use("/api/match-workers", matchRoutes);
 app.get("/", (req, res) => {
     res.json({
         message: "Cooperative Platform Backend is running!"
