@@ -1,9 +1,12 @@
 import json
 import math
-
+from pathlib import Path
 
 # Load worker data
-with open("workers.json", "r") as file:
+BASE_DIR = Path(__file__).resolve().parent
+WORKERS_FILE = BASE_DIR / "workers.json"
+
+with open(WORKERS_FILE, "r") as file:
     workers = json.load(file)
 
 
@@ -112,22 +115,23 @@ def match_workers(
 # TEST
 # --------------------------------
 
-customer_lat = 28.6130
-customer_lon = 77.2080
+if __name__ == "__main__":
 
-results = match_workers(
-    customer_lat,
-    customer_lon,
-    "carpenter"
-)
+    customer_lat = 28.6130
+    customer_lon = 77.2080
 
-
-print("\nBEST MATCHING WORKERS\n")
-
-for worker in results:
-    print(
-        f'{worker["name"]} | '
-        f'{worker["distance_km"]} km | '
-        f'Rating: {worker["rating"]} | '
-        f'Match Score: {worker["match_score"]}%'
+    results = match_workers(
+        customer_lat,
+        customer_lon,
+        "carpenter"
     )
+
+    print("\nBEST MATCHING WORKERS\n")
+
+    for worker in results:
+        print(
+            f'{worker["name"]} | '
+            f'{worker["distance_km"]} km | '
+            f'Rating: {worker["rating"]} | '
+            f'Match Score: {worker["match_score"]}%'
+        )
