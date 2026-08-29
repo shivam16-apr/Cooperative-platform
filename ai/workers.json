@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Rahul Kumar",
+    "service": "electrician",
+    "latitude": 28.6139,
+    "longitude": 77.2090,
+    "rating": 4.8,
+    "experience": 5,
+    "available": true
+  },
+  {
+    "id": 2,
+    "name": "Amit Sharma",
+    "service": "electrician",
+    "latitude": 28.6200,
+    "longitude": 77.2150,
+    "rating": 4.5,
+    "experience": 3,
+    "available": true
+  },
+  {
+    "id": 3,
+    "name": "Suresh Yadav",
+    "service": "plumber",
+    "latitude": 28.6300,
+    "longitude": 77.2200,
+    "rating": 4.7,
+    "experience": 6,
+    "available": true
+  },
+  {
+    "id": 4,
+    "name": "Priya Singh",
+    "service": "cleaner",
+    "latitude": 28.6100,
+    "longitude": 77.2000,
+    "rating": 4.9,
+    "experience": 4,
+    "available": true
+  },
+  {
+    "id": 5,
+    "name": "Vikash Kumar",
+    "service": "electrician",
+    "latitude": 28.6500,
+    "longitude": 77.2300,
+    "rating": 4.2,
+    "experience": 2,
+    "available": false
+  },
+  {
+    "id": 6,
+    "name": "Neha Verma",
+    "service": "plumber",
+    "latitude": 28.6150,
+    "longitude": 77.2100,
+    "rating": 4.6,
+    "experience": 5,
+    "available": true
+  }
+]
