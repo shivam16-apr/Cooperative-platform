@@ -19,6 +19,12 @@ def home():
     return {
         "message": "AI Matching API is running"
     }
+@app.get("/health")
+def health():
+    return {
+        "status": "ok",
+        "service": "worker-matching-ai"
+    }
 
 
 @app.post("/match")
