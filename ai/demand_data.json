@@ -1,0 +1,77 @@
+[
+  {
+    "date": "2026-08-20",
+    "service": "plumber",
+    "bookings": 8
+  },
+  {
+    "date": "2026-08-20",
+    "service": "electrician",
+    "bookings": 5
+  },
+  {
+    "date": "2026-08-20",
+    "service": "carpenter",
+    "bookings": 3
+  },
+  {
+    "date": "2026-08-21",
+    "service": "plumber",
+    "bookings": 10
+  },
+  {
+    "date": "2026-08-21",
+    "service": "electrician",
+    "bookings": 6
+  },
+  {
+    "date": "2026-08-21",
+    "service": "carpenter",
+    "bookings": 4
+  },
+  {
+    "date": "2026-08-22",
+    "service": "plumber",
+    "bookings": 12
+  },
+  {
+    "date": "2026-08-22",
+    "service": "electrician",
+    "bookings": 7
+  },
+  {
+    "date": "2026-08-22",
+    "service": "carpenter",
+    "bookings": 5
+  },
+  {
+    "date": "2026-08-23",
+    "service": "plumber",
+    "bookings": 9
+  },
+  {
+    "date": "2026-08-23",
+    "service": "electrician",
+    "bookings": 8
+  },
+  {
+    "date": "2026-08-23",
+    "service": "carpenter",
+    "bookings": 4
+  },
+  {
+    "date": "2026-08-24",
+    "service": "plumber",
+    "bookings": 13
+  },
+  {
+    "date": "2026-08-24",
+    "service": "electrician",
+    "bookings": 9
+  },
+  {
+    "date": "2026-08-24",
+    "service": "carpenter",
+    "bookings": 6
+  }
+]

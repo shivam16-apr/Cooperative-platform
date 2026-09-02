@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 
 from .matching import match_workers
+from .forecasting import forecast_demand
 
 
 app = FastAPI()
@@ -19,13 +20,13 @@ def home():
     return {
         "message": "AI Matching API is running"
     }
+
 @app.get("/health")
 def health():
     return {
         "status": "ok",
         "service": "worker-matching-ai"
     }
-
 
 @app.post("/match")
 def match(request: MatchingRequest):
@@ -40,3 +41,12 @@ def match(request: MatchingRequest):
     return {
         "workers": results
     }
+
+@app.get("/forecast")
+def forecast(service: str = None):
+    results = forecast_demand(service)
+
+    return {
+        "forecasts": results
+    }
+
