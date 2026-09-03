@@ -3,6 +3,7 @@ from pydantic import BaseModel
 
 from .matching import match_workers
 from .forecasting import forecast_demand
+from .allocation import allocate_workforce
 
 
 app = FastAPI()
@@ -49,4 +50,14 @@ def forecast(service: str = None):
     return {
         "forecasts": results
     }
+
+@app.get("/allocate")
+def allocate():
+    results = allocate_workforce()
+
+    return {
+        "allocation": results
+    }
+
+
 
