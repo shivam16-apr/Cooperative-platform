@@ -1,7 +1,4 @@
-# SevaPulse Admin Dashboard 🇮🇳
-
-> **Bharat's On-Demand Services & Operations Management Platform**  
-> Built for Smart India Hackathon (SIH) & scalable municipal / enterprise service operations.
+# FixMate Admin Dashboard
 
 ---
 
@@ -10,12 +7,10 @@
 - **📊 Central Overview & Operations Center**:
   - Real-time KPI counters (Active Technicians, Bookings, Completed Jobs, Gross Revenue).
   - Interactive Revenue & Job fulfillment charts powered by Chart.js.
-  - Broadcast team motivation messages & send appreciation bonuses (Mithai tips).
   - Quick CSV report generation.
 
-- **👷 Technician / Worker Roster**:
+- **👷 Worker Roster**:
   - Track live availability (`Active`, `On Duty`, `Offline`).
-  - Send direct praise & shabaashi tips with automated ledger updates.
   - Onboard new verified service professionals.
 
 - **👥 Customer Directory**:
@@ -60,32 +55,6 @@
 - **Node.js**: v18.0.0 or higher
 - **npm**: v9.0.0 or higher
 
-### Installation
-
-1. Open a terminal in this directory:
-   ```bash
-   cd "D:\Documents\SIH\Admin Dashboard Frontend\Admin Dashboard Frontend"
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-### Running the Development Server
-
-You can run the app using any of the following methods:
-
-#### Option A: Quick Double-Click (Windows)
-Double-click `start.bat` in the project root. It will verify dependencies and launch Vite automatically.
-
-#### Option B: Terminal Command
-```bash
-npm run dev
-```
-> The dashboard will start locally at **`http://localhost:3000`** (or next available port).
-
----
 
 ## 📦 Available Scripts
 
