@@ -1,6 +1,7 @@
 const serviceRoutes = require("./service");
 const express = require("express");
 const cors = require("cors");
+const adminRoutes = require("./admin");
 const prisma = require("./prisma");
 const authRoutes = require("./auth");
 const workerRoutes = require("./worker");
@@ -14,15 +15,11 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/services", serviceRoutes);
-app.use("/api/auth", authRoutes);
-app.use("/api/services", serviceRoutes);
-app.use("/api/workers", workerRoutes);
-app.use("/api/auth", authRoutes);
-app.use("/api/services", serviceRoutes);
 app.use("/api/workers", workerRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/reviews", reviewRoutes);
 app.use("/api/match-workers", matchRoutes);
+app.use("/api/admin", adminRoutes);
 app.get("/", (req, res) => {
     res.json({
         message: "Cooperative Platform Backend is running!"
