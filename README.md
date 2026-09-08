@@ -1,44 +1,82 @@
 # FixMate — Cooperative Service Marketplace
 
-FixMate is a cooperative-owned digital platform that connects households and institutions with verified local service workers.
+## Smart India Hackathon 2026
 
-The platform aims to create a trusted and organized service marketplace by combining worker verification, skill-based matching, availability, ratings, AI-based demand forecasting and workforce allocation.
+| **Problem Statement ID** | 26089 |
+| ------------------------ | ----- |
+| **Problem Statement Title** | Cooperative Gig Services Platform for Household & Community Services |
+| **Organization** | Ministry of Cooperation |
+| **Department** | National Council for Cooperative Training (NCCT) |
+| **Category** | Software |
+| **Theme** | Agriculture, FoodTech & Rural Development |
 
 ---
 
 # Problem Statement
 
-Local service workers often face difficulties such as:
+## Background
 
-- Limited access to reliable employment opportunities
-- Difficulty finding customers in nearby areas
-- Unorganized service requests
-- Lack of transparent worker profiles and verification
-- Unpredictable demand for different services
-- Limited access to welfare and insurance-related support
+Labour Cooperative Federations and Labour Cooperative Societies possess a large pool of skilled workers such as electricians, plumbers, carpenters, painters, domestic helpers, caregivers, drivers, gardeners, cleaners and technicians.
 
-Customers and institutions also face challenges in finding reliable and suitable workers for their service requirements.
+However, they lack a structured digital platform to connect these workers with households and institutions requiring such services.
 
-FixMate aims to address these challenges through a cooperative digital platform.
+Private platforms currently dominate this market, while cooperative workers often remain underutilized despite having skills and local presence.
+
+## Problem
+
+The objective is to develop a cooperative-owned digital service marketplace platform that enables Labour Cooperative Federations and Labour Cooperative Societies to provide verified household and community services while ensuring:
+
+- Fair wages
+- Worker welfare
+- Consumer trust
+
+## Expected Solution Features
+
+The proposed platform is expected to support:
+
+- Service provider registration and verification
+- Worker skill profiling and certification
+- Customer booking and scheduling system
+- Geo-location based service matching
+- Digital payments and invoicing
+- Rating and feedback mechanism
+- Worker welfare and insurance integration
+- Emergency and on-demand service booking
+- Cooperative federation administration dashboard
+- Multilingual mobile application
+- AI-based demand forecasting and workforce allocation
+
+## Technology Components
+
+The problem statement identifies the following technology components:
+
+- Mobile Applications
+- Artificial Intelligence (AI)
+- Geo-Spatial Technology
+- Digital Payment Systems
+- Cloud Computing
+- Software
 
 ---
 
 # Proposed Solution
 
-FixMate provides a centralized platform where customers can request services and verified workers can discover and accept suitable opportunities.
+FixMate is a cooperative-owned digital service marketplace designed to connect verified local service workers with households and institutions requiring services.
 
-The platform focuses on:
+The platform brings together customer, worker and administrative interfaces with a backend API, PostgreSQL database and AI services.
+
+The solution focuses on:
 
 - Verified worker profiles
 - Skill-based service matching
 - Location-aware matching
-- Worker availability
+- Service booking and scheduling
+- Digital payment flow
 - Ratings and reviews
-- Service booking
+- Worker welfare and insurance support
 - AI-based demand forecasting
 - Workforce allocation
-- Worker welfare and insurance support
-- Administrative monitoring and management
+- Cooperative administration
 
 ---
 
@@ -77,19 +115,21 @@ Customers can provide ratings and reviews after completing a service.
 
 This helps improve transparency and provides useful feedback about service quality.
 
-## Demand Forecasting
+## Digital Payments
 
-The AI component analyses demand-related data to estimate future service requirements.
-
-This can help identify areas and time periods where additional workforce capacity may be required.
-
-## Workforce Allocation
-
-The allocation component uses demand and worker information to support better distribution of available workers across service requirements.
+The platform includes a digital payment flow to support transactions between customers and service providers.
 
 ## Worker Welfare and Insurance
 
 The platform is designed to support worker welfare through features related to insurance and other welfare-oriented services.
+
+## Demand Forecasting
+
+The AI component analyses demand-related data to estimate future service requirements.
+
+## Workforce Allocation
+
+The allocation component uses demand and worker information to support better distribution of available workers across service requirements.
 
 ---
 
