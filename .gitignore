@@ -5,3 +5,5 @@ prisma/.env
 # Python cache
 __pycache__/
 *.pyc
+# Frontend build output
+dist/
