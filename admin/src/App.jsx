@@ -44,11 +44,12 @@ import {
 export default function App() {
   const navigate = useNavigate();
 
-  // State
-  const [workers, setWorkers] = useState(() => {
-    const saved = localStorage.getItem('sevapulse_workers');
-    return saved ? JSON.parse(saved) : initialWorkers;
-  });
+  // ==========================================
+  // STATE
+  // ==========================================
+
+  // Workers now come from backend
+  const [workers, setWorkers] = useState([]);
 
   const [customers, setCustomers] = useState(() => {
     const saved = localStorage.getItem('sevapulse_customers');
@@ -98,18 +99,57 @@ export default function App() {
   const [globalSearch, setGlobalSearch] = useState('');
   const [toasts, setToasts] = useState([]);
 
-  // Theme
+  // ==========================================
+  // FETCH WORKERS FROM BACKEND
+  // ==========================================
+
+  useEffect(() => {
+    const fetchWorkers = async () => {
+      try {
+        const token = localStorage.getItem('token');
+
+        const response = await fetch(
+          'http://localhost:5000/api/admin/workers',
+          {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch workers');
+        }
+
+        const data = await response.json();
+
+        setWorkers(data);
+
+      } catch (error) {
+        console.error('Error fetching workers:', error);
+      }
+    };
+
+    fetchWorkers();
+  }, []);
+
+  // ==========================================
+  // THEME
+  // ==========================================
+
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('sevapulse_theme') || 'light';
   });
 
   useEffect(() => {
     const root = document.documentElement;
+
     if (theme === 'dark') {
       root.classList.add('dark');
     } else {
       root.classList.remove('dark');
     }
+
     localStorage.setItem('sevapulse_theme', theme);
   }, [theme]);
 
@@ -117,64 +157,123 @@ export default function App() {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
   };
 
-  // Sync to localStorage
+  // ==========================================
+  // SYNC OTHER DATA TO LOCAL STORAGE
+  // ==========================================
+
   useEffect(() => {
-    localStorage.setItem('sevapulse_workers', JSON.stringify(workers));
-  }, [workers]);
-  useEffect(() => {
-    localStorage.setItem('sevapulse_customers', JSON.stringify(customers));
+    localStorage.setItem(
+      'sevapulse_customers',
+      JSON.stringify(customers)
+    );
   }, [customers]);
+
   useEffect(() => {
-    localStorage.setItem('sevapulse_bookings', JSON.stringify(bookings));
+    localStorage.setItem(
+      'sevapulse_bookings',
+      JSON.stringify(bookings)
+    );
   }, [bookings]);
+
   useEffect(() => {
-    localStorage.setItem('sevapulse_payments', JSON.stringify(payments));
+    localStorage.setItem(
+      'sevapulse_payments',
+      JSON.stringify(payments)
+    );
   }, [payments]);
+
   useEffect(() => {
-    localStorage.setItem('sevapulse_complaints', JSON.stringify(complaints));
+    localStorage.setItem(
+      'sevapulse_complaints',
+      JSON.stringify(complaints)
+    );
   }, [complaints]);
+
   useEffect(() => {
-    localStorage.setItem('sevapulse_notifications', JSON.stringify(notifications));
+    localStorage.setItem(
+      'sevapulse_notifications',
+      JSON.stringify(notifications)
+    );
   }, [notifications]);
+
   useEffect(() => {
-    localStorage.setItem('sevapulse_claims', JSON.stringify(claims));
+    localStorage.setItem(
+      'sevapulse_claims',
+      JSON.stringify(claims)
+    );
   }, [claims]);
+
   useEffect(() => {
-    localStorage.setItem('sevapulse_welfare_overview', JSON.stringify(welfareOverview));
+    localStorage.setItem(
+      'sevapulse_welfare_overview',
+      JSON.stringify(welfareOverview)
+    );
   }, [welfareOverview]);
+
   useEffect(() => {
-    localStorage.setItem('sevapulse_ai_demand', JSON.stringify(aiDemandData));
+    localStorage.setItem(
+      'sevapulse_ai_demand',
+      JSON.stringify(aiDemandData)
+    );
   }, [aiDemandData]);
+
   useEffect(() => {
-    localStorage.setItem('sevapulse_admin_name', adminName);
+    localStorage.setItem(
+      'sevapulse_admin_name',
+      adminName
+    );
   }, [adminName]);
 
-  // Toast helper
+  // ==========================================
+  // TOAST HELPER
+  // ==========================================
+
   const showToast = (message, type = 'info') => {
     const id = Date.now() + Math.random();
-    setToasts((prev) => [...prev, { id, message, type }]);
+
+    setToasts((prev) => [
+      ...prev,
+      {
+        id,
+        message,
+        type
+      }
+    ]);
+
     setTimeout(() => {
-      setToasts((prev) => prev.filter((t) => t.id !== id));
+      setToasts((prev) =>
+        prev.filter((t) => t.id !== id)
+      );
     }, 4000);
   };
 
   const dismissToast = (id) => {
-    setToasts((prev) => prev.filter((t) => t.id !== id));
+    setToasts((prev) =>
+      prev.filter((t) => t.id !== id)
+    );
   };
 
-  // Modals state
+  // ==========================================
+  // MODALS STATE
+  // ==========================================
+
   const [isAddWorkerOpen, setIsAddWorkerOpen] = useState(false);
   const [isAddCustomerOpen, setIsAddCustomerOpen] = useState(false);
   const [isAddBookingOpen, setIsAddBookingOpen] = useState(false);
+
   const [selectedComplaint, setSelectedComplaint] = useState(null);
   const [selectedPayment, setSelectedPayment] = useState(null);
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   const [selectedClaimForReview, setSelectedClaimForReview] = useState(null);
   const [selectedWorkerForWelfare, setSelectedWorkerForWelfare] = useState(null);
+
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
   const [isLocked, setIsLocked] = useState(false);
 
-  // Welfare & Claims Actions
+  // ==========================================
+  // WELFARE & CLAIMS ACTIONS
+  // ==========================================
+
   const handleApproveClaim = (claimId, payoutAmount, notes) => {
     setClaims((prev) =>
       prev.map((c) => {
@@ -186,6 +285,7 @@ export default function App() {
             adminNotes: notes
           };
         }
+
         return c;
       })
     );
@@ -196,11 +296,17 @@ export default function App() {
         ...prev.claims,
         pending: Math.max(0, prev.claims.pending - 1),
         approved: prev.claims.approved + 1,
-        totalDisbursedMonth: prev.claims.totalDisbursedMonth + payoutAmount
+        totalDisbursedMonth:
+          prev.claims.totalDisbursedMonth + payoutAmount
       }
     }));
 
-    showToast(`Claim ${claimId} approved! ₹${payoutAmount.toLocaleString('en-IN')} disbursed via UPI Direct Benefit Transfer.`, 'success');
+    showToast(
+      `Claim ${claimId} approved! ₹${payoutAmount.toLocaleString(
+        'en-IN'
+      )} disbursed via UPI Direct Benefit Transfer.`,
+      'success'
+    );
   };
 
   const handleRejectClaim = (claimId, reason) => {
@@ -213,6 +319,7 @@ export default function App() {
             rejectReason: reason
           };
         }
+
         return c;
       })
     );
@@ -226,7 +333,10 @@ export default function App() {
       }
     }));
 
-    showToast(`Claim ${claimId} marked as Rejected. Notice sent to worker.`, 'warning');
+    showToast(
+      `Claim ${claimId} marked as Rejected. Notice sent to worker.`,
+      'warning'
+    );
   };
 
   const handleToggleWelfareEnrollment = (workerId) => {
@@ -234,34 +344,59 @@ export default function App() {
       prev.map((w) => {
         if (w.id === workerId) {
           const newEnrolled = !w.welfareEnrolled;
-          showToast(`${w.name} ${newEnrolled ? 'enrolled into' : 'removed from'} Welfare Board registry`, 'info');
+
+          showToast(
+            `${w.name} ${
+              newEnrolled ? 'enrolled into' : 'removed from'
+            } Welfare Board registry`,
+            'info'
+          );
+
           return {
             ...w,
             welfareEnrolled: newEnrolled,
             benefitsActive: newEnrolled
           };
         }
+
         return w;
       })
     );
   };
 
-  // AI Rebalance Action
+  // ==========================================
+  // AI REBALANCE ACTION
+  // ==========================================
+
   const handleApplyRebalance = (allocationId) => {
     setAiDemandData((prev) => {
-      const updatedRecs = prev.recommendedReallocations.map((r) => {
-        if (allocationId === 'ALL' || r.id === allocationId) {
-          return { ...r, applied: true };
-        }
-        return r;
-      });
+      const updatedRecs =
+        prev.recommendedReallocations.map((r) => {
+          if (
+            allocationId === 'ALL' ||
+            r.id === allocationId
+          ) {
+            return {
+              ...r,
+              applied: true
+            };
+          }
+
+          return r;
+        });
 
       return {
         ...prev,
         recommendedReallocations: updatedRecs,
         metadata: {
           ...prev.metadata,
-          netShortage: allocationId === 'ALL' ? -12 : Math.min(0, prev.metadata.netShortage + 10)
+          netShortage:
+            allocationId === 'ALL'
+              ? -12
+              : Math.min(
+                  0,
+                  prev.metadata.netShortage + 10
+                )
         }
       };
     });
@@ -274,7 +409,10 @@ export default function App() {
     );
   };
 
-  // AI Surge Simulator
+  // ==========================================
+  // AI SURGE SIMULATOR
+  // ==========================================
+
   const handleSimulateSurge = (scenario) => {
     if (scenario === 'Delhi 42°C Heatwave') {
       setAiDemandData((prev) => ({
@@ -286,12 +424,25 @@ export default function App() {
         },
         zones: prev.zones.map((z) =>
           z.id === 'ZN-DEL-SOUTH'
-            ? { ...z, currentDemand: 105, gap: -57, surgeFactor: '1.8x', weatherAlert: 'Critical Heatwave 44°C • Severe AC breakdown spike' }
+            ? {
+                ...z,
+                currentDemand: 105,
+                gap: -57,
+                surgeFactor: '1.8x',
+                weatherAlert:
+                  'Critical Heatwave 44°C • Severe AC breakdown spike'
+              }
             : z
         )
       }));
-      showToast('AI Simulation: Heatwave AC breakdown surge deployed!', 'warning');
+
+      showToast(
+        'AI Simulation: Heatwave AC breakdown surge deployed!',
+        'warning'
+      );
+
     } else if (scenario === 'Monsoon Waterlogging') {
+
       setAiDemandData((prev) => ({
         ...prev,
         metadata: {
@@ -301,193 +452,416 @@ export default function App() {
         },
         zones: prev.zones.map((z) =>
           z.id === 'ZN-NOIDA-62'
-            ? { ...z, currentDemand: 92, gap: -28, surgeFactor: '1.6x', weatherAlert: 'Monsoon Alert • Heavy drain clogging' }
+            ? {
+                ...z,
+                currentDemand: 92,
+                gap: -28,
+                surgeFactor: '1.6x',
+                weatherAlert:
+                  'Monsoon Alert • Heavy drain clogging'
+              }
             : z
         )
       }));
-      showToast('AI Simulation: Monsoon plumbing emergency surge deployed!', 'info');
+
+      showToast(
+        'AI Simulation: Monsoon plumbing emergency surge deployed!',
+        'info'
+      );
+
     } else {
+
       setAiDemandData(initialAiDemandData);
-      showToast('AI Model reset to standard operational baseline.', 'info');
+
+      showToast(
+        'AI Model reset to standard operational baseline.',
+        'info'
+      );
     }
   };
 
-  // Worker Actions
+  // ==========================================
+  // WORKER ACTIONS
+  // ==========================================
+
   const handleAddWorker = (newWorker) => {
-    setWorkers((prev) => [newWorker, ...prev]);
-    showToast(`Technician ${newWorker.name} onboarded successfully!`, 'success');
+    setWorkers((prev) => [
+      newWorker,
+      ...prev
+    ]);
+
+    showToast(
+      `Technician ${newWorker.name} onboarded successfully!`,
+      'success'
+    );
   };
 
   const handleToggleWorkerStatus = (id) => {
     setWorkers((prev) =>
       prev.map((w) => {
+
         if (w.id === id) {
-          const nextStatus = w.status === 'Active' ? 'On Duty' : w.status === 'On Duty' ? 'Offline' : 'Active';
-          showToast(`Updated status of ${w.name} to ${nextStatus}`, 'info');
-          return { ...w, status: nextStatus };
+
+          const nextStatus =
+            w.status === 'Active'
+              ? 'On Duty'
+              : w.status === 'On Duty'
+              ? 'Offline'
+              : 'Active';
+
+          showToast(
+            `Updated status of ${w.name} to ${nextStatus}`,
+            'info'
+          );
+
+          return {
+            ...w,
+            status: nextStatus
+          };
         }
+
         return w;
       })
     );
   };
 
   const handleDeleteWorker = (id) => {
-    const worker = workers.find((w) => w.id === id);
+    const worker = workers.find(
+      (w) => w.id === id
+    );
+
     if (!worker) return;
-    if (confirm(`Remove technician ${worker.name} from active roster?`)) {
-      setWorkers((prev) => prev.filter((w) => w.id !== id));
-      showToast(`Removed technician ${worker.name}`, 'warning');
+
+    if (
+      confirm(
+        `Remove technician ${worker.name} from active roster?`
+      )
+    ) {
+
+      setWorkers((prev) =>
+        prev.filter((w) => w.id !== id)
+      );
+
+      showToast(
+        `Removed technician ${worker.name}`,
+        'warning'
+      );
     }
   };
 
   const handleSendPraise = (id) => {
     setWorkers((prev) =>
       prev.map((w) => {
+
         if (w.id === id) {
-          const newTips = (w.tips || 0) + 100;
-          showToast(`Shabaashi sent to ${w.name}! ₹100 tip credited 👏`, 'success');
-          return { ...w, tips: newTips };
+
+          const newTips =
+            (w.tips || 0) + 100;
+
+          showToast(
+            `Shabaashi sent to ${w.name}! ₹100 tip credited 👏`,
+            'success'
+          );
+
+          return {
+            ...w,
+            tips: newTips
+          };
         }
+
         return w;
       })
     );
   };
 
-  // Customer Actions
+  // ==========================================
+  // CUSTOMER ACTIONS
+  // ==========================================
+
   const handleAddCustomer = (newCustomer) => {
-    setCustomers((prev) => [newCustomer, ...prev]);
-    showToast(`Customer ${newCustomer.name} registered successfully!`, 'success');
+    setCustomers((prev) => [
+      newCustomer,
+      ...prev
+    ]);
+
+    showToast(
+      `Customer ${newCustomer.name} registered successfully!`,
+      'success'
+    );
   };
 
-  // Booking Actions
-  const handleAddBooking = (newBooking) => {
-    setBookings((prev) => [newBooking, ...prev]);
+  // ==========================================
+  // BOOKING ACTIONS
+  // ==========================================
 
-    // Also add to payments
+  const handleAddBooking = (newBooking) => {
+    setBookings((prev) => [
+      newBooking,
+      ...prev
+    ]);
+
     const newPayment = {
-      id: `TXN-UPI-${Math.floor(910 + Math.random() * 80)}`,
+      id: `TXN-UPI-${Math.floor(
+        910 + Math.random() * 80
+      )}`,
       bookingId: newBooking.id,
       customerName: newBooking.customerName,
       service: newBooking.service,
-      date: new Date().toISOString().slice(0, 10),
+      date: new Date()
+        .toISOString()
+        .slice(0, 10),
       amount: newBooking.amount,
       method: 'UPI (PhonePe)',
       status: 'Paid'
     };
-    setPayments((prev) => [newPayment, ...prev]);
 
-    showToast(`Booking ${newBooking.id} confirmed & assigned to ${newBooking.workerName}!`, 'success');
-  };
+    setPayments((prev) => [
+      newPayment,
+      ...prev
+    ]);
 
-  const handleUpdateBookingStatus = (id, newStatus) => {
-    setBookings((prev) =>
-      prev.map((b) => (b.id === id ? { ...b, status: newStatus } : b))
+    showToast(
+      `Booking ${newBooking.id} confirmed & assigned to ${newBooking.workerName}!`,
+      'success'
     );
-    showToast(`Booking ${id} status changed to ${newStatus}`, 'info');
   };
 
-  // Complaint Actions
-  const handleResolveComplaint = (ticketId, compensation, notes) => {
+  const handleUpdateBookingStatus = (
+    id,
+    newStatus
+  ) => {
+
+    setBookings((prev) =>
+      prev.map((b) =>
+        b.id === id
+          ? {
+              ...b,
+              status: newStatus
+            }
+          : b
+      )
+    );
+
+    showToast(
+      `Booking ${id} status changed to ${newStatus}`,
+      'info'
+    );
+  };
+
+  // ==========================================
+  // COMPLAINT ACTIONS
+  // ==========================================
+
+  const handleResolveComplaint = (
+    ticketId,
+    compensation,
+    notes
+  ) => {
+
     setComplaints((prev) =>
       prev.map((c) =>
         c.id === ticketId
-          ? { ...c, status: 'Resolved', resolutionNotes: notes, compensation }
+          ? {
+              ...c,
+              status: 'Resolved',
+              resolutionNotes: notes,
+              compensation
+            }
           : c
       )
     );
-    showToast(`Complaint ${ticketId} resolved with care & apology voucher sent!`, 'success');
+
+    showToast(
+      `Complaint ${ticketId} resolved with care & apology voucher sent!`,
+      'success'
+    );
   };
 
-  // Notifications
+  // ==========================================
+  // NOTIFICATIONS
+  // ==========================================
+
   const handleMarkAllNotificationsRead = () => {
-    setNotifications((prev) => prev.map((n) => ({ ...n, unread: false })));
-    showToast('All notifications marked as read', 'info');
+    setNotifications((prev) =>
+      prev.map((n) => ({
+        ...n,
+        unread: false
+      }))
+    );
+
+    showToast(
+      'All notifications marked as read',
+      'info'
+    );
   };
 
-  // Motivation banner
+  // ==========================================
+  // MOTIVATION BANNER
+  // ==========================================
+
   const handleSendTeamMotivation = () => {
-    showToast('Sent broadcast to all 24 technicians: "Bahut badhiya kaam team! Bharat loves your service 🙏"', 'success');
+    showToast(
+      'Sent broadcast to all 24 technicians: "Bahut badhiya kaam team! Bharat loves your service 🙏"',
+      'success'
+    );
   };
 
   const handleSendMithaiBonus = (name) => {
-    showToast(`₹200 Mithai Bonus & appreciation badge credited to ${name}! 🍬`, 'success');
+    showToast(
+      `₹200 Mithai Bonus & appreciation badge credited to ${name}! 🍬`,
+      'success'
+    );
   };
 
-  // CSV Export
+  // ==========================================
+  // CSV EXPORT
+  // ==========================================
+
   const handleExportCSV = (type) => {
-    let csvContent = 'data:text/csv;charset=utf-8,';
+
+    let csvContent =
+      'data:text/csv;charset=utf-8,';
+
     let filename = '';
 
     if (type === 'payment') {
-      csvContent += 'Transaction ID,Booking ID,Customer,Service,Date,Amount (INR),Method,Status\n';
+
+      csvContent +=
+        'Transaction ID,Booking ID,Customer,Service,Date,Amount (INR),Method,Status\n';
+
       payments.forEach((p) => {
-        csvContent += `"${p.id}","${p.bookingId}","${p.customerName}","${p.service}","${p.date}",${p.amount},"${p.method}","${p.status}"\n`;
+
+        csvContent +=
+          `"${p.id}","${p.bookingId}","${p.customerName}","${p.service}","${p.date}",${p.amount},"${p.method}","${p.status}"\n`;
+
       });
-      filename = `SevaPulse_Payments_${new Date().toISOString().slice(0, 10)}.csv`;
+
+      filename =
+        `SevaPulse_Payments_${new Date()
+          .toISOString()
+          .slice(0, 10)}.csv`;
+
     } else {
-      csvContent += 'Metric,Value\n';
-      csvContent += `"Total Indian Workers",${workers.length}\n`;
-      csvContent += `"Total Customers",${customers.length}\n`;
-      csvContent += `"Active Bookings",${bookings.length}\n`;
-      csvContent += `"Open Complaints",${complaints.filter((c) => c.status !== 'Resolved').length}\n`;
-      filename = `SevaPulse_Overview_${new Date().toISOString().slice(0, 10)}.csv`;
+
+      csvContent +=
+        'Metric,Value\n';
+
+      csvContent +=
+        `"Total Indian Workers",${workers.length}\n`;
+
+      csvContent +=
+        `"Total Customers",${customers.length}\n`;
+
+      csvContent +=
+        `"Active Bookings",${bookings.length}\n`;
+
+      csvContent +=
+        `"Open Complaints",${complaints.filter(
+          (c) => c.status !== 'Resolved'
+        ).length}\n`;
+
+      filename =
+        `SevaPulse_Overview_${new Date()
+          .toISOString()
+          .slice(0, 10)}.csv`;
     }
 
-    const encodedUri = encodeURI(csvContent);
-    const link = document.createElement('a');
-    link.setAttribute('href', encodedUri);
-    link.setAttribute('download', filename);
+    const encodedUri =
+      encodeURI(csvContent);
+
+    const link =
+      document.createElement('a');
+
+    link.setAttribute(
+      'href',
+      encodedUri
+    );
+
+    link.setAttribute(
+      'download',
+      filename
+    );
+
     document.body.appendChild(link);
+
     link.click();
+
     document.body.removeChild(link);
 
-    showToast(`Exported ${filename} successfully!`, 'success');
+    showToast(
+      `Exported ${filename} successfully!`,
+      'success'
+    );
   };
 
-  // Counts for sidebar badges
+  // ==========================================
+  // SIDEBAR COUNTS
+  // ==========================================
+
   const sidebarCounts = {
     workers: workers.length,
     customers: customers.length,
-    pendingBookings: bookings.filter((b) => b.status === 'Pending' || b.status === 'Confirmed').length,
-    openComplaints: complaints.filter((c) => c.status !== 'Resolved').length,
-    pendingClaims: claims.filter((c) => c.status === 'Pending').length,
+    pendingBookings: bookings.filter(
+      (b) =>
+        b.status === 'Pending' ||
+        b.status === 'Confirmed'
+    ).length,
+    openComplaints: complaints.filter(
+      (c) => c.status !== 'Resolved'
+    ).length,
+    pendingClaims: claims.filter(
+      (c) => c.status === 'Pending'
+    ).length
   };
+
+  // ==========================================
+  // RETURN
+  // ==========================================
 
   return (
     <div className="min-h-screen bg-[#f4f6fa] dark:bg-charcoal-950 text-slate-900 dark:text-slate-100 flex flex-col font-sans transition-colors duration-200">
-      {/* Toast Alert Engine */}
-      <Toast toasts={toasts} onDismiss={dismissToast} />
 
-      {/* Main App Container */}
+      <Toast
+        toasts={toasts}
+        onDismiss={dismissToast}
+      />
+
       <div className="flex flex-1 min-h-screen">
-        {/* Sidebar */}
+
         <Sidebar
           sidebarOpen={sidebarOpen}
           setSidebarOpen={setSidebarOpen}
           counts={sidebarCounts}
           adminName={adminName}
-          onLogoutClick={() => setIsLogoutModalOpen(true)}
+          onLogoutClick={() =>
+            setIsLogoutModalOpen(true)
+          }
         />
 
-        {/* Content Wrapper */}
         <div className="flex-1 lg:pl-64 flex flex-col min-w-0">
-          {/* Header */}
+
           <Header
             sidebarOpen={sidebarOpen}
             setSidebarOpen={setSidebarOpen}
             theme={theme}
             toggleTheme={toggleTheme}
             notifications={notifications}
-            markAllNotificationsRead={handleMarkAllNotificationsRead}
-            onNewBookingClick={() => setIsAddBookingOpen(true)}
+            markAllNotificationsRead={
+              handleMarkAllNotificationsRead
+            }
+            onNewBookingClick={() =>
+              setIsAddBookingOpen(true)
+            }
             globalSearch={globalSearch}
             setGlobalSearch={setGlobalSearch}
           />
 
-          {/* Main View Area */}
           <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto">
+
             <Routes>
-              {/* Home & Overview */}
+
+              {/* HOME */}
+
               <Route
                 path="/"
                 element={
@@ -500,247 +874,451 @@ export default function App() {
                     welfareOverview={welfareOverview}
                     aiDemandData={aiDemandData}
                     theme={theme}
-                    onSendTeamMotivation={handleSendTeamMotivation}
-                    onSendMithaiBonus={handleSendMithaiBonus}
-                    onExportCSV={handleExportCSV}
+                    onSendTeamMotivation={
+                      handleSendTeamMotivation
+                    }
+                    onSendMithaiBonus={
+                      handleSendMithaiBonus
+                    }
+                    onExportCSV={
+                      handleExportCSV
+                    }
                   />
                 }
               />
-              <Route path="/overview" element={<Navigate to="/" replace />} />
 
-              {/* Workers */}
+              <Route
+                path="/overview"
+                element={
+                  <Navigate
+                    to="/"
+                    replace
+                  />
+                }
+              />
+
+              {/* WORKERS */}
+
               <Route
                 path="/workers"
                 element={
                   <WorkersView
                     workers={workers}
-                    onAddWorkerClick={() => setIsAddWorkerOpen(true)}
-                    onToggleStatus={handleToggleWorkerStatus}
-                    onDeleteWorker={handleDeleteWorker}
-                    onSendPraise={handleSendPraise}
-                    onViewWorkerWelfare={(w) => setSelectedWorkerForWelfare(w)}
-                    globalSearch={globalSearch}
+                    onAddWorkerClick={() =>
+                      setIsAddWorkerOpen(true)
+                    }
+                    onToggleStatus={
+                      handleToggleWorkerStatus
+                    }
+                    onDeleteWorker={
+                      handleDeleteWorker
+                    }
+                    onSendPraise={
+                      handleSendPraise
+                    }
+                    onViewWorkerWelfare={(w) =>
+                      setSelectedWorkerForWelfare(w)
+                    }
+                    globalSearch={
+                      globalSearch
+                    }
                   />
                 }
               />
 
-              {/* Customers */}
+              {/* CUSTOMERS */}
+
               <Route
                 path="/customers"
                 element={
                   <CustomersView
                     customers={customers}
-                    onAddCustomerClick={() => setIsAddCustomerOpen(true)}
-                    onViewCustomer={(c) => setSelectedCustomer(c)}
-                    globalSearch={globalSearch}
+                    onAddCustomerClick={() =>
+                      setIsAddCustomerOpen(true)
+                    }
+                    onViewCustomer={(c) =>
+                      setSelectedCustomer(c)
+                    }
+                    globalSearch={
+                      globalSearch
+                    }
                   />
                 }
               />
-              <Route path="/customer" element={<Navigate to="/customers" replace />} />
 
-              {/* Bookings */}
+              <Route
+                path="/customer"
+                element={
+                  <Navigate
+                    to="/customers"
+                    replace
+                  />
+                }
+              />
+
+              {/* BOOKINGS */}
+
               <Route
                 path="/bookings"
                 element={
                   <BookingsView
                     bookings={bookings}
-                    onAddBookingClick={() => setIsAddBookingOpen(true)}
-                    onUpdateStatus={handleUpdateBookingStatus}
-                    globalSearch={globalSearch}
+                    onAddBookingClick={() =>
+                      setIsAddBookingOpen(true)
+                    }
+                    onUpdateStatus={
+                      handleUpdateBookingStatus
+                    }
+                    globalSearch={
+                      globalSearch
+                    }
                   />
                 }
               />
-              <Route path="/booking" element={<Navigate to="/bookings" replace />} />
 
-              {/* Payments */}
+              <Route
+                path="/booking"
+                element={
+                  <Navigate
+                    to="/bookings"
+                    replace
+                  />
+                }
+              />
+
+              {/* PAYMENTS */}
+
               <Route
                 path="/payments"
                 element={
                   <PaymentsView
                     payments={payments}
-                    onShowReceipt={(p) => setSelectedPayment(p)}
-                    onExportCSV={handleExportCSV}
-                    globalSearch={globalSearch}
+                    onShowReceipt={(p) =>
+                      setSelectedPayment(p)
+                    }
+                    onExportCSV={
+                      handleExportCSV
+                    }
+                    globalSearch={
+                      globalSearch
+                    }
                   />
                 }
               />
-              <Route path="/payment" element={<Navigate to="/payments" replace />} />
 
-              {/* Complaints */}
+              <Route
+                path="/payment"
+                element={
+                  <Navigate
+                    to="/payments"
+                    replace
+                  />
+                }
+              />
+
+              {/* COMPLAINTS */}
+
               <Route
                 path="/complaints"
                 element={
                   <ComplaintsView
                     complaints={complaints}
-                    onResolveTicket={(c) => setSelectedComplaint(c)}
-                    globalSearch={globalSearch}
+                    onResolveTicket={(c) =>
+                      setSelectedComplaint(c)
+                    }
+                    globalSearch={
+                      globalSearch
+                    }
                   />
                 }
               />
-              <Route path="/complaint" element={<Navigate to="/complaints" replace />} />
 
-              {/* 🤖 AI & Operations Routes */}
+              <Route
+                path="/complaint"
+                element={
+                  <Navigate
+                    to="/complaints"
+                    replace
+                  />
+                }
+              />
+
+              {/* AI & OPERATIONS */}
+
               <Route
                 path="/operations"
                 element={
                   <AIOperationsView
-                    demandData={aiDemandData}
-                    onApplyRebalance={handleApplyRebalance}
-                    onSimulateSurge={handleSimulateSurge}
+                    demandData={
+                      aiDemandData
+                    }
+                    onApplyRebalance={
+                      handleApplyRebalance
+                    }
+                    onSimulateSurge={
+                      handleSimulateSurge
+                    }
                     theme={theme}
                     initialTab="demand-forecast"
                   />
                 }
               />
+
               <Route
                 path="/operations/demand-forecast"
                 element={
                   <AIOperationsView
-                    demandData={aiDemandData}
-                    onApplyRebalance={handleApplyRebalance}
-                    onSimulateSurge={handleSimulateSurge}
+                    demandData={
+                      aiDemandData
+                    }
+                    onApplyRebalance={
+                      handleApplyRebalance
+                    }
+                    onSimulateSurge={
+                      handleSimulateSurge
+                    }
                     theme={theme}
                     initialTab="demand-forecast"
                   />
                 }
               />
+
               <Route
                 path="/operations/workforce-allocation"
                 element={
                   <AIOperationsView
-                    demandData={aiDemandData}
-                    onApplyRebalance={handleApplyRebalance}
-                    onSimulateSurge={handleSimulateSurge}
+                    demandData={
+                      aiDemandData
+                    }
+                    onApplyRebalance={
+                      handleApplyRebalance
+                    }
+                    onSimulateSurge={
+                      handleSimulateSurge
+                    }
                     theme={theme}
                     initialTab="workforce-allocation"
                   />
                 }
               />
 
-              {/* 🛡️ Worker Welfare Routes */}
+              {/* WORKER WELFARE */}
+
               <Route
                 path="/welfare"
                 element={
                   <WorkerWelfareView
                     workers={workers}
                     claims={claims}
-                    welfareOverview={welfareOverview}
-                    insurancePolicies={initialInsurancePolicies}
-                    welfareBenefits={initialWelfareBenefits}
-                    onReviewClaim={(c) => setSelectedClaimForReview(c)}
-                    onViewWorkerWelfare={(w) => setSelectedWorkerForWelfare(w)}
-                    onToggleEnrollment={handleToggleWelfareEnrollment}
-                    globalSearch={globalSearch}
+                    welfareOverview={
+                      welfareOverview
+                    }
+                    insurancePolicies={
+                      initialInsurancePolicies
+                    }
+                    welfareBenefits={
+                      initialWelfareBenefits
+                    }
+                    onReviewClaim={(c) =>
+                      setSelectedClaimForReview(c)
+                    }
+                    onViewWorkerWelfare={(w) =>
+                      setSelectedWorkerForWelfare(w)
+                    }
+                    onToggleEnrollment={
+                      handleToggleWelfareEnrollment
+                    }
+                    globalSearch={
+                      globalSearch
+                    }
                     initialTab="insurance"
                   />
                 }
               />
+
               <Route
                 path="/welfare/insurance"
                 element={
                   <WorkerWelfareView
                     workers={workers}
                     claims={claims}
-                    welfareOverview={welfareOverview}
-                    insurancePolicies={initialInsurancePolicies}
-                    welfareBenefits={initialWelfareBenefits}
-                    onReviewClaim={(c) => setSelectedClaimForReview(c)}
-                    onViewWorkerWelfare={(w) => setSelectedWorkerForWelfare(w)}
-                    onToggleEnrollment={handleToggleWelfareEnrollment}
-                    globalSearch={globalSearch}
+                    welfareOverview={
+                      welfareOverview
+                    }
+                    insurancePolicies={
+                      initialInsurancePolicies
+                    }
+                    welfareBenefits={
+                      initialWelfareBenefits
+                    }
+                    onReviewClaim={(c) =>
+                      setSelectedClaimForReview(c)
+                    }
+                    onViewWorkerWelfare={(w) =>
+                      setSelectedWorkerForWelfare(w)
+                    }
+                    onToggleEnrollment={
+                      handleToggleWelfareEnrollment
+                    }
+                    globalSearch={
+                      globalSearch
+                    }
                     initialTab="insurance"
                   />
                 }
               />
+
               <Route
                 path="/welfare/benefits"
                 element={
                   <WorkerWelfareView
                     workers={workers}
                     claims={claims}
-                    welfareOverview={welfareOverview}
-                    insurancePolicies={initialInsurancePolicies}
-                    welfareBenefits={initialWelfareBenefits}
-                    onReviewClaim={(c) => setSelectedClaimForReview(c)}
-                    onViewWorkerWelfare={(w) => setSelectedWorkerForWelfare(w)}
-                    onToggleEnrollment={handleToggleWelfareEnrollment}
-                    globalSearch={globalSearch}
+                    welfareOverview={
+                      welfareOverview
+                    }
+                    insurancePolicies={
+                      initialInsurancePolicies
+                    }
+                    welfareBenefits={
+                      initialWelfareBenefits
+                    }
+                    onReviewClaim={(c) =>
+                      setSelectedClaimForReview(c)
+                    }
+                    onViewWorkerWelfare={(w) =>
+                      setSelectedWorkerForWelfare(w)
+                    }
+                    onToggleEnrollment={
+                      handleToggleWelfareEnrollment
+                    }
+                    globalSearch={
+                      globalSearch
+                    }
                     initialTab="benefits"
                   />
                 }
               />
+
               <Route
                 path="/welfare/claims"
                 element={
                   <WorkerWelfareView
                     workers={workers}
                     claims={claims}
-                    welfareOverview={welfareOverview}
-                    insurancePolicies={initialInsurancePolicies}
-                    welfareBenefits={initialWelfareBenefits}
-                    onReviewClaim={(c) => setSelectedClaimForReview(c)}
-                    onViewWorkerWelfare={(w) => setSelectedWorkerForWelfare(w)}
-                    onToggleEnrollment={handleToggleWelfareEnrollment}
-                    globalSearch={globalSearch}
+                    welfareOverview={
+                      welfareOverview
+                    }
+                    insurancePolicies={
+                      initialInsurancePolicies
+                    }
+                    welfareBenefits={
+                      initialWelfareBenefits
+                    }
+                    onReviewClaim={(c) =>
+                      setSelectedClaimForReview(c)
+                    }
+                    onViewWorkerWelfare={(w) =>
+                      setSelectedWorkerForWelfare(w)
+                    }
+                    onToggleEnrollment={
+                      handleToggleWelfareEnrollment
+                    }
+                    globalSearch={
+                      globalSearch
+                    }
                     initialTab="claims"
                   />
                 }
               />
 
-              {/* Reports */}
+              {/* REPORTS */}
+
               <Route
                 path="/reports"
                 element={
                   <ReportsView
                     theme={theme}
-                    onExportCSV={handleExportCSV}
+                    onExportCSV={
+                      handleExportCSV
+                    }
                   />
                 }
               />
 
-              {/* Settings */}
+              {/* SETTINGS */}
+
               <Route
                 path="/settings"
                 element={
                   <SettingsView
                     adminName={adminName}
-                    setAdminName={setAdminName}
+                    setAdminName={
+                      setAdminName
+                    }
                     theme={theme}
                     setTheme={setTheme}
                     onSaveSettings={(newName) => {
                       setAdminName(newName);
-                      showToast('Settings saved successfully in Indian region preferences!', 'success');
+
+                      showToast(
+                        'Settings saved successfully in Indian region preferences!',
+                        'success'
+                      );
                     }}
                     onRevokeSessions={() => {
-                      showToast('All other sessions revoked successfully!', 'warning');
+                      showToast(
+                        'All other sessions revoked successfully!',
+                        'warning'
+                      );
                     }}
                   />
                 }
               />
 
-              {/* Fallback to Home */}
-              <Route path="*" element={<Navigate to="/" replace />} />
+              {/* FALLBACK */}
+
+              <Route
+                path="*"
+                element={
+                  <Navigate
+                    to="/"
+                    replace
+                  />
+                }
+              />
+
             </Routes>
+
           </main>
         </div>
       </div>
 
-      {/* Modals & Overlays */}
+      {/* ==========================================
+          MODALS
+      ========================================== */}
+
       <AddWorkerModal
         isOpen={isAddWorkerOpen}
-        onClose={() => setIsAddWorkerOpen(false)}
+        onClose={() =>
+          setIsAddWorkerOpen(false)
+        }
         onAdd={handleAddWorker}
       />
 
       <AddCustomerModal
         isOpen={isAddCustomerOpen}
-        onClose={() => setIsAddCustomerOpen(false)}
+        onClose={() =>
+          setIsAddCustomerOpen(false)
+        }
         onAdd={handleAddCustomer}
       />
 
       <AddBookingModal
         isOpen={isAddBookingOpen}
-        onClose={() => setIsAddBookingOpen(false)}
+        onClose={() =>
+          setIsAddBookingOpen(false)
+        }
         onAdd={handleAddBooking}
         workers={workers}
         customers={customers}
@@ -749,44 +1327,78 @@ export default function App() {
       <ResolveComplaintModal
         isOpen={!!selectedComplaint}
         ticket={selectedComplaint}
-        onClose={() => setSelectedComplaint(null)}
-        onResolve={handleResolveComplaint}
+        onClose={() =>
+          setSelectedComplaint(null)
+        }
+        onResolve={
+          handleResolveComplaint
+        }
       />
 
       <InvoiceModal
         isOpen={!!selectedPayment}
         payment={selectedPayment}
-        onClose={() => setSelectedPayment(null)}
+        onClose={() =>
+          setSelectedPayment(null)
+        }
       />
 
       <CustomerDetailModal
         isOpen={!!selectedCustomer}
         customer={selectedCustomer}
-        onClose={() => setSelectedCustomer(null)}
+        onClose={() =>
+          setSelectedCustomer(null)
+        }
       />
 
       <ReviewClaimModal
-        isOpen={!!selectedClaimForReview}
-        claim={selectedClaimForReview}
-        onClose={() => setSelectedClaimForReview(null)}
-        onApprove={handleApproveClaim}
-        onReject={handleRejectClaim}
+        isOpen={
+          !!selectedClaimForReview
+        }
+        claim={
+          selectedClaimForReview
+        }
+        onClose={() =>
+          setSelectedClaimForReview(null)
+        }
+        onApprove={
+          handleApproveClaim
+        }
+        onReject={
+          handleRejectClaim
+        }
       />
 
       <WorkerWelfareModal
-        isOpen={!!selectedWorkerForWelfare}
-        worker={selectedWorkerForWelfare}
-        onClose={() => setSelectedWorkerForWelfare(null)}
-        onToggleWelfareEnrollment={handleToggleWelfareEnrollment}
+        isOpen={
+          !!selectedWorkerForWelfare
+        }
+        worker={
+          selectedWorkerForWelfare
+        }
+        onClose={() =>
+          setSelectedWorkerForWelfare(null)
+        }
+        onToggleWelfareEnrollment={
+          handleToggleWelfareEnrollment
+        }
       />
 
       <LogoutModal
-        isOpen={isLogoutModalOpen}
-        onClose={() => setIsLogoutModalOpen(false)}
+        isOpen={
+          isLogoutModalOpen
+        }
+        onClose={() =>
+          setIsLogoutModalOpen(false)
+        }
         onConfirm={() => {
           setIsLogoutModalOpen(false);
           setIsLocked(true);
-          showToast('Signed out of SevaPulse Admin session.', 'info');
+
+          showToast(
+            'Signed out of SevaPulse Admin session.',
+            'info'
+          );
         }}
       />
 
@@ -796,9 +1408,13 @@ export default function App() {
         onRelogin={() => {
           setIsLocked(false);
           navigate('/');
-          showToast('Namaste! Welcome back to SevaPulse Admin Dashboard 🙏', 'success');
+          showToast(
+            'Namaste! Welcome back to SevaPulse Admin Dashboard 🙏',
+            'success'
+          );
         }}
       />
+
     </div>
   );
 }
