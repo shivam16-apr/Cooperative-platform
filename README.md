@@ -342,13 +342,17 @@ The AI service can then be started using FastAPI and Uvicorn according to the co
 
 ## Frontend Setup
 
+The project contains separate frontend interfaces for different platform users.
+
+### Admin Frontend
+
 Open a terminal inside:
 
 ```text
 Cooperative-platform/src/admin
 ```
 
-Install the frontend dependencies:
+Install the dependencies:
 
 ```bash
 npm install
@@ -360,9 +364,47 @@ Start the development server:
 npm run dev
 ```
 
-The terminal will display the local development URL for the frontend.
+### Worker Frontend
 
----
+Open a terminal inside the Worker frontend directory:
+
+```text
+Cooperative-platform/src/worker
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+### Customer Frontend
+
+Open a terminal inside the Customer frontend directory:
+
+```text
+Cooperative-platform/src/customer
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+
 
 # API Documentation
 
@@ -376,22 +418,52 @@ The documentation contains information about the available backend API endpoints
 
 ---
 
-# Screenshots
+## Screenshots
 
-Screenshots will be added as the frontend modules are finalized.
+### Worker Interface
 
-Planned screenshots include:
+#### Worker Onboarding & Authentication
 
-- Customer Login
-- Customer Dashboard
-- Worker Login
-- Worker Dashboard
-- Admin Dashboard
-- Worker Matching
-- Demand Forecasting
-- Workforce Allocation
+The Worker interface provides a guided onboarding flow for new workers, along with login access for existing workers.
 
----
+**1. Worker Login & Profession Selection**
+
+The main entry screen allows new workers to select their profession, while existing workers can access the login option.
+
+![Worker Login Page](assets/screenshots/worker/1%20worker%20login%20page.png)
+
+**2. Personal Information**
+
+New workers provide their basic information, including their name and phone number.
+
+![Worker Personal Information](assets/screenshots/worker/sign%20up%20follows%202.png)
+
+**3. Work Preferences & Service Details**
+
+Workers provide their operating city, experience, maximum service radius and hourly charges.
+
+![Worker Work Preferences](assets/screenshots/worker/sign%20up%20follows%203.png)
+
+**4. Identity Verification & Security**
+
+Workers complete the verification process and create a secure 4-digit PIN for account access.
+
+![Worker Verification & Security](assets/screenshots/worker/sign%20up%20follows%204.png)
+
+#### Worker Dashboard
+
+The Worker Dashboard provides an overview of the worker's activities and important account information.
+
+![Worker Dashboard](assets/screenshots/worker/worker%20dashboard.png)
+
+#### Worker Earnings
+
+Workers can view and track their earnings through the dedicated Earnings interface.
+
+![Worker Earnings](assets/screenshots/worker/workerEarningpage.png)
+
+> Screenshots for the Customer and Admin interfaces will be added as those modules are finalized.
+
 
 # Project Vision
 
