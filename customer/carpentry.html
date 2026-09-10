@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FixMate - Carpentry Services</title>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="carpentry.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+
+       <div class="brand">
+            <img src="fixmate-logo.jpg" alt="FixMate Logo" class="logo-img">
+        </div>
+    </div>
+
+
+    <div class="nav-right">
+
+        <button class="location-btn">
+            <i data-lucide="map-pin"></i>
+            <span>Delhi, India</span>
+        </button>
+
+        <button class="theme-toggle" id="themeToggle">
+            <i data-lucide="moon"></i>
+        </button>
+
+        <button class="notification">
+            <i data-lucide="bell"></i>
+        </button>
+
+        <div class="profile">
+
+            <div class="profile-avatar">
+                A
+            </div>
+
+            <div class="profile-name">
+                <strong>Abhishek</strong>
+                <span>Customer</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<main>
+
+<div class="breadcrumb">
+
+    <span>Home</span>
+    <i data-lucide="chevron-right"></i>
+
+    <span>Services</span>
+    <i data-lucide="chevron-right"></i>
+
+    <strong>Carpentry</strong>
+
+</div>
+
+
+<div class="steps">
+
+    <div class="step completed">
+
+        <div class="step-circle">
+            <i data-lucide="check"></i>
+        </div>
+
+        <span>Home</span>
+
+    </div>
+
+    <div class="step-line active"></div>
+
+    <div class="step active">
+
+        <div class="step-circle">
+            2
+        </div>
+
+        <span>Service</span>
+
+    </div>
+
+    <div class="step-line"></div>
+
+    <div class="step">
+
+        <div class="step-circle">
+            3
+        </div>
+
+        <span>Location</span>
+
+    </div>
+
+    <div class="step-line"></div>
+
+    <div class="step">
+
+        <div class="step-circle">
+            4
+        </div>
+
+        <span>Book</span>
+
+    </div>
+
+</div>
+
+
+<section class="page-header">
+
+    <div class="header-left">
+
+        <div class="category-icon">
+            <i data-lucide="hammer"></i>
+        </div>
+
+        <div>
+
+            <span class="small-label">
+                HOME IMPROVEMENT
+            </span>
+
+            <h2>
+                Carpentry Services
+            </h2>
+
+            <p>
+                Choose the carpentry service you need.
+                Our verified professionals are ready to help.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="trust-badge">
+
+        <i data-lucide="shield-check"></i>
+
+        <div>
+
+            <strong>
+                Verified Professionals
+            </strong>
+
+            <span>
+                100% background checked
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="tools">
+
+    <div class="search-box">
+
+        <i data-lucide="search"></i>
+
+        <input
+            type="text"
+            id="serviceSearch"
+            placeholder="Search carpentry services..."
+        >
+
+    </div>
+
+    <button class="filter-btn" id="filterBtn">
+
+        <i data-lucide="sliders-horizontal"></i>
+
+        Filters
+
+    </button>
+
+
+    <button class="sort-btn" id="sortBtn">
+
+        <i data-lucide="arrow-down-up"></i>
+
+        Popular
+
+    </button>
+
+</section>
+
+
+<div class="service-title">
+
+    <div>
+
+        <span>
+            RECOMMENDED FOR YOU
+        </span>
+
+        <h3>
+            Popular Carpentry Services
+        </h3>
+
+    </div>
+
+</div>
+
+
+<section class="service-grid" id="serviceGrid">
+
+
+<div class="service-card"
+     data-name="Furniture Repair"
+     data-price="299">
+
+    <div class="service-top">
+
+        <div class="service-icon">
+            <i data-lucide="armchair"></i>
+        </div>
+
+        <span class="popular-badge">
+            Most booked
+        </span>
+
+    </div>
+
+    <div class="service-content">
+
+        <h4>
+            Furniture Repair
+        </h4>
+
+        <p>
+            Repair damaged tables, chairs and furniture.
+        </p>
+
+        <div class="service-meta">
+
+            <span>
+                <i data-lucide="star"></i>
+                4.9
+            </span>
+
+            <span>
+                <i data-lucide="clock-3"></i>
+                1–2 hrs
+            </span>
+
+        </div>
+
+        <div class="price-row">
+
+            <div>
+
+                <small>
+                    Starting from
+                </small>
+
+                <strong>
+                    ₹299
+                </strong>
+
+            </div>
+
+            <button class="select-btn">
+                Select
+                <i data-lucide="arrow-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="service-card"
+     data-name="Door Repair"
+     data-price="249">
+
+    <div class="service-top">
+
+        <div class="service-icon">
+            <i data-lucide="door-open"></i>
+        </div>
+
+        <span class="fast-badge">
+            Quick fix
+        </span>
+
+    </div>
+
+    <div class="service-content">
+
+        <h4>
+            Door Repair
+        </h4>
+
+        <p>
+            Repair doors, hinges, locks and wooden frames.
+        </p>
+
+        <div class="service-meta">
+
+            <span>
+                <i data-lucide="star"></i>
+                4.8
+            </span>
+
+            <span>
+                <i data-lucide="clock-3"></i>
+                1–2 hrs
+            </span>
+
+        </div>
+
+        <div class="price-row">
+
+            <div>
+
+                <small>
+                    Starting from
+                </small>
+
+                <strong>
+                    ₹249
+                </strong>
+
+            </div>
+
+            <button class="select-btn">
+                Select
+                <i data-lucide="arrow-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="service-card"
+     data-name="Custom Furniture"
+     data-price="799">
+
+    <div class="service-top">
+
+        <div class="service-icon">
+            <i data-lucide="sofa"></i>
+        </div>
+
+        <span class="recommended-badge">
+            Recommended
+        </span>
+
+    </div>
+
+    <div class="service-content">
+
+        <h4>
+            Custom Furniture
+        </h4>
+
+        <p>
+            Create customized wooden furniture for your home.
+        </p>
+
+        <div class="service-meta">
+
+            <span>
+                <i data-lucide="star"></i>
+                4.9
+            </span>
+
+            <span>
+                <i data-lucide="clock-3"></i>
+                1–2 days
+            </span>
+
+        </div>
+
+        <div class="price-row">
+
+            <div>
+
+                <small>
+                    Starting from
+                </small>
+
+                <strong>
+                    ₹799
+                </strong>
+
+            </div>
+
+            <button class="select-btn">
+                Select
+                <i data-lucide="arrow-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="service-card"
+     data-name="Cabinet Repair"
+     data-price="349">
+
+    <div class="service-top">
+
+        <div class="service-icon">
+            <i data-lucide="archive"></i>
+        </div>
+
+        <span class="recommended-badge">
+            Popular
+        </span>
+
+    </div>
+
+    <div class="service-content">
+
+        <h4>
+            Cabinet Repair
+        </h4>
+
+        <p>
+            Repair kitchen and storage cabinets.
+        </p>
+
+        <div class="service-meta">
+
+            <span>
+                <i data-lucide="star"></i>
+                4.8
+            </span>
+
+            <span>
+                <i data-lucide="clock-3"></i>
+                1–2 hrs
+            </span>
+
+        </div>
+
+        <div class="price-row">
+
+            <div>
+
+                <small>
+                    Starting from
+                </small>
+
+                <strong>
+                    ₹349
+                </strong>
+
+            </div>
+
+            <button class="select-btn">
+                Select
+                <i data-lucide="arrow-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="service-card"
+     data-name="Wood Polishing"
+     data-price="499">
+
+    <div class="service-top">
+
+        <div class="service-icon">
+            <i data-lucide="brush"></i>
+        </div>
+
+        <span class="popular-badge">
+            Popular
+        </span>
+
+    </div>
+
+    <div class="service-content">
+
+        <h4>
+            Wood Polishing
+        </h4>
+
+        <p>
+            Restore shine and finish to wooden furniture.
+        </p>
+
+        <div class="service-meta">
+
+            <span>
+                <i data-lucide="star"></i>
+                4.8
+            </span>
+
+            <span>
+                <i data-lucide="clock-3"></i>
+                2–4 hrs
+            </span>
+
+        </div>
+
+        <div class="price-row">
+
+            <div>
+
+                <small>
+                    Starting from
+                </small>
+
+                <strong>
+                    ₹499
+                </strong>
+
+            </div>
+
+            <button class="select-btn">
+                Select
+                <i data-lucide="arrow-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="service-card"
+     data-name="Bed & Sofa Repair"
+     data-price="399">
+
+    <div class="service-top">
+
+        <div class="service-icon">
+            <i data-lucide="bed-double"></i>
+        </div>
+
+        <span class="recommended-badge">
+            Safe choice
+        </span>
+
+    </div>
+
+    <div class="service-content">
+
+        <h4>
+            Bed & Sofa Repair
+        </h4>
+
+        <p>
+            Repair wooden beds, sofas and frames.
+        </p>
+
+        <div class="service-meta">
+
+            <span>
+                <i data-lucide="star"></i>
+                4.8
+            </span>
+
+            <span>
+                <i data-lucide="clock-3"></i>
+                1–3 hrs
+            </span>
+
+        </div>
+
+        <div class="price-row">
+
+            <div>
+
+                <small>
+                    Starting from
+                </small>
+
+                <strong>
+                    ₹399
+                </strong>
+
+            </div>
+
+            <button class="select-btn">
+                Select
+                <i data-lucide="arrow-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<div class="no-result" id="noResult">
+
+    <i data-lucide="search-x"></i>
+
+    <h3>No service found</h3>
+
+    <p>
+        Try searching for another service.
+    </p>
+
+</div>
+
+</main>
+
+
+<div class="booking-bar">
+
+    <div class="selected-service">
+
+        <div class="selected-icon">
+            <i data-lucide="hammer"></i>
+        </div>
+
+        <div>
+
+            <span>
+                SELECTED SERVICE
+            </span>
+
+            <strong id="selectedService">
+                No service selected
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="booking-info">
+
+        <i data-lucide="shield-check"></i>
+
+        Verified professional
+
+    </div>
+
+
+    <button
+        class="continue-btn"
+        id="continueBtn"
+        disabled
+    >
+
+        Continue
+
+        <i data-lucide="arrow-right"></i>
+
+    </button>
+
+</div>
+
+
+<button
+    class="floating-emergency"
+    id="emergencyBtn"
+>
+
+    <i data-lucide="siren"></i>
+
+    Emergency
+
+</button>
+
+
+<script>
+
+lucide.createIcons();
+
+
+/* THEME */
+
+const themeToggle =
+    document.getElementById("themeToggle");
+
+const savedTheme =
+    localStorage.getItem("fixmate-theme");
+
+if (savedTheme === "dark") {
+
+    document.body.classList.add("dark-mode");
+
+    themeToggle.innerHTML =
+        '<i data-lucide="sun"></i>';
+
+    lucide.createIcons();
+
+}
+
+
+themeToggle.addEventListener("click", function () {
+
+    document.body.classList.toggle("dark-mode");
+
+    const isDark =
+        document.body.classList.contains("dark-mode");
+
+    localStorage.setItem(
+        "fixmate-theme",
+        isDark ? "dark" : "light"
+    );
+
+    themeToggle.innerHTML =
+        isDark
+            ? '<i data-lucide="sun"></i>'
+            : '<i data-lucide="moon"></i>';
+
+    lucide.createIcons();
+
+});
+
+
+/* SERVICE */
+
+const cards =
+    document.querySelectorAll(".service-card");
+
+const selectedText =
+    document.getElementById("selectedService");
+
+const continueBtn =
+    document.getElementById("continueBtn");
+
+let selectedService = null;
+
+
+cards.forEach(function (card) {
+
+    card.addEventListener("click", function () {
+
+        cards.forEach(function (c) {
+            c.classList.remove("selected");
+        });
+
+        card.classList.add("selected");
+
+        selectedService =
+            card.dataset.name;
+
+        selectedText.textContent =
+            selectedService;
+
+        continueBtn.disabled = false;
+
+    });
+
+});
+
+
+/* CONTINUE */
+
+continueBtn.addEventListener("click", function () {
+
+    if (!selectedService) {
+        return;
+    }
+
+    const selectedCard =
+        document.querySelector(
+            ".service-card.selected"
+        );
+
+    const selectedPrice =
+        selectedCard.dataset.price;
+
+    localStorage.setItem(
+        "fixmate-selected-service",
+        selectedService
+    );
+
+    localStorage.setItem(
+        "fixmate-service-price",
+        selectedPrice
+    );
+
+    window.location.href =
+        "index4.html";
+
+});
+
+
+/* EMERGENCY */
+
+document.getElementById("emergencyBtn")
+    .addEventListener("click", function () {
+
+        window.location.href =
+            "emergency.html";
+
+    });
+
+
+/* SEARCH */
+
+const searchInput =
+    document.getElementById("serviceSearch");
+
+const noResult =
+    document.getElementById("noResult");
+
+searchInput.addEventListener("input", function () {
+
+    const search =
+        this.value.toLowerCase().trim();
+
+    let found = false;
+
+    cards.forEach(function (card) {
+
+        const name =
+            card.dataset.name.toLowerCase();
+
+        if (name.includes(search)) {
+
+            card.style.display = "flex";
+            found = true;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    noResult.style.display =
+        found ? "none" : "flex";
+
+});
+
+
+/* FILTER */
+
+document.getElementById("filterBtn")
+    .addEventListener("click", function () {
+
+        alert(
+            "Filter options will be available soon."
+        );
+
+    });
+
+
+/* SORT */
+
+const sortBtn =
+    document.getElementById("sortBtn");
+
+let sortAscending = true;
+
+
+sortBtn.addEventListener("click", function () {
+
+    const grid =
+        document.getElementById("serviceGrid");
+
+    const cardArray =
+        Array.from(cards);
+
+    cardArray.sort(function (a, b) {
+
+        return sortAscending
+            ? Number(a.dataset.price) -
+              Number(b.dataset.price)
+            : Number(b.dataset.price) -
+              Number(a.dataset.price);
+
+    });
+
+    cardArray.forEach(function (card) {
+        grid.appendChild(card);
+    });
+
+    sortAscending = !sortAscending;
+
+    sortBtn.innerHTML =
+        sortAscending
+            ? '<i data-lucide="arrow-down-up"></i> Low to High'
+            : '<i data-lucide="arrow-down-up"></i> High to Low';
+
+    lucide.createIcons();
+
+});
+
+</script>
+
+</body>
+</html>

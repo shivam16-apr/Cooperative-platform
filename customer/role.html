@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FixMate | Choose Role</title>
+
+    <link rel="stylesheet" href="role.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="top-header">
+
+        <!-- LOGO -->
+
+       <div class="brand-logo">
+  <img src="fixmate-logo.jpg" alt="FixMate Logo" class="logo-img">
+</div>
+
+
+        <!-- HEADER ACTIONS -->
+
+        <div class="header-actions">
+
+            <div class="secure-badge">
+
+                <span class="secure-icon">
+                    ✓
+                </span>
+
+                Trusted & Secure
+
+            </div>
+
+
+            <button
+                class="theme-btn"
+                id="themeBtn"
+                aria-label="Toggle theme"
+                title="Toggle theme"
+            >
+
+                <span id="themeIcon">
+                    ☀️
+                </span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+        <!-- PAGE HEADING -->
+
+        <section class="page-heading">
+
+            <div class="eyebrow">
+
+                <span class="eyebrow-dot"></span>
+
+                Welcome to FixMate
+
+            </div>
+
+
+            <h1>
+                Choose your account type
+            </h1>
+
+
+            <p>
+                Select how you would like to continue with FixMate.
+            </p>
+
+        </section>
+
+
+        <!-- ================= ROLE CARDS ================= -->
+
+        <section class="role-list">
+
+
+            <!-- ================= CUSTOMER ================= -->
+
+            <div
+                class="role-card customer-card"
+                data-role="customer"
+                tabindex="0"
+            >
+
+                <div class="role-icon customer-icon">
+                    👤
+                </div>
+
+
+                <div class="role-info">
+
+                    <div class="role-heading">
+
+                        <div>
+
+                            <h2>
+                                Customer
+                            </h2>
+
+                            <span class="role-label customer-label">
+                                Book Services
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <p>
+                        Find trusted professionals and book reliable
+                        services for your home.
+                    </p>
+
+
+                    <div class="role-features">
+
+                        <span>
+                            ✓ Easy booking
+                        </span>
+
+                        <span>
+                            ✓ Live tracking
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= WORKER ================= -->
+
+            <div
+                class="role-card worker-card"
+                data-role="worker"
+                tabindex="0"
+            >
+
+                <div class="role-icon worker-icon">
+                    🧰
+                </div>
+
+
+                <div class="role-info">
+
+                    <div class="role-heading">
+
+                        <div>
+
+                            <h2>
+                                Worker
+                            </h2>
+
+                            <span class="role-label worker-label">
+                                Manage Jobs
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <p>
+                        Accept customer requests, manage your jobs
+                        and grow your professional profile.
+                    </p>
+
+
+                    <div class="role-features">
+
+                        <span>
+                            ✓ Manage jobs
+                        </span>
+
+                        <span>
+                            ✓ Track earnings
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= ADMIN ================= -->
+
+            <div
+                class="role-card admin-card"
+                data-role="admin"
+                tabindex="0"
+            >
+
+                <div class="role-icon admin-icon">
+                    🛡️
+                </div>
+
+
+                <div class="role-info">
+
+                    <div class="role-heading">
+
+                        <div>
+
+                            <h2>
+                                Admin
+                            </h2>
+
+                            <span class="role-label admin-label">
+                                Platform Control
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <p>
+                        Manage users, workers, services and bookings
+                        across the FixMate platform.
+                    </p>
+
+
+                    <div class="role-features">
+
+                        <span>
+                            ✓ Manage platform
+                        </span>
+
+                        <span>
+                            ✓ View analytics
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SECURITY MESSAGE ================= -->
+
+        <div class="bottom-info">
+
+            <span>
+                🔒
+            </span>
+
+            Your account information is secure with FixMate.
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        © 2026 FixMate · Reliable services. Better living.
+
+    </footer>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+/* =====================================================
+   THEME
+===================================================== */
+
+const themeBtn = document.getElementById("themeBtn");
+const themeIcon = document.getElementById("themeIcon");
+
+
+/* Load saved theme */
+
+let savedTheme = localStorage.getItem("fixmate-theme");
+
+if (!savedTheme) {
+    savedTheme = "light";
+}
+
+
+/* Apply theme */
+
+function applyTheme(theme) {
+
+    if (theme === "dark") {
+
+        document.body.classList.add("dark-mode");
+
+        themeIcon.textContent = "🌙";
+
+    } else {
+
+        document.body.classList.remove("dark-mode");
+
+        themeIcon.textContent = "☀️";
+    }
+}
+
+
+applyTheme(savedTheme);
+
+
+/* Toggle theme */
+
+themeBtn.addEventListener("click", function () {
+
+    const isDark =
+        document.body.classList.contains("dark-mode");
+
+    const newTheme =
+        isDark ? "light" : "dark";
+
+    applyTheme(newTheme);
+
+    localStorage.setItem(
+        "fixmate-theme",
+        newTheme
+    );
+
+});
+
+
+/* =====================================================
+   ROLE SELECTION
+===================================================== */
+
+const roleCards =
+    document.querySelectorAll(".role-card");
+
+
+function selectRole(role) {
+
+    /* Save selected role */
+
+    localStorage.setItem(
+        "fixmate-user-role",
+        role
+    );
+
+
+    /* Remove previous selection */
+
+    roleCards.forEach(function (card) {
+
+        card.classList.remove("selected");
+
+    });
+
+
+    /* Select current card */
+
+    const selectedCard =
+        document.querySelector(
+            '[data-role="' + role + '"]'
+        );
+
+
+    if (selectedCard) {
+
+        selectedCard.classList.add("selected");
+
+    }
+
+
+    /* Small delay for animation */
+
+    setTimeout(function () {
+
+
+        /* CUSTOMER */
+
+        if (role === "customer") {
+
+            sessionStorage.setItem(
+                "fixmate-role-entry",
+                "customer"
+            );
+
+            window.location.href =
+                "index.html";
+
+        }
+
+
+        /* WORKER */
+
+        else if (role === "worker") {
+
+            window.location.href =
+                "worker-login.html";
+
+        }
+
+
+        /* ADMIN */
+
+        else if (role === "admin") {
+
+            window.location.href =
+                "admin-login.html";
+
+        }
+
+    }, 180);
+
+}
+
+
+/* =====================================================
+   CARD CLICK
+===================================================== */
+
+roleCards.forEach(function (card) {
+
+
+    /* Mouse / touch */
+
+    card.addEventListener("click", function () {
+
+        const role =
+            this.dataset.role;
+
+        selectRole(role);
+
+    });
+
+
+    /* Keyboard support */
+
+    card.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Enter" ||
+                event.key === " "
+            ) {
+
+                event.preventDefault();
+
+                const role =
+                    this.dataset.role;
+
+                selectRole(role);
+
+            }
+
+        }
+    );
+
+});
+
+</script>
+
+</body>
+
+</html>

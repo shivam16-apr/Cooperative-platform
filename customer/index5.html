@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FixMate - Choose Professional</title>
+
+    <link rel="stylesheet" href="style5.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="top-header">
+
+      <div class="brand">
+    <img src="fixmate-logo.jpg" alt="FixMate Logo" class="logo-img">
+</div>
+
+        <div class="header-actions">
+
+            <div class="step-indicator">
+                Step 3 of 4
+            </div>
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                aria-label="Toggle theme"
+            >
+                <i class="fa-solid fa-sun sun"></i>
+                <i class="fa-solid fa-moon moon"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+        <!-- ================= PROGRESS ================= -->
+
+        <div class="booking-progress">
+
+            <div class="progress-step completed">
+                <span>1</span>
+                Service
+            </div>
+
+            <div class="progress-line active"></div>
+
+            <div class="progress-step completed">
+                <span>2</span>
+                Location
+            </div>
+
+            <div class="progress-line active"></div>
+
+            <div class="progress-step current">
+                <span>3</span>
+                Professional
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+                <span>4</span>
+                Booking
+            </div>
+
+        </div>
+
+
+        <!-- ================= HEADING ================= -->
+
+        <section class="heading-section">
+
+            <div class="location-pill">
+                <i class="fa-solid fa-location-dot"></i>
+
+                <span id="locationText">
+                    Your Location
+                </span>
+            </div>
+
+            <h2>
+                Choose your
+                <span>professional</span>
+            </h2>
+
+            <p id="serviceText">
+                We found the best professionals near you.
+            </p>
+
+        </section>
+
+
+        <!-- ================= SELECTED SERVICE ================= -->
+
+        <div class="selected-service-bar">
+
+            <div
+                class="selected-service-icon"
+                id="selectedServiceIcon"
+            >
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+
+            <div class="selected-service-info">
+
+                <small>
+                    SELECTED SERVICE
+                </small>
+
+                <strong id="selectedService">
+                    Service
+                </strong>
+
+            </div>
+
+            <div class="selected-service-price">
+
+                <span class="price-label">Starting from</span>
+
+                <strong>
+                    ₹<span id="selectedPrice">0</span>
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= LOCATION ================= -->
+
+        <div class="location-summary-card">
+
+            <div class="location-summary-icon">
+                <i class="fa-solid fa-house"></i>
+            </div>
+
+            <div class="location-summary-content">
+
+                <div class="location-summary-heading">
+
+                    <div class="summary-label">
+                        SERVICE LOCATION
+                    </div>
+
+                    <button
+                        class="edit-location-btn"
+                        id="editLocationBtn"
+                        type="button"
+                    >
+                        <i class="fa-solid fa-pen"></i>
+                        Edit
+                    </button>
+
+                </div>
+
+
+                <div class="address-details">
+
+                    <div
+                        class="address-line-main"
+                        id="addressPrimary"
+                    >
+                        Your Address
+                    </div>
+
+                    <div
+                        class="address-line-secondary"
+                        id="addressSecondary"
+                    >
+                        Street • Area
+                    </div>
+
+                    <div class="address-meta">
+
+                        <span id="addressCity">
+                            City
+                        </span>
+
+                        <span class="meta-separator">•</span>
+
+                        <span id="addressState">
+                            State
+                        </span>
+
+                        <span class="meta-separator">•</span>
+
+                        <span id="addressPincode">
+                            000000
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= AI MATCH SUMMARY ================= -->
+
+        <div class="match-summary">
+
+            <div class="summary-icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+
+            <div class="summary-text">
+
+                <strong class="match-count">
+                    3 professionals
+                </strong>
+
+                are currently online and available near your location.
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= WORKERS ================= -->
+
+        <section class="workers-container">
+
+
+            <!-- ================= RAJESH ================= -->
+
+            <article
+                class="worker-card recommended online"
+                data-worker="Rajesh Kumar"
+                data-rating="4.8"
+                data-experience="7+ years"
+                data-distance="1.2 km away"
+            >
+
+                <div class="recommended-label">
+                    <i class="fa-solid fa-star"></i>
+                    BEST MATCH
+                </div>
+
+
+                <div class="worker-top">
+
+                    <div class="worker-avatar">
+                        RK
+                    </div>
+
+                    <div class="worker-profile">
+
+                        <div class="worker-name">
+
+                            <h3>
+                                Rajesh Kumar
+                            </h3>
+
+                            <span class="verified">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Verified Professional
+                            </span>
+
+                        </div>
+
+
+                        <div class="rating">
+
+                            <span class="rating-star">
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+
+                            <span class="rating-value">
+                                4.8
+                            </span>
+
+                            <span class="rating-count">
+                                (126 reviews)
+                            </span>
+
+                        </div>
+
+
+                        <div class="online-status">
+
+                            <span class="online-badge">
+                                ONLINE
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="worker-info">
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <span>
+                            <strong>1.2 km</strong>
+                            away
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+
+                        <span>
+                            <strong>7+ years</strong>
+                            experience
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="skill-match">
+
+                    <div class="skill-header">
+
+                        <span>
+                            Skill Match
+                        </span>
+
+                        <span>
+                            96%
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-fill"
+                            style="width: 96%;"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ai-match">
+
+                    <div class="ai-icon">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+
+                    <div class="ai-text">
+
+                        <strong>
+                            AI Match • 93%
+                        </strong>
+
+                        <div class="ai-description">
+                            Excellent match for your selected service
+                            based on skills, rating and location.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="book-btn"
+                    type="button"
+                >
+                    Select & Continue
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </article>
+
+
+
+            <!-- ================= AMIT ================= -->
+
+            <article
+                class="worker-card online"
+                data-worker="Amit Sharma"
+                data-rating="4.7"
+                data-experience="5+ years"
+                data-distance="2.4 km away"
+            >
+
+                <div class="worker-top">
+
+                    <div class="worker-avatar avatar-two">
+                        AS
+                    </div>
+
+                    <div class="worker-profile">
+
+                        <div class="worker-name">
+
+                            <h3>
+                                Amit Sharma
+                            </h3>
+
+                            <span class="verified">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Verified Professional
+                            </span>
+
+                        </div>
+
+
+                        <div class="rating">
+
+                            <span class="rating-star">
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+
+                            <span class="rating-value">
+                                4.7
+                            </span>
+
+                            <span class="rating-count">
+                                (98 reviews)
+                            </span>
+
+                        </div>
+
+
+                        <div class="online-status">
+
+                            <span class="online-badge">
+                                ONLINE
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="worker-info">
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <span>
+                            <strong>2.4 km</strong>
+                            away
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+
+                        <span>
+                            <strong>5+ years</strong>
+                            experience
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="skill-match">
+
+                    <div class="skill-header">
+
+                        <span>
+                            Skill Match
+                        </span>
+
+                        <span>
+                            91%
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-fill"
+                            style="width: 91%;"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ai-match">
+
+                    <div class="ai-icon">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+
+                    <div class="ai-text">
+
+                        <strong>
+                            AI Match • 89%
+                        </strong>
+
+                        <div class="ai-description">
+                            Highly suitable for your service with
+                            strong customer ratings.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="book-btn"
+                    type="button"
+                >
+                    Select & Continue
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </article>
+
+
+
+            <!-- ================= VIKRAM ================= -->
+
+            <article
+                class="worker-card online"
+                data-worker="Vikram Kumar"
+                data-rating="4.6"
+                data-experience="6+ years"
+                data-distance="3.1 km away"
+            >
+
+                <div class="worker-top">
+
+                    <div class="worker-avatar avatar-three">
+                        VK
+                    </div>
+
+                    <div class="worker-profile">
+
+                        <div class="worker-name">
+
+                            <h3>
+                                Vikram Kumar
+                            </h3>
+
+                            <span class="verified">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Verified Professional
+                            </span>
+
+                        </div>
+
+
+                        <div class="rating">
+
+                            <span class="rating-star">
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+
+                            <span class="rating-value">
+                                4.6
+                            </span>
+
+                            <span class="rating-count">
+                                (84 reviews)
+                            </span>
+
+                        </div>
+
+
+                        <div class="online-status">
+
+                            <span class="online-badge">
+                                ONLINE
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="worker-info">
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <span>
+                            <strong>3.1 km</strong>
+                            away
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+
+                        <span>
+                            <strong>6+ years</strong>
+                            experience
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="skill-match">
+
+                    <div class="skill-header">
+
+                        <span>
+                            Skill Match
+                        </span>
+
+                        <span>
+                            87%
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-fill"
+                            style="width: 87%;"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ai-match">
+
+                    <div class="ai-icon">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+
+                    <div class="ai-text">
+
+                        <strong>
+                            AI Match • 85%
+                        </strong>
+
+                        <div class="ai-description">
+                            Good match based on experience,
+                            availability and customer feedback.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="book-btn"
+                    type="button"
+                >
+                    Select & Continue
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </article>
+
+        </section>
+
+
+        <!-- ================= BOTTOM NOTE ================= -->
+
+        <div class="bottom-note">
+
+            <span>
+                <i class="fa-solid fa-shield-halved"></i>
+            </span>
+
+            <p>
+                All FixMate professionals are verified.
+                You can review their details before confirming
+                your booking.
+            </p>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script>
+
+    /* =====================================================
+       GET DATA FROM INDEX 4
+    ===================================================== */
+
+    const service = localStorage.getItem(
+        "fixmate-selected-service"
+    );
+
+    const price = localStorage.getItem(
+        "fixmate-service-price"
+    );
+
+    const savedLocation = localStorage.getItem(
+        "fixmate-location"
+    );
+
+
+    /* =====================================================
+       CHECK DATA
+    ===================================================== */
+
+    if (!service || !savedLocation) {
+
+        window.location.href = "index4.html";
+
+    }
+
+
+    /* =====================================================
+       SERVICE ICONS
+    ===================================================== */
+
+    const serviceIcons = {
+
+        "AC Repair": "fa-snowflake",
+
+        "Plumbing": "fa-faucet-drip",
+
+        "Electrician": "fa-bolt",
+
+        "Electrical": "fa-bolt",
+
+        "Electrical Repair": "fa-bolt",
+
+        "Fan Installation": "fa-fan",
+
+        "Switch Repair": "fa-toggle-on",
+
+        "Wiring & Rewiring": "fa-plug",
+
+        "Tap Repair": "fa-faucet-drip",
+
+        "Pipe Leakage Repair": "fa-droplet",
+
+        "Drain Cleaning": "fa-water",
+
+        "Toilet Repair": "fa-toilet",
+
+        "Water Tank Repair": "fa-database",
+
+        "Shower Installation": "fa-shower",
+
+        "Cleaning": "fa-broom",
+
+        "Full Home Cleaning": "fa-house",
+
+        "Bathroom Cleaning": "fa-bath",
+
+        "Kitchen Cleaning": "fa-kitchen-set",
+
+        "Sofa Cleaning": "fa-couch",
+
+        "Carpet Cleaning": "fa-rug",
+
+        "Deep Cleaning": "fa-sparkles",
+
+        "Carpentry": "fa-hammer",
+
+        "Furniture Repair": "fa-chair",
+
+        "Door Repair": "fa-door-open",
+
+        "Custom Furniture": "fa-couch",
+
+        "Cabinet Repair": "fa-box",
+
+        "Wood Polishing": "fa-brush",
+
+        "Bed & Sofa Repair": "fa-bed",
+
+        "Painting": "fa-paint-roller",
+
+        "Full Home Painting": "fa-house",
+
+        "Room Painting": "fa-paint-roller",
+
+        "Wall Texture Painting": "fa-brush",
+
+        "Exterior Painting": "fa-building",
+
+        "Wood Painting": "fa-brush",
+
+        "Wall Touch-up": "fa-paintbrush",
+
+        "Appliance Repair": "fa-house",
+
+        "Washing Machine Repair": "fa-soap",
+
+        "Refrigerator Repair": "fa-temperature-low",
+
+        "Microwave Repair": "fa-microwave",
+
+        "Geyser Repair": "fa-fire-flame-simple",
+
+        "TV Repair": "fa-tv",
+
+        "RO Repair": "fa-droplet",
+
+        "Laptop Repair": "fa-laptop",
+
+        "Mobile Repair": "fa-mobile-screen",
+
+        "CCTV Installation": "fa-video",
+
+        "Pest Control": "fa-bug",
+
+        "Salon": "fa-scissors",
+
+        "Beauty": "fa-spa",
+
+        "Garden Maintenance": "fa-seedling",
+
+        "Lawn Care": "fa-leaf",
+
+        "Planting Service": "fa-seedling",
+
+        "Tree Trimming": "fa-tree",
+
+        "Plant Health Check": "fa-heart-pulse",
+
+        "Garden Cleanup": "fa-broom"
+
+    };
+
+
+    /* =====================================================
+       DISPLAY SERVICE
+    ===================================================== */
+
+    const serviceElement =
+        document.getElementById("selectedService");
+
+    const serviceText =
+        document.getElementById("serviceText");
+
+    const selectedServiceIcon =
+        document.querySelector("#selectedServiceIcon i");
+
+
+    serviceElement.textContent =
+        service || "Selected Service";
+
+
+    serviceText.textContent =
+        `Choose a trusted professional for your ${service.toLowerCase()} service.`;
+
+
+    /* =====================================================
+       DISPLAY PRICE
+    ===================================================== */
+
+    const priceElement =
+        document.getElementById("selectedPrice");
+
+
+    if (price) {
+
+        priceElement.textContent =
+            price.replace("₹", "").trim();
+
+    } else {
+
+        priceElement.textContent = "0";
+
+    }
+
+
+    /* =====================================================
+       DISPLAY SERVICE ICON
+    ===================================================== */
+
+    const iconClass =
+        serviceIcons[service] ||
+        "fa-screwdriver-wrench";
+
+
+    selectedServiceIcon.className =
+        `fa-solid ${iconClass}`;
+
+
+    /* =====================================================
+       PARSE LOCATION FROM INDEX 4
+       
+       INDEX 4 SAVES:
+       
+       House Number,
+       Street,
+       Area,
+       City,
+       State,
+       Pincode,
+       Near Landmark
+    ===================================================== */
+
+    function parseAddress(locationString) {
+
+        if (!locationString) {
+
+            return {
+
+                house: "",
+                street: "",
+                area: "",
+                city: "",
+                state: "",
+                pincode: "",
+                landmark: ""
+
+            };
+
+        }
+
+
+        let parts = locationString
+            .split(",")
+            .map(item => item.trim())
+            .filter(item => item.length > 0);
+
+
+        let landmark = "";
+
+
+        /*
+           Find landmark saved as:
+           Near Metro
+           Near Market
+           Near School
+        */
+
+        const landmarkIndex = parts.findIndex(
+            item =>
+                item.toLowerCase().startsWith("near ")
+        );
+
+
+        if (landmarkIndex !== -1) {
+
+            landmark =
+                parts[landmarkIndex];
+
+            parts.splice(landmarkIndex, 1);
+
+        }
+
+
+        return {
+
+            house: parts[0] || "",
+
+            street: parts[1] || "",
+
+            area: parts[2] || "",
+
+            city: parts[3] || "",
+
+            state: parts[4] || "",
+
+            pincode: parts[5] || "",
+
+            landmark: landmark
+
+        };
+
+    }
+
+
+    /* =====================================================
+       GET ADDRESS
+    ===================================================== */
+
+    const address =
+        parseAddress(savedLocation);
+
+
+    /* =====================================================
+       DISPLAY ADDRESS PROPERLY
+    ===================================================== */
+
+    const addressPrimary =
+        document.getElementById("addressPrimary");
+
+    const addressSecondary =
+        document.getElementById("addressSecondary");
+
+    const addressCity =
+        document.getElementById("addressCity");
+
+    const addressState =
+        document.getElementById("addressState");
+
+    const addressPincode =
+        document.getElementById("addressPincode");
+
+    const locationText =
+        document.getElementById("locationText");
+
+
+    /*
+       MAIN ADDRESS
+    */
+
+    addressPrimary.textContent =
+        address.house || "Service Address";
+
+
+    /*
+       STREET + AREA + LANDMARK
+    */
+
+    const secondaryParts = [];
+
+
+    if (address.street) {
+
+        secondaryParts.push(address.street);
+
+    }
+
+
+    if (address.area) {
+
+        secondaryParts.push(address.area);
+
+    }
+
+
+    if (address.landmark) {
+
+        secondaryParts.push(address.landmark);
+
+    }
+
+
+    addressSecondary.textContent =
+        secondaryParts.join(" • ") ||
+        "Service location";
+
+
+    /*
+       CITY
+    */
+
+    addressCity.textContent =
+        address.city || "City";
+
+
+    /*
+       STATE
+    */
+
+    addressState.textContent =
+        address.state || "State";
+
+
+    /*
+       PINCODE
+    */
+
+    addressPincode.textContent =
+        address.pincode || "000000";
+
+
+    /*
+       LOCATION PILL
+    */
+
+    locationText.textContent =
+        address.area ||
+        address.city ||
+        "Your Location";
+
+
+    /* =====================================================
+       EDIT LOCATION
+    ===================================================== */
+
+    document
+        .getElementById("editLocationBtn")
+        .addEventListener("click", function () {
+
+            window.location.href =
+                "index4.html";
+
+        });
+
+
+    /* =====================================================
+       WORKER SELECTION
+    ===================================================== */
+
+    const bookButtons =
+        document.querySelectorAll(".book-btn");
+
+
+    bookButtons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            const workerCard =
+                this.closest(".worker-card");
+
+
+            if (!workerCard) {
+                return;
+            }
+
+
+            const workerName =
+                workerCard.dataset.worker;
+
+
+            const rating =
+                workerCard.dataset.rating;
+
+
+            const experience =
+                workerCard.dataset.experience;
+
+
+            const distance =
+                workerCard.dataset.distance;
+
+
+            /*
+               SAVE SELECTED PROFESSIONAL
+            */
+
+            localStorage.setItem(
+                "fixmate-selected-worker",
+                workerName
+            );
+
+
+            localStorage.setItem(
+                "fixmate-worker-rating",
+                rating
+            );
+
+
+            localStorage.setItem(
+                "fixmate-worker-experience",
+                experience
+            );
+
+
+            localStorage.setItem(
+                "fixmate-worker-distance",
+                distance
+            );
+
+
+            /*
+               GO TO NEXT STEP
+            */
+
+            window.location.href =
+                "index6.html";
+
+        });
+
+    });
+
+
+    /* =====================================================
+       DARK / LIGHT THEME
+    ===================================================== */
+
+    const themeToggle =
+        document.getElementById("themeToggle");
+
+
+    const savedTheme =
+        localStorage.getItem("fixmate-theme");
+
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark");
+
+    }
+
+
+    themeToggle.addEventListener(
+        "click",
+        function () {
+
+            document.body.classList.toggle("dark");
+
+
+            localStorage.setItem(
+                "fixmate-theme",
+
+                document.body.classList.contains("dark")
+                    ? "dark"
+                    : "light"
+            );
+
+        }
+    );
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FixMate - Emergency Assistance</title>
+
+    <link rel="stylesheet" href="emergency.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+     <div class="brand">
+    <img src="fixmate-logo.jpg" alt="FixMate Logo" class="logo-img">
+</div>
+
+        <div class="nav-right">
+
+            <div class="location">
+                <i data-lucide="map-pin"></i>
+                Delhi, India
+            </div>
+
+            <button class="theme-toggle" id="themeToggle">
+                <i data-lucide="moon"></i>
+            </button>
+
+            <button class="notification">
+                <i data-lucide="bell"></i>
+            </button>
+
+            <div class="profile">
+
+                <div class="profile-avatar">
+                    A
+                </div>
+
+                <div class="profile-info">
+                    <div class="profile-name">
+                        Abhishek
+                    </div>
+
+                    <div class="profile-role">
+                        Customer
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- Back -->
+
+        <button class="back-btn" onclick="goBack()">
+            <i data-lucide="arrow-left"></i>
+            Back to Services
+        </button>
+
+
+        <!-- ================= EMERGENCY HEADER ================= -->
+
+        <section class="emergency-header">
+
+            <div class="emergency-icon">
+                <i data-lucide="phone-call"></i>
+            </div>
+
+            <div class="emergency-label">
+                EMERGENCY ASSISTANCE
+            </div>
+
+            <h1>Need Help Right Now?</h1>
+
+            <p>
+                Get immediate assistance from a verified
+                FixMate professional near you.
+            </p>
+
+        </section>
+
+
+        <!-- ================= EMERGENCY CARD ================= -->
+
+        <section class="emergency-card">
+
+            <div class="alert-box">
+
+                <i data-lucide="triangle-alert"></i>
+
+                <div>
+                    <strong>Emergency service available</strong>
+
+                    <p>
+                        Our support team can help connect you
+                        with the nearest available professional.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Call Section -->
+
+            <div class="call-section">
+
+                <div class="call-icon">
+                    <i data-lucide="phone"></i>
+                </div>
+
+                <div class="call-content">
+
+                    <h2>Call Emergency Support</h2>
+
+                    <p>
+                        Speak directly with FixMate emergency
+                        support for immediate assistance.
+                    </p>
+
+                </div>
+
+                <button
+                    class="call-btn"
+                    id="callBtn">
+
+                    <i data-lucide="phone-call"></i>
+                    Call Now
+
+                </button>
+
+            </div>
+
+
+            <!-- Divider -->
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+
+            <!-- Request Section -->
+
+            <div class="request-section">
+
+                <div class="request-icon">
+                    <i data-lucide="user-round-check"></i>
+                </div>
+
+                <div class="request-content">
+
+                    <h2>Request Emergency Assistance</h2>
+
+                    <p>
+                        Send an emergency request and a verified
+                        professional will contact you.
+                    </p>
+
+                </div>
+
+                <button
+                    class="request-btn"
+                    id="requestBtn">
+
+                    Request Help
+                    <i data-lucide="arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SAFETY INFO ================= -->
+
+        <section class="safety-section">
+
+            <div class="section-heading">
+
+                <i data-lucide="shield-check"></i>
+
+                <div>
+                    <h2>Your Safety Matters</h2>
+
+                    <p>
+                        Important information when requesting
+                        emergency assistance.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="safety-grid">
+
+                <div class="safety-card">
+
+                    <div class="safety-icon">
+                        <i data-lucide="badge-check"></i>
+                    </div>
+
+                    <h3>Verified Professionals</h3>
+
+                    <p>
+                        Connect with verified service
+                        professionals through FixMate.
+                    </p>
+
+                </div>
+
+
+                <div class="safety-card">
+
+                    <div class="safety-icon">
+                        <i data-lucide="map-pin"></i>
+                    </div>
+
+                    <h3>Nearby Assistance</h3>
+
+                    <p>
+                        We try to connect you with an
+                        available professional nearby.
+                    </p>
+
+                </div>
+
+
+                <div class="safety-card">
+
+                    <div class="safety-icon">
+                        <i data-lucide="clock-3"></i>
+                    </div>
+
+                    <h3>Quick Response</h3>
+
+                    <p>
+                        Emergency requests are prioritized
+                        for faster assistance.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= IMPORTANT NOTE ================= -->
+
+        <div class="important-note">
+
+            <i data-lucide="info"></i>
+
+            <p>
+                <strong>Important:</strong>
+                FixMate emergency assistance is for urgent
+                home-service issues. For life-threatening
+                situations or medical emergencies, contact
+                the appropriate emergency services immediately.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        lucide.createIcons();
+
+
+        /* ================= THEME ================= */
+
+        const themeToggle =
+            document.getElementById("themeToggle");
+
+        const savedTheme =
+            localStorage.getItem("fixmate-theme");
+
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark");
+        }
+
+
+        themeToggle.addEventListener("click", () => {
+
+            document.body.classList.toggle("dark");
+
+            if (
+                document.body.classList.contains("dark")
+            ) {
+
+                localStorage.setItem(
+                    "fixmate-theme",
+                    "dark"
+                );
+
+            } else {
+
+                localStorage.setItem(
+                    "fixmate-theme",
+                    "light"
+                );
+
+            }
+
+        });
+
+
+        /* ================= BACK ================= */
+
+        function goBack() {
+
+            if (document.referrer) {
+                history.back();
+            } else {
+                window.location.href = "index3.html";
+            }
+
+        }
+
+
+        /* ================= CALL ================= */
+
+        document
+            .getElementById("callBtn")
+            .addEventListener("click", () => {
+
+                /*
+                 * Replace this number with your actual
+                 * FixMate emergency support number.
+                 */
+
+                window.location.href =
+                    "tel:+911234567890";
+
+            });
+
+
+        /* ================= REQUEST HELP ================= */
+
+        document
+            .getElementById("requestBtn")
+            .addEventListener("click", () => {
+
+                alert(
+                    "Your emergency request has been received. A FixMate professional will contact you shortly."
+                );
+
+            });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FixMate - Painting Services</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Painting CSS -->
+    <link rel="stylesheet" href="painting.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <nav class="navbar">
+
+
+        <!-- Logo -->
+
+       <div class="brand">
+    <img src="fixmate-logo.jpg" alt="FixMate Logo" class="logo-img">
+</div>
+
+
+
+        <!-- Right Navigation -->
+
+        <div class="nav-right">
+
+
+            <!-- Location -->
+
+            <button class="location-btn">
+
+                <i data-lucide="map-pin"></i>
+
+                <span>Delhi, India</span>
+
+            </button>
+
+
+
+            <!-- Theme -->
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                aria-label="Toggle theme"
+            >
+
+                <i data-lucide="moon"></i>
+
+            </button>
+
+
+
+            <!-- Notification -->
+
+            <button
+                class="notification"
+                aria-label="Notifications"
+            >
+
+                <i data-lucide="bell"></i>
+
+                <span class="notification-dot"></span>
+
+            </button>
+
+
+
+            <!-- Profile -->
+
+            <div class="profile">
+
+                <div class="profile-avatar">
+                    A
+                </div>
+
+                <div class="profile-name">
+
+                    <strong>Abhishek</strong>
+
+                    <span>Customer</span>
+
+                </div>
+
+                <i data-lucide="chevron-down"></i>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main>
+
+
+        <!-- ================= BREADCRUMB ================= -->
+
+        <div class="breadcrumb">
+
+            <span>Home</span>
+
+            <i data-lucide="chevron-right"></i>
+
+            <span>Services</span>
+
+            <i data-lucide="chevron-right"></i>
+
+            <strong>Painting</strong>
+
+        </div>
+
+
+
+        <!-- ================= STEPS ================= -->
+
+        <div class="steps">
+
+
+            <!-- Home -->
+
+            <div class="step completed">
+
+                <div class="step-circle">
+
+                    <i data-lucide="home"></i>
+
+                </div>
+
+                <span>Home</span>
+
+            </div>
+
+
+            <div class="step-line active"></div>
+
+
+            <!-- Service -->
+
+            <div class="step active">
+
+                <div class="step-circle">
+
+                    <i data-lucide="paintbrush"></i>
+
+                </div>
+
+                <span>Service</span>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <!-- Location -->
+
+            <div class="step">
+
+                <div class="step-circle">
+
+                    <i data-lucide="map-pin"></i>
+
+                </div>
+
+                <span>Location</span>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <!-- Book -->
+
+            <div class="step">
+
+                <div class="step-circle">
+
+                    <i data-lucide="calendar-check"></i>
+
+                </div>
+
+                <span>Book</span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= PAGE HEADER ================= -->
+
+        <section class="page-header">
+
+
+            <div class="header-left">
+
+
+                <div class="category-icon">
+
+                    <i data-lucide="paintbrush"></i>
+
+                </div>
+
+
+                <div>
+
+                    <div class="small-label">
+                        HOME IMPROVEMENT
+                    </div>
+
+                    <h2>
+                        Painting Services
+                    </h2>
+
+                    <p>
+                        Choose the painting service you need.
+                        Our verified professionals are ready to help.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Trust Badge -->
+
+            <div class="trust-badge">
+
+                <i data-lucide="badge-check"></i>
+
+                <div>
+
+                    <strong>
+                        Verified Professionals
+                    </strong>
+
+                    <span>
+                        Trusted &amp; background checked
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= SEARCH / FILTER ================= -->
+
+        <div class="tools">
+
+
+            <div class="search-box">
+
+                <i data-lucide="search"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search painting services..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+
+            <button
+                class="filter-btn"
+                id="filterBtn"
+            >
+
+                <i data-lucide="sliders-horizontal"></i>
+
+                <span>Filter</span>
+
+            </button>
+
+
+
+            <button
+                class="sort-btn"
+                id="sortBtn"
+            >
+
+                <i data-lucide="arrow-up-down"></i>
+
+                <span>Sort</span>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ================= SERVICE TITLE ================= -->
+
+        <div class="service-title">
+
+            <div>
+
+                <span>
+                    RECOMMENDED FOR YOU
+                </span>
+
+                <h3>
+                    Popular Painting Services
+                </h3>
+
+            </div>
+
+
+            <p>
+
+                <i data-lucide="shield-check"></i>
+
+                Verified professionals
+
+            </p>
+
+        </div>
+
+
+
+        <!-- ================= SERVICE GRID ================= -->
+
+        <div
+            class="service-grid"
+            id="serviceGrid"
+        >
+
+
+            <!-- =================================================
+                 CARD 1
+                 ================================================= -->
+
+            <div
+                class="service-card"
+                data-service="Full Home Painting"
+                data-price="₹2499"
+            >
+
+                <div class="service-top">
+
+                    <div class="service-icon wall">
+
+                        <i data-lucide="paintbrush"></i>
+
+                    </div>
+
+
+                    <div class="popular-badge">
+
+                        <i data-lucide="star"></i>
+
+                        Popular
+
+                    </div>
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h4>
+                        Full Home Painting
+                    </h4>
+
+                    <p>
+                        Complete interior painting for
+                        your home with a clean finish.
+                    </p>
+
+
+                    <div class="service-meta">
+
+                        <span>
+
+                            <i data-lucide="clock"></i>
+
+                            1–2 days
+
+                        </span>
+
+
+                        <span>
+
+                            <i data-lucide="shield-check"></i>
+
+                            Verified
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="price-row">
+
+                        <div>
+
+                            <small>
+                                STARTING FROM
+                            </small>
+
+                            <strong>
+                                ₹2499
+                            </strong>
+
+                        </div>
+
+
+                        <button class="select-btn">
+
+                            Select
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CARD 2
+                 ================================================= -->
+
+            <div
+                class="service-card"
+                data-service="Room Painting"
+                data-price="₹699"
+            >
+
+                <div class="service-top">
+
+                    <div class="service-icon room">
+
+                        <i data-lucide="home"></i>
+
+                    </div>
+
+
+                    <div class="fast-badge">
+
+                        <i data-lucide="zap"></i>
+
+                        Fast
+
+                    </div>
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h4>
+                        Room Painting
+                    </h4>
+
+                    <p>
+                        Give your bedroom, living room or
+                        study a fresh new look.
+                    </p>
+
+
+                    <div class="service-meta">
+
+                        <span>
+
+                            <i data-lucide="clock"></i>
+
+                            4–6 hrs
+
+                        </span>
+
+
+                        <span>
+
+                            <i data-lucide="shield-check"></i>
+
+                            Verified
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="price-row">
+
+                        <div>
+
+                            <small>
+                                STARTING FROM
+                            </small>
+
+                            <strong>
+                                ₹699
+                            </strong>
+
+                        </div>
+
+
+                        <button class="select-btn">
+
+                            Select
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CARD 3
+                 ================================================= -->
+
+            <div
+                class="service-card"
+                data-service="Wall Texture Painting"
+                data-price="₹899"
+            >
+
+                <div class="service-top">
+
+                    <div class="service-icon texture">
+
+                        <i data-lucide="layers"></i>
+
+                    </div>
+
+
+                    <div class="recommended-badge">
+
+                        Recommended
+
+                    </div>
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h4>
+                        Wall Texture Painting
+                    </h4>
+
+                    <p>
+                        Add beautiful textures and
+                        decorative finishes to your walls.
+                    </p>
+
+
+                    <div class="service-meta">
+
+                        <span>
+
+                            <i data-lucide="clock"></i>
+
+                            5–7 hrs
+
+                        </span>
+
+
+                        <span>
+
+                            <i data-lucide="shield-check"></i>
+
+                            Verified
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="price-row">
+
+                        <div>
+
+                            <small>
+                                STARTING FROM
+                            </small>
+
+                            <strong>
+                                ₹899
+                            </strong>
+
+                        </div>
+
+
+                        <button class="select-btn">
+
+                            Select
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CARD 4
+                 ================================================= -->
+
+            <div
+                class="service-card"
+                data-service="Exterior Painting"
+                data-price="₹1299"
+            >
+
+                <div class="service-top">
+
+                    <div class="service-icon exterior">
+
+                        <i data-lucide="building-2"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h4>
+                        Exterior Painting
+                    </h4>
+
+                    <p>
+                        Weather-resistant painting for
+                        exterior walls and surfaces.
+                    </p>
+
+
+                    <div class="service-meta">
+
+                        <span>
+
+                            <i data-lucide="clock"></i>
+
+                            1 day
+
+                        </span>
+
+
+                        <span>
+
+                            <i data-lucide="shield-check"></i>
+
+                            Verified
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="price-row">
+
+                        <div>
+
+                            <small>
+                                STARTING FROM
+                            </small>
+
+                            <strong>
+                                ₹1299
+                            </strong>
+
+                        </div>
+
+
+                        <button class="select-btn">
+
+                            Select
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CARD 5
+                 ================================================= -->
+
+            <div
+                class="service-card"
+                data-service="Wood Painting"
+                data-price="₹499"
+            >
+
+                <div class="service-top">
+
+                    <div class="service-icon wood">
+
+                        <i data-lucide="brush"></i>
+
+                    </div>
+
+
+                    <div class="popular-badge">
+
+                        <i data-lucide="star"></i>
+
+                        Popular
+
+                    </div>
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h4>
+                        Wood Painting
+                    </h4>
+
+                    <p>
+                        Refresh wooden doors, furniture
+                        and other wooden surfaces.
+                    </p>
+
+
+                    <div class="service-meta">
+
+                        <span>
+
+                            <i data-lucide="clock"></i>
+
+                            3–5 hrs
+
+                        </span>
+
+
+                        <span>
+
+                            <i data-lucide="shield-check"></i>
+
+                            Verified
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="price-row">
+
+                        <div>
+
+                            <small>
+                                STARTING FROM
+                            </small>
+
+                            <strong>
+                                ₹499
+                            </strong>
+
+                        </div>
+
+
+                        <button class="select-btn">
+
+                            Select
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CARD 6
+                 ================================================= -->
+
+            <div
+                class="service-card"
+                data-service="Wall Touch-up"
+                data-price="₹299"
+            >
+
+                <div class="service-top">
+
+                    <div class="service-icon touchup">
+
+                        <i data-lucide="paint-roller"></i>
+
+                    </div>
+
+
+                    <div class="fast-badge">
+
+                        <i data-lucide="zap"></i>
+
+                        Fast
+
+                    </div>
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h4>
+                        Wall Touch-up
+                    </h4>
+
+                    <p>
+                        Cover stains, scratches and small
+                        damaged areas on your walls.
+                    </p>
+
+
+                    <div class="service-meta">
+
+                        <span>
+
+                            <i data-lucide="clock"></i>
+
+                            1–2 hrs
+
+                        </span>
+
+
+                        <span>
+
+                            <i data-lucide="shield-check"></i>
+
+                            Verified
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="price-row">
+
+                        <div>
+
+                            <small>
+                                STARTING FROM
+                            </small>
+
+                            <strong>
+                                ₹299
+                            </strong>
+
+                        </div>
+
+
+                        <button class="select-btn">
+
+                            Select
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= NO RESULT ================= -->
+
+        <div
+            class="no-result"
+            id="noResult"
+        >
+
+            <i data-lucide="search-x"></i>
+
+            <h3>
+                No services found
+            </h3>
+
+            <p>
+                Try searching for another painting service.
+            </p>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         BOOKING BAR
+         ===================================================== -->
+
+    <div class="booking-bar">
+
+
+        <div class="selected-service">
+
+            <div class="selected-icon">
+
+                <i
+                    data-lucide="paintbrush"
+                    id="selectedIcon"
+                ></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    SELECTED SERVICE
+                </span>
+
+                <strong id="selectedService">
+                    Select a service
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="booking-info">
+
+            <i data-lucide="shield-check"></i>
+
+            Verified professionals
+
+        </div>
+
+
+
+        <button
+            class="continue-btn"
+            id="continueBtn"
+            disabled
+        >
+
+            Continue
+
+            <i data-lucide="arrow-right"></i>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         EMERGENCY BUTTON
+         ===================================================== -->
+
+    <button class="floating-emergency">
+
+        <i data-lucide="phone-call"></i>
+
+        Emergency
+
+    </button>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           LUCIDE ICONS
+           ===================================================== */
+
+        lucide.createIcons();
+
+
+
+        /* =====================================================
+           SERVICE SELECTION
+           ===================================================== */
+
+        const serviceCards =
+            document.querySelectorAll(".service-card");
+
+        const selectedService =
+            document.getElementById("selectedService");
+
+        const continueBtn =
+            document.getElementById("continueBtn");
+
+        const selectedIcon =
+            document.getElementById("selectedIcon");
+
+
+        let selectedServiceName = "";
+
+        let selectedPrice = "";
+
+
+
+        serviceCards.forEach(card => {
+
+
+            const selectButton =
+                card.querySelector(".select-btn");
+
+
+            selectButton.addEventListener(
+                "click",
+                function (event) {
+
+                    event.stopPropagation();
+
+                    selectService(card);
+
+                }
+            );
+
+
+            card.addEventListener(
+                "click",
+                function () {
+
+                    selectService(card);
+
+                }
+            );
+
+        });
+
+
+
+        function selectService(card) {
+
+
+            /* Remove old selection */
+
+            serviceCards.forEach(item => {
+
+                item.classList.remove("selected");
+
+            });
+
+
+            /* Add selection */
+
+            card.classList.add("selected");
+
+
+            /* Get data */
+
+            selectedServiceName =
+                card.dataset.service;
+
+            selectedPrice =
+                card.dataset.price;
+
+
+            /* Update bottom bar */
+
+            selectedService.textContent =
+                selectedServiceName;
+
+
+            /* Enable continue */
+
+            continueBtn.disabled = false;
+
+
+            /* Update icon */
+
+            selectedIcon.setAttribute(
+                "data-lucide",
+                "paintbrush"
+            );
+
+
+            lucide.createIcons();
+
+        }
+
+
+
+        /* =====================================================
+           SEARCH
+           ===================================================== */
+
+        const searchInput =
+            document.getElementById("searchInput");
+
+        const noResult =
+            document.getElementById("noResult");
+
+
+        searchInput.addEventListener(
+            "input",
+            function () {
+
+
+                const searchValue =
+                    this.value.toLowerCase().trim();
+
+
+                let visibleCards = 0;
+
+
+                serviceCards.forEach(card => {
+
+
+                    const serviceName =
+                        card.dataset.service.toLowerCase();
+
+
+                    const description =
+                        card
+                        .querySelector(".service-content p")
+                        .textContent
+                        .toLowerCase();
+
+
+                    if (
+                        serviceName.includes(searchValue) ||
+                        description.includes(searchValue)
+                    ) {
+
+                        card.style.display = "block";
+
+                        visibleCards++;
+
+                    } else {
+
+                        card.style.display = "none";
+
+                    }
+
+                });
+
+
+                if (visibleCards === 0) {
+
+                    noResult.style.display = "flex";
+
+                } else {
+
+                    noResult.style.display = "none";
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           THEME TOGGLE
+           ===================================================== */
+
+        const themeToggle =
+            document.getElementById("themeToggle");
+
+
+        const savedTheme =
+            localStorage.getItem("fixmate-theme");
+
+
+        if (savedTheme === "dark") {
+
+            document.body.classList.add("dark-mode");
+
+        }
+
+
+
+        themeToggle.addEventListener(
+            "click",
+            function () {
+
+
+                document.body.classList.toggle(
+                    "dark-mode"
+                );
+
+
+                const isDark =
+                    document.body.classList.contains(
+                        "dark-mode"
+                    );
+
+
+                localStorage.setItem(
+                    "fixmate-theme",
+                    isDark ? "dark" : "light"
+                );
+
+            }
+        );
+
+
+
+        /* =====================================================
+   CONTINUE
+   ===================================================== */
+
+continueBtn.addEventListener("click", function () {
+
+    if (!selectedServiceName) {
+        return;
+    }
+
+    localStorage.setItem(
+        "fixmate-selected-service",
+        selectedServiceName
+    );
+
+    localStorage.setItem(
+        "fixmate-service-price",
+        selectedPrice
+    );
+
+    window.location.href = "index4.html";
+});
+
+
+
+        /* =====================================================
+           FILTER
+           ===================================================== */
+
+        const filterBtn =
+            document.getElementById("filterBtn");
+
+
+        filterBtn.addEventListener(
+            "click",
+            function () {
+
+                alert(
+                    "Filter options will be available soon."
+                );
+
+            }
+        );
+
+
+
+        /* =====================================================
+           SORT BY PRICE
+           ===================================================== */
+
+        const sortBtn =
+            document.getElementById("sortBtn");
+
+
+        let sortLowToHigh = true;
+
+
+        sortBtn.addEventListener(
+            "click",
+            function () {
+
+
+                const cards =
+                    Array.from(serviceCards);
+
+
+                cards.sort(
+                    function (a, b) {
+
+
+                        const priceA =
+                            parseInt(
+                                a.dataset.price
+                                    .replace("₹", "")
+                            );
+
+
+                        const priceB =
+                            parseInt(
+                                b.dataset.price
+                                    .replace("₹", "")
+                            );
+
+
+                        return sortLowToHigh
+                            ? priceA - priceB
+                            : priceB - priceA;
+
+                    }
+                );
+
+
+                const serviceGrid =
+                    document.getElementById(
+                        "serviceGrid"
+                    );
+
+
+                cards.forEach(card => {
+
+                    serviceGrid.appendChild(card);
+
+                });
+
+
+                sortLowToHigh =
+                    !sortLowToHigh;
+
+            }
+        );
+
+
+
+        /* =====================================================
+           EMERGENCY
+           ===================================================== */
+
+        const emergencyButton =
+            document.querySelector(
+                ".floating-emergency"
+            );
+
+
+        emergencyButton.addEventListener(
+            "click",
+            function () {
+
+                alert(
+                    "Emergency service will connect you with the nearest available professional."
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

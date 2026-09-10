@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FixMate - Register</title>
+
+    <link rel="stylesheet" href="register.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <div class="register-container">
+
+        <!-- LEFT SIDE -->
+        <div class="left-section">
+
+        <div class="brand">
+    <img src="fixmate-logo.jpg" alt="FixMate Logo" class="logo-img">
+</div>
+
+
+            <div class="left-content">
+
+                <div class="small-heading">
+                    YOUR HOME, OUR CARE
+                </div>
+
+                <h2>
+                    Reliable help.<br>
+                    <span>Right when you<br>need it.</span>
+                </h2>
+
+                <p class="description">
+                    Book trusted professionals for electrical,
+                    plumbing, cleaning, carpentry and more.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="right-section">
+
+            <div class="register-card">
+
+                <h2>Create your account 👋</h2>
+
+                <p class="subtitle">
+                    Join FixMate and book trusted professionals
+                </p>
+
+
+                <!-- REGISTER FORM -->
+                <form id="registerForm">
+
+                    <!-- NAME -->
+                    <div class="input-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <div class="input-box">
+
+                            <i data-lucide="user"></i>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your full name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+                    <div class="input-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <div class="input-box">
+
+                            <i data-lucide="mail"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHONE -->
+                    <div class="input-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <div class="input-box">
+
+                            <i data-lucide="phone"></i>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="Enter your phone number"
+                                maxlength="10"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="input-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-box">
+
+                            <i data-lucide="lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Create a password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="eye-button"
+                                id="togglePassword"
+                            >
+                                <i data-lucide="eye"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONFIRM PASSWORD -->
+                    <div class="input-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <div class="input-box">
+
+                            <i data-lucide="lock-keyhole"></i>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Confirm your password"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ERROR / SUCCESS MESSAGE -->
+                    <div id="message"></div>
+
+
+                    <!-- REGISTER BUTTON -->
+                    <button
+                        type="submit"
+                        class="register-button"
+                        id="registerButton"
+                    >
+                        CREATE ACCOUNT
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+
+                <!-- LOGIN LINK -->
+                <p class="login-text">
+                    Already have an account?
+                    <a href="index.html">Login</a>
+                </p>
+
+
+                <!-- TRUST SECTION -->
+                <div class="trust-section">
+
+                    <div class="trust-line">
+                        <span></span>
+                        <p>Trusted by homeowners</p>
+                        <span></span>
+                    </div>
+
+                    <div class="trust-items">
+
+                        <div>
+                            ✓ Verified Workers
+                        </div>
+
+                        <div>
+                            ★ Rated Professionals
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+
+        // ==========================================
+        // PASSWORD VISIBILITY
+        // ==========================================
+
+        const togglePassword =
+            document.getElementById("togglePassword");
+
+        const password =
+            document.getElementById("password");
+
+        togglePassword.addEventListener("click", function () {
+
+            if (password.type === "password") {
+
+                password.type = "text";
+
+                togglePassword.innerHTML =
+                    '<i data-lucide="eye-off"></i>';
+
+            } else {
+
+                password.type = "password";
+
+                togglePassword.innerHTML =
+                    '<i data-lucide="eye"></i>';
+            }
+
+            lucide.createIcons();
+
+        });
+
+
+        // ==========================================
+        // REGISTER
+        // ==========================================
+
+        const registerForm =
+            document.getElementById("registerForm");
+
+        const message =
+            document.getElementById("message");
+
+        const registerButton =
+            document.getElementById("registerButton");
+
+
+        registerForm.addEventListener("submit", async function (event) {
+
+            event.preventDefault();
+
+
+            const name =
+                document.getElementById("name").value.trim();
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const phone =
+                document.getElementById("phone").value.trim();
+
+            const passwordValue =
+                document.getElementById("password").value;
+
+            const confirmPassword =
+                document.getElementById("confirmPassword").value;
+
+
+            // Check passwords
+            if (passwordValue !== confirmPassword) {
+
+                message.textContent =
+                    "Passwords do not match.";
+
+                message.className = "error-message";
+
+                return;
+            }
+
+
+            // Basic phone validation
+            if (!/^[0-9]{10}$/.test(phone)) {
+
+                message.textContent =
+                    "Please enter a valid 10-digit phone number.";
+
+                message.className = "error-message";
+
+                return;
+            }
+
+
+            // Disable button
+            registerButton.disabled = true;
+
+            registerButton.textContent =
+                "CREATING ACCOUNT...";
+
+
+            try {
+
+                const response = await fetch(
+                    "http://localhost:5000/api/auth/register",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify({
+
+                            name: name,
+                            email: email,
+                            password: passwordValue,
+                            phone: phone,
+                            role: "CUSTOMER"
+
+                        })
+                    }
+                );
+
+
+                const data = await response.json();
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        data.message || "Registration failed"
+                    );
+
+                }
+
+
+                // Save login information
+                localStorage.setItem(
+                    "token",
+                    data.token
+                );
+
+                localStorage.setItem(
+                    "user",
+                    JSON.stringify(data.user)
+                );
+
+
+                message.textContent =
+                    "Account created successfully!";
+
+                message.className =
+                    "success-message";
+
+
+                // Go to Home page
+                setTimeout(function () {
+
+                    window.location.href =
+                        "index2.html";
+
+                }, 800);
+
+
+            } catch (error) {
+
+                console.error(error);
+
+                message.textContent =
+                    error.message ||
+                    "Something went wrong. Please try again.";
+
+                message.className =
+                    "error-message";
+
+
+                registerButton.disabled = false;
+
+                registerButton.innerHTML =
+                    'CREATE ACCOUNT <span>→</span>';
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

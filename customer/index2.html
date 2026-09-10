@@ -1,0 +1,1210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>FixMate - Home</title>
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Lucide Icons -->
+
+    <script
+        src="https://unpkg.com/lucide@latest">
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+        href="style2.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         NAVBAR
+    =================================================== -->
+
+    <nav class="navbar">
+
+
+        <!-- LOGO -->
+
+       <div class="brand">
+    <img src="fixmate-logo.jpg" alt="FixMate Logo" class="logo-img">
+</div>
+
+
+
+        <!-- NAV RIGHT -->
+
+        <div class="nav-right">
+
+
+            <!-- LOCATION -->
+
+            <button class="location-btn">
+
+                <i data-lucide="map-pin"></i>
+
+                <span>
+                    Delhi, India
+                </span>
+
+            </button>
+
+
+
+            <!-- THEME -->
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                aria-label="Toggle theme">
+
+                <i data-lucide="moon"></i>
+
+            </button>
+
+
+
+            <!-- NOTIFICATION -->
+
+            <button class="notification">
+
+                <i data-lucide="bell"></i>
+
+                <span class="notification-dot"></span>
+
+            </button>
+
+
+
+            <!-- PROFILE -->
+
+            <div class="profile">
+
+                <div
+                    class="profile-avatar"
+                    id="profileAvatar">
+
+                    C
+
+                </div>
+
+
+                <div class="profile-name">
+
+                    <strong id="profileName">
+                        Customer
+                    </strong>
+
+                    <span>
+                        Customer
+                    </span>
+
+                </div>
+
+
+                <i data-lucide="chevron-down"></i>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ==================================================
+         MAIN
+    =================================================== -->
+
+    <main>
+
+
+        <!-- ==================================================
+             HERO
+        =================================================== -->
+
+        <section class="hero">
+
+
+            <div class="hero-content">
+
+
+                <!-- STATUS -->
+
+                <div class="greeting">
+
+                    <span class="status-dot"></span>
+
+                    Available professionals near you
+
+                </div>
+
+
+
+                <!-- HEADING -->
+
+                <h2>
+
+                    <span id="timeGreeting">
+                        Good morning
+                    </span>,
+
+                    <span id="greetingName">
+                        Customer
+                    </span>
+
+                    <span class="wave">
+                        👋
+                    </span>
+
+                </h2>
+
+
+
+                <p>
+
+                    What service do you need today?
+
+                    Find trusted professionals near you
+                    in just a few clicks.
+
+                </p>
+
+
+
+                <!-- BUTTONS -->
+
+                <div class="hero-buttons">
+
+
+                    <!-- FIND SERVICE -->
+
+                    <button
+                        class="quick-btn"
+                        id="findServiceBtn">
+
+                        <i data-lucide="search"></i>
+
+                        Find a service
+
+                    </button>
+
+
+
+                    <!-- MY BOOKINGS -->
+
+                    <button
+                        class="outline-btn"
+                        id="myBookingsBtn">
+
+                        <i data-lucide="clock-3"></i>
+
+                        My bookings
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 HERO IMAGE
+            =================================================== -->
+
+            <div class="hero-image">
+
+                <div class="image-glow"></div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=85"
+                    alt="Professional home service worker">
+
+
+                <!-- WORKER BADGE -->
+
+                <div class="worker-badge">
+
+                    <div class="verified-icon">
+
+                        <i data-lucide="badge-check"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Trusted Professionals
+                        </strong>
+
+                        <span>
+                            Verified & rated
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             SERVICES
+        =================================================== -->
+
+        <section class="services-section">
+
+
+            <!-- HEADING -->
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        SERVICES
+                    </span>
+
+                    <h3>
+                        What can we help you with?
+                    </h3>
+
+                </div>
+
+
+              
+            </div>
+
+
+
+            <!-- ==================================================
+                 SERVICE GRID
+            =================================================== -->
+
+            <div class="service-grid">
+
+
+                <!-- ELECTRICAL -->
+
+                <div
+                    class="service-card electrical"
+                    data-service="Electrical">
+
+                    <div class="service-icon">
+
+                        <i data-lucide="zap"></i>
+
+                    </div>
+
+
+                    <div class="service-info">
+
+                        <h4>
+                            Electrical
+                        </h4>
+
+                        <p>
+                            Wiring, repairs & installations
+                        </p>
+
+                    </div>
+
+
+                    <div class="card-arrow">
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PLUMBING -->
+
+                <div
+                    class="service-card plumbing"
+                    data-service="Plumbing">
+
+                    <div class="service-icon">
+
+                        <i data-lucide="droplets"></i>
+
+                    </div>
+
+
+                    <div class="service-info">
+
+                        <h4>
+                            Plumbing
+                        </h4>
+
+                        <p>
+                            Leaks, pipes & fittings
+                        </p>
+
+                    </div>
+
+
+                    <div class="card-arrow">
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CLEANING -->
+
+                <div
+                    class="service-card cleaning"
+                    data-service="Cleaning">
+
+                    <div class="service-icon">
+
+                        <i data-lucide="sparkles"></i>
+
+                    </div>
+
+
+                    <div class="service-info">
+
+                        <h4>
+                            Cleaning
+                        </h4>
+
+                        <p>
+                            Home & deep cleaning
+                        </p>
+
+                    </div>
+
+
+                    <div class="card-arrow">
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CARPENTRY -->
+
+                <div
+                    class="service-card carpentry"
+                    data-service="Carpentry">
+
+                    <div class="service-icon">
+
+                        <i data-lucide="hammer"></i>
+
+                    </div>
+
+
+                    <div class="service-info">
+
+                        <h4>
+                            Carpentry
+                        </h4>
+
+                        <p>
+                            Furniture & woodwork
+                        </p>
+
+                    </div>
+
+
+                    <div class="card-arrow">
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PAINTING -->
+
+                <div
+                    class="service-card painting"
+                    data-service="Painting">
+
+                    <div class="service-icon">
+
+                        <i data-lucide="paintbrush"></i>
+
+                    </div>
+
+
+                    <div class="service-info">
+
+                        <h4>
+                            Painting
+                        </h4>
+
+                        <p>
+                            Walls & home makeover
+                        </p>
+
+                    </div>
+
+
+                    <div class="card-arrow">
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- GARDENING -->
+
+                <div
+                    class="service-card gardening"
+                    data-service="Gardening">
+
+                    <div class="service-icon">
+
+                        <i data-lucide="leaf"></i>
+
+                    </div>
+
+
+                    <div class="service-info">
+
+                        <h4>
+                            Gardening
+                        </h4>
+
+                        <p>
+                            Plants & garden care
+                        </p>
+
+                    </div>
+
+
+                    <div class="card-arrow">
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             EMERGENCY
+        =================================================== -->
+
+        <section class="emergency">
+
+
+            <div class="emergency-icon">
+
+                <i data-lucide="siren"></i>
+
+            </div>
+
+
+            <div class="emergency-text">
+
+                <span>
+                    NEED HELP URGENTLY?
+                </span>
+
+                <h3>
+                    Emergency Service
+                </h3>
+
+                <p>
+                    Get immediate assistance from
+                    nearby verified professionals.
+                </p>
+
+            </div>
+
+
+            <button
+                class="emergency-btn"
+                id="emergencyBtn">
+
+                <i data-lucide="phone-call"></i>
+
+                Get Emergency Help
+
+            </button>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    =================================================== -->
+
+    <script>
+
+
+        // ==========================================
+        // INITIALIZE LUCIDE ICONS
+        // ==========================================
+
+        lucide.createIcons();
+
+
+
+        // ==========================================
+        // CHECK LOGIN
+        // ==========================================
+
+        const token =
+            localStorage.getItem("token");
+
+
+        if (!token) {
+
+            window.location.href =
+                "index.html";
+
+        }
+
+
+
+        // ==========================================
+        // LOAD LOGGED-IN USER
+        // ==========================================
+
+        const savedUser =
+            localStorage.getItem("user");
+
+
+        if (savedUser) {
+
+            try {
+
+                const user =
+                    JSON.parse(savedUser);
+
+
+                const profileName =
+                    document.getElementById(
+                        "profileName"
+                    );
+
+
+                const greetingName =
+                    document.getElementById(
+                        "greetingName"
+                    );
+
+
+                const profileAvatar =
+                    document.getElementById(
+                        "profileAvatar"
+                    );
+
+
+                if (user.name) {
+
+                    profileName.textContent =
+                        user.name;
+
+
+                    greetingName.textContent =
+                        user.name;
+
+
+                    profileAvatar.textContent =
+                        user.name
+                            .charAt(0)
+                            .toUpperCase();
+
+                }
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Failed to load user:",
+                    error
+                );
+
+            }
+
+        }
+
+
+
+        // ==========================================
+        // TIME-BASED GREETING
+        // ==========================================
+
+        function updateGreeting() {
+
+            const hour =
+                new Date().getHours();
+
+
+            const timeGreeting =
+                document.getElementById(
+                    "timeGreeting"
+                );
+
+
+            if (hour >= 5 && hour < 12) {
+
+                timeGreeting.textContent =
+                    "Good morning";
+
+            }
+
+            else if (
+                hour >= 12 &&
+                hour < 17
+            ) {
+
+                timeGreeting.textContent =
+                    "Good afternoon";
+
+            }
+
+            else if (
+                hour >= 17 &&
+                hour < 21
+            ) {
+
+                timeGreeting.textContent =
+                    "Good evening";
+
+            }
+
+            else {
+
+                timeGreeting.textContent =
+                    "Good night";
+
+            }
+
+        }
+
+
+        updateGreeting();
+
+
+
+        // ==========================================
+        // DARK / LIGHT MODE
+        // ==========================================
+
+        const themeToggle =
+            document.getElementById(
+                "themeToggle"
+            );
+
+
+        const savedTheme =
+            localStorage.getItem(
+                "fixmate-theme"
+            );
+
+
+        // Apply saved theme
+
+        if (savedTheme === "dark") {
+
+            document.body.classList.add(
+                "dark-mode"
+            );
+
+
+            themeToggle.innerHTML =
+                '<i data-lucide="sun"></i>';
+
+
+            lucide.createIcons();
+
+        }
+
+
+
+        // ==========================================
+        // TOGGLE THEME
+        // ==========================================
+
+        themeToggle.addEventListener(
+            "click",
+            function () {
+
+                document.body.classList.toggle(
+                    "dark-mode"
+                );
+
+
+                const isDark =
+                    document.body.classList.contains(
+                        "dark-mode"
+                    );
+
+
+                if (isDark) {
+
+                    themeToggle.innerHTML =
+                        '<i data-lucide="sun"></i>';
+
+
+                    localStorage.setItem(
+                        "fixmate-theme",
+                        "dark"
+                    );
+
+                }
+
+                else {
+
+                    themeToggle.innerHTML =
+                        '<i data-lucide="moon"></i>';
+
+
+                    localStorage.setItem(
+                        "fixmate-theme",
+                        "light"
+                    );
+
+                }
+
+
+                lucide.createIcons();
+
+            }
+        );
+
+
+
+        // ==========================================
+        // SERVICE CARD NAVIGATION
+        // ==========================================
+
+        const serviceCards =
+            document.querySelectorAll(
+                ".service-card"
+            );
+
+
+        serviceCards.forEach(
+            function (card) {
+
+                card.addEventListener(
+                    "click",
+                    function () {
+
+
+                        const service =
+                            card.dataset.service;
+
+
+                        // Save main service
+
+                        localStorage.setItem(
+                            "selectedService",
+                            service
+                        );
+
+
+                        // Remove old sub-service
+
+                        localStorage.removeItem(
+                            "selectedSubService"
+                        );
+
+
+                        console.log(
+                            "Selected service:",
+                            service
+                        );
+
+
+
+                        // =================================
+                        // REDIRECT
+                        // =================================
+
+                        if (
+                            service ===
+                            "Electrical"
+                        ) {
+
+                            window.location.href =
+                                "index3.html";
+
+                        }
+
+                        else if (
+                            service ===
+                            "Plumbing"
+                        ) {
+
+                            window.location.href =
+                                "plumbing.html";
+
+                        }
+
+                        else if (
+                            service ===
+                            "Cleaning"
+                        ) {
+
+                            window.location.href =
+                                "cleaning.html";
+
+                        }
+
+                        else if (
+                            service ===
+                            "Carpentry"
+                        ) {
+
+                            window.location.href =
+                                "carpentry.html";
+
+                        }
+
+                        else if (
+                            service ===
+                            "Painting"
+                        ) {
+
+                            window.location.href =
+                                "painting.html";
+
+                        }
+
+                        else if (
+                            service ===
+                            "Gardening"
+                        ) {
+
+                            window.location.href =
+                                "gardening.html";
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        // ==========================================
+        // FIND A SERVICE
+        // ==========================================
+
+        const findServiceBtn =
+            document.getElementById(
+                "findServiceBtn"
+            );
+
+
+        if (findServiceBtn) {
+
+            findServiceBtn.addEventListener(
+                "click",
+                function () {
+
+
+                    // Clear previous selections
+
+                    localStorage.removeItem(
+                        "selectedService"
+                    );
+
+
+                    localStorage.removeItem(
+                        "selectedSubService"
+                    );
+
+
+                    // Open services page
+
+                    window.location.href =
+                        "index3.html";
+
+                }
+            );
+
+        }
+
+
+
+        // ==========================================
+        // VIEW ALL SERVICES
+        // ==========================================
+
+        const viewAllBtn =
+            document.getElementById(
+                "viewAllBtn"
+            );
+
+
+        if (viewAllBtn) {
+
+            viewAllBtn.addEventListener(
+                "click",
+                function () {
+
+
+                    // Clear previous selections
+
+                    localStorage.removeItem(
+                        "selectedService"
+                    );
+
+
+                    localStorage.removeItem(
+                        "selectedSubService"
+                    );
+
+
+                    // Open services page
+
+                    window.location.href =
+                        "index3.html";
+
+                }
+            );
+
+        }
+
+
+
+        // ==========================================
+        // MY BOOKINGS
+        // ==========================================
+
+        const myBookingsBtn =
+            document.getElementById(
+                "myBookingsBtn"
+            );
+
+
+        if (myBookingsBtn) {
+
+            myBookingsBtn.addEventListener(
+                "click",
+                function () {
+
+                    alert(
+                        "My bookings page coming soon."
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        // ==========================================
+        // EMERGENCY SERVICE
+        // ==========================================
+
+        const emergencyBtn =
+            document.getElementById(
+                "emergencyBtn"
+            );
+
+
+        if (emergencyBtn) {
+
+            emergencyBtn.addEventListener(
+                "click",
+                function () {
+
+                    alert(
+                        "Emergency service will be available soon."
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        // ==========================================
+        // FETCH SERVICES FROM BACKEND
+        // ==========================================
+
+        async function loadServices() {
+
+            try {
+
+                const response =
+                    await fetch(
+                        "http://localhost:5000/api/services"
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Failed to fetch services"
+                    );
+
+                }
+
+
+                const services =
+                    await response.json();
+
+
+                console.log(
+                    "Services from backend:",
+                    services
+                );
+
+
+
+                // Use the already-created
+                // serviceCards variable
+
+                serviceCards.forEach(
+                    function (card) {
+
+
+                        const serviceName =
+                            card.dataset.service;
+
+
+                        const service =
+                            services.find(
+                                function (item) {
+
+
+                                    return (
+                                        item.name
+                                            .toLowerCase()
+                                        ===
+                                        serviceName
+                                            .toLowerCase()
+                                    );
+
+                                }
+                            );
+
+
+                        if (service) {
+
+
+                            const title =
+                                card.querySelector(
+                                    "h4"
+                                );
+
+
+                            const description =
+                                card.querySelector(
+                                    "p"
+                                );
+
+
+                            if (title) {
+
+                                title.textContent =
+                                    service.name;
+
+                            }
+
+
+                            if (
+                                description &&
+                                service.description
+                            ) {
+
+                                description.textContent =
+                                    service.description;
+
+                            }
+
+                        }
+
+                    }
+                );
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Error loading services:",
+                    error
+                );
+
+                // The page still works
+                // even if backend is unavailable.
+
+            }
+
+        }
+
+
+        // Load services
+
+        loadServices();
+
+
+    </script>
+
+
+</body>
+
+</html>

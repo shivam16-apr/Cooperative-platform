@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FixMate - Confirm Booking</title>
+
+    <link rel="stylesheet" href="style6.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="top-header">
+
+     <div class="brand">
+    <img src="fixmate-logo.jpg" alt="FixMate Logo" class="logo-img">
+</div>
+
+
+        <div class="header-actions">
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                aria-label="Toggle theme">
+
+                <span class="sun" id="sun">☀</span>
+                <span class="moon" id="moon">☾</span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =====================================
+             HEADING
+        ====================================== -->
+
+        <section class="heading-section">
+
+            <div class="booking-pill">
+                ✓ Professional selected
+            </div>
+
+            <h2>
+                Confirm your
+                <span>booking</span>
+            </h2>
+
+            <p id="headingMessage">
+                Review your service details before confirming your booking.
+            </p>
+
+        </section>
+
+
+
+        <!-- =====================================
+             BOOKING CARD
+        ====================================== -->
+
+        <section class="booking-card">
+
+
+            <!-- SERVICE HEADER -->
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        YOUR SERVICE
+                    </span>
+
+                    <h3 id="serviceName">
+                        Electrical Repair
+                    </h3>
+
+                </div>
+
+                <div
+                    class="service-icon"
+                    id="serviceIcon">
+                    ⚡
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 WORKER
+            ================================== -->
+
+            <div class="worker-section">
+
+                <div
+                    class="worker-avatar"
+                    id="workerAvatar">
+                    RK
+                </div>
+
+
+                <div class="worker-details">
+
+                    <div class="worker-name-row">
+
+                        <h3 id="workerName">
+                            Rajesh Kumar
+                        </h3>
+
+                        <span class="verified">
+                            ✓ Verified
+                        </span>
+
+                    </div>
+
+
+                    <p id="workerProfession">
+                        Electrical Specialist
+                    </p>
+
+
+                    <div class="worker-rating">
+
+                        <span class="star">
+                            ★
+                        </span>
+
+                        <strong id="workerRating">
+                            4.8
+                        </strong>
+
+                        <span>
+                            ·
+                            <span id="workerServices">
+                                156 services
+                            </span>
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="match-badge"
+                    id="matchBadge">
+                    AI MATCH 93%
+                </div>
+
+            </div>
+
+
+
+            <!-- DIVIDER -->
+
+            <div class="divider"></div>
+
+
+
+            <!-- =================================
+                 DETAILS
+            ================================== -->
+
+            <div class="details-grid">
+
+
+                <!-- DATE -->
+
+                <div class="detail-item">
+
+                    <span class="detail-icon">
+                        📅
+                    </span>
+
+                    <div>
+
+                        <span>
+                            DATE
+                        </span>
+
+                        <strong id="bookingDate">
+                            Today
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TIME -->
+
+                <div class="detail-item">
+
+                    <span class="detail-icon">
+                        🕕
+
+                    </span>
+
+                    <div>
+
+                        <span>
+                            TIME
+                        </span>
+
+                        <strong id="bookingTime">
+                            Flexible
+                        </strong>
+
+                        <small>
+                            Approx. 1 hour
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- LOCATION -->
+
+                <div class="detail-item">
+
+                    <span class="detail-icon">
+                        📍
+                    </span>
+
+                    <div>
+
+                        <span>
+                            LOCATION
+                        </span>
+
+                        <strong id="bookingAddress">
+                            Your confirmed location
+                        </strong>
+
+                        <small id="bookingAddressExtra">
+                            Worker will navigate to your location
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 PRICE
+            ================================== -->
+
+            <div class="price-section">
+
+                <div>
+
+                    <span>
+                        ESTIMATED SERVICE COST
+                    </span>
+
+                    <small>
+                        Final amount may vary after inspection
+                    </small>
+
+                </div>
+
+
+                <strong id="servicePrice">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+
+            <!-- =================================
+                 CONFIRM
+            ================================== -->
+
+            <button
+                class="confirm-btn"
+                id="confirmBooking">
+
+                CONFIRM BOOKING
+
+            </button>
+
+
+            <div class="secure-note">
+
+                🛡️
+                Your booking is protected by FixMate.
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             BOTTOM MESSAGE
+        ====================================== -->
+
+        <div class="bottom-message">
+
+            <div>
+
+                <strong>
+                    Almost there!
+                </strong>
+
+                <span>
+                    Confirm your booking to start service tracking.
+                </span>
+
+            </div>
+
+
+            <div class="mini-progress">
+
+                <div class="mini-progress-bar">
+                    <div class="mini-progress-fill"></div>
+                </div>
+
+                <strong>
+                    4 / 4
+                </strong>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+    /* =========================================
+       THEME
+    ========================================== */
+
+    const themeToggle =
+        document.getElementById("themeToggle");
+
+    const sun =
+        document.getElementById("sun");
+
+    const moon =
+        document.getElementById("moon");
+
+
+    function applyTheme() {
+
+        const savedTheme =
+            localStorage.getItem("fixmate-theme");
+
+
+        if (savedTheme === "dark") {
+
+            document.body.classList.add("dark");
+
+            if (sun) sun.style.display = "none";
+            if (moon) moon.style.display = "block";
+
+        } else {
+
+            document.body.classList.remove("dark");
+
+            if (sun) sun.style.display = "block";
+            if (moon) moon.style.display = "none";
+
+        }
+
+    }
+
+
+    applyTheme();
+
+
+    themeToggle.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark");
+
+
+        const darkMode =
+            document.body.classList.contains("dark");
+
+
+        localStorage.setItem(
+            "fixmate-theme",
+            darkMode ? "dark" : "light"
+        );
+
+
+        if (darkMode) {
+
+            sun.style.display = "none";
+            moon.style.display = "block";
+
+        } else {
+
+            sun.style.display = "block";
+            moon.style.display = "none";
+
+        }
+
+    });
+
+
+
+    /* =========================================
+       SERVICE DATA
+    ========================================== */
+
+    const serviceData = {
+
+        "Electrical Repair": {
+            icon: "⚡",
+            category: "Electrical"
+        },
+
+        "Fan Installation": {
+            icon: "🌀",
+            category: "Electrical"
+        },
+
+        "Switch Repair": {
+            icon: "🔌",
+            category: "Electrical"
+        },
+
+        "Wiring & Rewiring": {
+            icon: "🔌",
+            category: "Electrical"
+        },
+
+        "Tap Repair": {
+            icon: "🚰",
+            category: "Plumbing"
+        },
+
+        "Pipe Leakage Repair": {
+            icon: "💧",
+            category: "Plumbing"
+        },
+
+        "Drain Cleaning": {
+            icon: "🚿",
+            category: "Plumbing"
+        },
+
+        "Toilet Repair": {
+            icon: "🚽",
+            category: "Plumbing"
+        },
+
+        "Water Tank Repair": {
+            icon: "💧",
+            category: "Plumbing"
+        },
+
+        "Shower Installation": {
+            icon: "🚿",
+            category: "Plumbing"
+        },
+
+        "Full Home Cleaning": {
+            icon: "🧹",
+            category: "Cleaning"
+        },
+
+        "Bathroom Cleaning": {
+            icon: "🧼",
+            category: "Cleaning"
+        },
+
+        "Kitchen Cleaning": {
+            icon: "🍽️",
+            category: "Cleaning"
+        },
+
+        "Sofa Cleaning": {
+            icon: "🛋️",
+            category: "Cleaning"
+        },
+
+        "Carpet Cleaning": {
+            icon: "🧹",
+            category: "Cleaning"
+        },
+
+        "Deep Cleaning": {
+            icon: "✨",
+            category: "Cleaning"
+        },
+
+        "Furniture Repair": {
+            icon: "🪑",
+            category: "Carpentry"
+        },
+
+        "Door Repair": {
+            icon: "🚪",
+            category: "Carpentry"
+        },
+
+        "Custom Furniture": {
+            icon: "🪑",
+            category: "Carpentry"
+        },
+
+        "Cabinet Repair": {
+            icon: "🗄️",
+            category: "Carpentry"
+        },
+
+        "Wood Polishing": {
+            icon: "🪵",
+            category: "Carpentry"
+        },
+
+        "Bed & Sofa Repair": {
+            icon: "🛏️",
+            category: "Carpentry"
+        },
+
+        "Full Home Painting": {
+            icon: "🎨",
+            category: "Painting"
+        },
+
+        "Room Painting": {
+            icon: "🖌️",
+            category: "Painting"
+        },
+
+        "Wall Texture Painting": {
+            icon: "🎨",
+            category: "Painting"
+        },
+
+        "Exterior Painting": {
+            icon: "🏠",
+            category: "Painting"
+        },
+
+        "Wood Painting": {
+            icon: "🪵",
+            category: "Painting"
+        },
+
+        "Wall Touch-up": {
+            icon: "🖌️",
+            category: "Painting"
+        },
+
+        "AC Repair": {
+            icon: "❄️",
+            category: "AC"
+        },
+
+        "Refrigerator Repair": {
+            icon: "🧊",
+            category: "Appliance"
+        },
+
+        "Washing Machine Repair": {
+            icon: "🫧",
+            category: "Appliance"
+        },
+
+        "Microwave Repair": {
+            icon: "📡",
+            category: "Appliance"
+        },
+
+        "Geyser Repair": {
+            icon: "♨️",
+            category: "Appliance"
+        },
+
+        "TV Repair": {
+            icon: "📺",
+            category: "Appliance"
+        },
+
+        "Garden Maintenance": {
+            icon: "🌿",
+            category: "Gardening"
+        },
+
+        "Lawn Care": {
+            icon: "🌱",
+            category: "Gardening"
+        },
+
+        "Planting Service": {
+            icon: "🌱",
+            category: "Gardening"
+        },
+
+        "Tree Trimming": {
+            icon: "🌳",
+            category: "Gardening"
+        },
+
+        "Plant Health Check": {
+            icon: "🌿",
+            category: "Gardening"
+        },
+
+        "Garden Cleanup": {
+            icon: "🍃",
+            category: "Gardening"
+        }
+
+    };
+
+
+
+    /* =========================================
+       WORKER DATA
+    ========================================== */
+
+    const workerData = {
+
+        "Rajesh Kumar": {
+            services: 156,
+            aiMatch: 93
+        },
+
+        "Amit Sharma": {
+            services: 124,
+            aiMatch: 89
+        },
+
+        "Vikram Kumar": {
+            services: 138,
+            aiMatch: 85
+        }
+
+    };
+
+
+
+    /* =========================================
+       GET DATA FROM INDEX 5
+    ========================================== */
+
+    const serviceName =
+        localStorage.getItem(
+            "fixmate-selected-service"
+        ) || "Electrical Repair";
+
+
+    const servicePrice =
+        localStorage.getItem(
+            "fixmate-service-price"
+        ) || "0";
+
+
+    const workerName =
+        localStorage.getItem(
+            "fixmate-selected-worker"
+        ) || "Rajesh Kumar";
+
+
+    const workerRating =
+        localStorage.getItem(
+            "fixmate-worker-rating"
+        ) || "4.8";
+
+
+    const workerExperience =
+        localStorage.getItem(
+            "fixmate-worker-experience"
+        ) || "7+ years";
+
+
+    const workerDistance =
+        localStorage.getItem(
+            "fixmate-worker-distance"
+        ) || "1.2 km";
+
+
+    const savedLocation =
+        localStorage.getItem(
+            "fixmate-location"
+        ) || "Your confirmed location";
+
+
+
+    /* =========================================
+       SERVICE
+    ========================================== */
+
+    const service =
+        serviceData[serviceName] || {
+            icon: "🔧",
+            category: "Service"
+        };
+
+
+    document.getElementById("serviceName")
+        .textContent = serviceName;
+
+
+    document.getElementById("serviceIcon")
+        .textContent = service.icon;
+
+
+
+    /* =========================================
+       WORKER
+    ========================================== */
+
+    document.getElementById("workerName")
+        .textContent = workerName;
+
+
+    document.getElementById("workerRating")
+        .textContent = workerRating;
+
+
+    document.getElementById("workerProfession")
+        .textContent =
+        service.category + " Specialist";
+
+
+    document.getElementById("workerAvatar")
+        .textContent =
+        getInitials(workerName);
+
+
+    const worker =
+        workerData[workerName] || {
+            services: 100,
+            aiMatch: 80
+        };
+
+
+    document.getElementById("workerServices")
+        .textContent =
+        worker.services + " services";
+
+
+    document.getElementById("matchBadge")
+        .textContent =
+        "AI MATCH " + worker.aiMatch + "%";
+
+
+
+    /* =========================================
+       PRICE
+    ========================================== */
+
+    const numericPrice =
+        Number(
+            String(servicePrice)
+                .replace(/[₹,]/g, "")
+                .trim()
+        ) || 0;
+
+
+    document.getElementById("servicePrice")
+        .textContent =
+        "₹" +
+        numericPrice.toLocaleString("en-IN");
+
+
+
+    /* =========================================
+       ADDRESS
+    ========================================== */
+
+    document.getElementById("bookingAddress")
+        .textContent =
+        getShortAddress(savedLocation);
+
+
+    document.getElementById("bookingAddressExtra")
+        .textContent =
+        "Worker will navigate to your location";
+
+
+
+    /* =========================================
+       DATE
+    ========================================== */
+
+    const selectedDate =
+        localStorage.getItem(
+            "fixmate-selected-date"
+        );
+
+
+    if (selectedDate) {
+
+        document.getElementById("bookingDate")
+            .textContent =
+            formatDate(selectedDate);
+
+    } else {
+
+        document.getElementById("bookingDate")
+            .textContent =
+            "Today";
+
+    }
+
+
+
+    /* =========================================
+       TIME
+    ========================================== */
+
+    const selectedTime =
+        localStorage.getItem(
+            "fixmate-selected-time"
+        );
+
+
+    if (selectedTime) {
+
+        document.getElementById("bookingTime")
+            .textContent =
+            formatTime(selectedTime);
+
+    } else {
+
+        document.getElementById("bookingTime")
+            .textContent =
+            "Flexible";
+
+    }
+
+
+
+    /* =========================================
+       HEADING
+    ========================================== */
+
+    document.getElementById("headingMessage")
+        .textContent =
+        "You're booking " +
+        serviceName +
+        " with " +
+        workerName +
+        ". Review the details before confirming.";
+
+
+
+    /* =========================================
+       CONFIRM BOOKING
+    ========================================== */
+
+    const confirmButton =
+        document.getElementById(
+            "confirmBooking"
+        );
+
+
+    confirmButton.addEventListener(
+        "click",
+        confirmBooking
+    );
+
+
+    function confirmBooking() {
+
+        confirmButton.disabled = true;
+
+        confirmButton.textContent =
+            "CONFIRMING...";
+
+
+        /*
+            Generate booking ID.
+        */
+
+        let bookingId =
+            localStorage.getItem(
+                "fixmate-booking-id"
+            );
+
+
+        if (!bookingId) {
+
+            bookingId =
+                "FM" +
+                Math.floor(
+                    10000 +
+                    Math.random() * 90000
+                );
+
+            localStorage.setItem(
+                "fixmate-booking-id",
+                bookingId
+            );
+
+        }
+
+
+
+        /*
+            COMPLETE BOOKING OBJECT
+
+            This is the main connection
+            between Index 6 and Index 7.
+        */
+
+        const booking = {
+
+            bookingId: bookingId,
+
+            service: serviceName,
+
+            serviceIcon: service.icon,
+
+            category: service.category,
+
+            price: numericPrice,
+
+            worker: workerName,
+
+            rating: workerRating,
+
+            experience: workerExperience,
+
+            distance: workerDistance,
+
+            aiMatch: worker.aiMatch,
+
+            servicesCompleted:
+                worker.services,
+
+            address: savedLocation,
+
+            date: selectedDate || "",
+
+            time: selectedTime || "",
+
+            status: "Confirmed",
+
+            createdAt:
+                new Date().toISOString()
+
+        };
+
+
+        /*
+            Save complete booking.
+        */
+
+        localStorage.setItem(
+            "fixmate-booking",
+            JSON.stringify(booking)
+        );
+
+
+        /*
+            Save in booking history.
+        */
+
+        let bookings = [];
+
+
+        try {
+
+            bookings =
+                JSON.parse(
+                    localStorage.getItem(
+                        "fixmate-bookings"
+                    )
+                ) || [];
+
+        } catch (error) {
+
+            bookings = [];
+
+        }
+
+
+        bookings.push(booking);
+
+
+        localStorage.setItem(
+            "fixmate-bookings",
+            JSON.stringify(bookings)
+        );
+
+
+        /*
+            Move to Index 7.
+        */
+
+        setTimeout(() => {
+
+            window.location.href =
+                "index7.html";
+
+        }, 500);
+
+    }
+
+
+
+    /* =========================================
+       HELPER FUNCTIONS
+    ========================================== */
+
+    function getInitials(name) {
+
+        if (!name) {
+            return "FM";
+        }
+
+
+        const words =
+            name.trim().split(/\s+/);
+
+
+        if (words.length === 1) {
+
+            return words[0]
+                .substring(0, 2)
+                .toUpperCase();
+
+        }
+
+
+        return (
+            words[0][0] +
+            words[words.length - 1][0]
+        ).toUpperCase();
+
+    }
+
+
+    function getShortAddress(address) {
+
+        if (!address) {
+            return "Confirmed location";
+        }
+
+
+        const parts =
+            address
+                .split(",")
+                .map(part => part.trim())
+                .filter(Boolean);
+
+
+        if (parts.length <= 2) {
+            return address;
+        }
+
+
+        return parts[0] + ", " + parts[1];
+
+    }
+
+
+    function formatDate(dateString) {
+
+        if (!dateString) {
+            return "Today";
+        }
+
+
+        const date =
+            new Date(dateString);
+
+
+        if (isNaN(date.getTime())) {
+            return dateString;
+        }
+
+
+        return date.toLocaleDateString(
+            "en-IN",
+            {
+                day: "numeric",
+                month: "short",
+                year: "numeric"
+            }
+        );
+
+    }
+
+
+    function formatTime(timeString) {
+
+        if (!timeString) {
+            return "Flexible";
+        }
+
+
+        if (/am|pm/i.test(timeString)) {
+            return timeString;
+        }
+
+
+        const parts =
+            timeString.split(":");
+
+
+        if (parts.length !== 2) {
+            return timeString;
+        }
+
+
+        let hours =
+            Number(parts[0]);
+
+
+        const minutes =
+            parts[1];
+
+
+        const period =
+            hours >= 12 ? "PM" : "AM";
+
+
+        hours =
+            hours % 12 || 12;
+
+
+        return (
+            hours +
+            ":" +
+            minutes +
+            " " +
+            period
+        );
+
+    }
+
+</script>
+
+</body>
+</html>

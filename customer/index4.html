@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FixMate - Confirm Location</title>
+
+    <link rel="stylesheet" href="style4.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="top-header">
+
+       <div class="brand">
+    <img src="fixmate-logo.jpg" alt="FixMate Logo" class="logo-img">
+</div>
+
+        <div class="header-actions">
+
+            <button
+                class="theme-btn"
+                id="themeBtn"
+                type="button"
+                title="Change theme">
+                ☀️
+            </button>
+
+            <button
+                class="notification-btn"
+                type="button">
+                🔔
+                <span class="notification-dot"></span>
+            </button>
+
+            <div class="profile">
+
+                <div class="profile-avatar">
+                    A
+                </div>
+
+                <div class="profile-info">
+                    <strong>Abhi</strong>
+                    <span>Customer</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= PROGRESS ================= -->
+
+    <div class="progress-wrapper">
+
+        <div class="progress">
+
+            <div class="step completed">
+                <span>✓</span>
+                <small>Service</small>
+            </div>
+
+            <div class="progress-line active"></div>
+
+            <div class="step current">
+                <span>2</span>
+                <small>Location</small>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="step">
+                <span>3</span>
+                <small>Worker</small>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="step">
+                <span>4</span>
+                <small>Booking</small>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <section class="page-heading">
+
+            <div>
+
+                <span class="eyebrow">
+                    STEP 02 OF 04
+                </span>
+
+                <h2>
+                    Where do you need<br>
+                    the service?
+                </h2>
+
+                <p>
+                    Tell us where our professional should arrive.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <section class="location-layout">
+
+
+            <!-- ================= MAP ================= -->
+
+            <div class="map-card">
+
+                <div class="map-toolbar">
+
+                    <div class="map-search">
+
+                        <span>🔍</span>
+
+                        <input
+                            type="text"
+                            id="mapSearchInput"
+                            placeholder="Search area, city or locality">
+
+                    </div>
+
+                    <button
+                        class="map-location-btn"
+                        id="currentLocationBtn"
+                        type="button"
+                        title="Use current location">
+
+                        ◎
+
+                    </button>
+
+                </div>
+
+
+                <div class="map">
+
+                    <div class="road road-1"></div>
+                    <div class="road road-2"></div>
+                    <div class="road road-3"></div>
+                    <div class="road road-4"></div>
+
+                    <div class="map-block block-1"></div>
+                    <div class="map-block block-2"></div>
+                    <div class="map-block block-3"></div>
+                    <div class="map-block block-4"></div>
+                    <div class="map-block block-5"></div>
+                    <div class="map-block block-6"></div>
+
+                    <div class="park park-1"></div>
+                    <div class="park park-2"></div>
+
+                    <div class="location-marker">
+
+                        <div class="marker-pulse"></div>
+
+                        <div class="marker-pin">
+                            📍
+                        </div>
+
+                    </div>
+
+                    <div class="map-location-label">
+                        <span class="mini-dot"></span>
+                        Selected location
+                    </div>
+
+                    <div class="map-controls">
+
+                        <button type="button" id="zoomInBtn">
+                            +
+                        </button>
+
+                        <button type="button" id="zoomOutBtn">
+                            −
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="map-footer">
+
+                    <div class="accuracy">
+
+                        <span class="accuracy-icon">
+                            ✓
+                        </span>
+
+                        <div>
+                            <strong>Location selected</strong>
+
+                            <small>
+                                Your address will be used for booking
+                            </small>
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="refresh-location"
+                        id="refreshLocationBtn"
+                        type="button">
+
+                        ↻ Refresh
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= RIGHT COLUMN ================= -->
+
+            <div class="details-column">
+
+
+                <!-- ================= ADDRESS CARD ================= -->
+
+                <div class="address-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon">
+                            📍
+                        </div>
+
+                        <div>
+
+                            <span>
+                                SERVICE LOCATION
+                            </span>
+
+                            <h3>
+                                Where should we arrive?
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= SAVED ADDRESSES ================= -->
+
+                    <div
+                        class="saved-addresses-section"
+                        id="savedAddressesSection">
+
+                        <div class="saved-addresses-header">
+
+                            <div>
+                                <span class="saved-label">
+                                    SAVED ADDRESSES
+                                </span>
+
+                                <h4>
+                                    Your saved locations
+                                </h4>
+                            </div>
+
+                            <span
+                                class="saved-count"
+                                id="savedAddressCount">
+                                0 saved
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="saved-address-list"
+                            id="savedAddressList">
+                        </div>
+
+
+                        <!-- NEW ADDRESS -->
+
+                        <button
+                            type="button"
+                            class="new-address-btn"
+                            id="newAddressBtn">
+
+                            <span class="new-address-icon">
+                                +
+                            </span>
+
+                            <span class="new-address-content">
+
+                                <strong>
+                                    Enter a new address
+                                </strong>
+
+                                <small>
+                                    Add another service location
+                                </small>
+
+                            </span>
+
+                            <span class="new-address-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- ================= LOCATION SEARCH ================= -->
+
+                    <div class="address-search-section">
+
+                        <label for="locationSearch">
+                            Search your location
+                        </label>
+
+                        <div class="address-search">
+
+                            <span>🔍</span>
+
+                            <input
+                                type="text"
+                                id="locationSearch"
+                                placeholder="Search area, street or locality"
+                                autocomplete="off">
+
+                            <button
+                                type="button"
+                                id="useLocationBtn"
+                                title="Use current location">
+
+                                ◎
+
+                            </button>
+
+                        </div>
+
+                        <small class="field-hint">
+                            Start typing your area or locality
+                        </small>
+
+                    </div>
+
+
+                    <!-- ================= ADDRESS FORM ================= -->
+
+                    <div class="address-form">
+
+
+                        <div class="form-group">
+
+                            <label for="houseNumber">
+                                House / Flat No.
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="houseNumber"
+                                placeholder="e.g. 51-A">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="street">
+                                Street / Road
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="street"
+                                placeholder="e.g. Main Road">
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="area">
+                                Area / Locality
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="area"
+                                placeholder="e.g. Hauz Khas">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="city">
+                                City
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="city"
+                                placeholder="e.g. New Delhi">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="pincode">
+                                PIN Code
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="pincode"
+                                maxlength="6"
+                                inputmode="numeric"
+                                placeholder="e.g. 110016">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="state">
+                                State
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="state"
+                                placeholder="e.g. Delhi">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="landmark">
+                                Landmark
+                                <small>(Optional)</small>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="landmark"
+                                placeholder="e.g. Near Metro Station">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= ADDRESS PREVIEW ================= -->
+
+                    <div class="address-preview">
+
+                        <div class="preview-icon">
+                            📍
+                        </div>
+
+                        <div class="preview-content">
+
+                            <span>
+                                YOUR SERVICE ADDRESS
+                            </span>
+
+                            <strong id="locationDisplay">
+                                No address added yet
+                            </strong>
+
+                            <p id="locationSubtext">
+                                Fill in your address details above.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="change-location"
+                        id="changeLocationBtn"
+                        type="button">
+
+                        ✎ Edit address
+
+                    </button>
+
+                </div>
+
+
+                <!-- ================= SERVICE SUMMARY ================= -->
+
+                <div class="service-summary">
+
+                    <div class="summary-heading">
+
+                        <span>
+                            SELECTED SERVICE
+                        </span>
+
+                        <button
+                            type="button"
+                            id="editServiceBtn">
+                            Edit
+                        </button>
+
+                    </div>
+
+
+                    <div class="service-row">
+
+                        <div
+                            class="service-icon"
+                            id="serviceIcon">
+                            🛠️
+                        </div>
+
+                        <div class="service-info">
+
+                            <h3 id="serviceName">
+                                Loading...
+                            </h3>
+
+                            <p id="serviceDescription">
+                                Home service
+                            </p>
+
+                            <p
+                                id="servicePrice"
+                                class="service-price">
+                                ₹0
+                            </p>
+
+                        </div>
+
+                        <span class="service-check">
+                            ✓
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= INFO ================= -->
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        🛡️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Why we need your location
+                        </h3>
+
+                        <p>
+                            We'll use it to find nearby verified
+                            professionals and calculate their
+                            travel distance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= CONTINUE ================= -->
+
+                <button
+                    class="confirm-btn"
+                    id="continueBtn"
+                    type="button">
+
+                    <span>
+                        Continue to Worker Selection
+                    </span>
+
+                    <strong>
+                        →
+                    </strong>
+
+                </button>
+
+
+                <p class="secure-note">
+                    🔒 Your location is only shared with
+                    the professional assigned to your booking.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= MOBILE ACTION ================= -->
+
+    <div class="mobile-action">
+
+        <button
+            class="confirm-btn"
+            id="mobileContinueBtn"
+            type="button">
+
+            <span>
+                Continue to Worker Selection
+            </span>
+
+            <strong>
+                →
+            </strong>
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+/* =====================================================
+   THEME
+===================================================== */
+
+const themeBtn = document.getElementById("themeBtn");
+
+const savedTheme =
+    localStorage.getItem("fixmate-theme");
+
+if (savedTheme === "dark") {
+
+    document.body.classList.add("dark");
+    themeBtn.textContent = "🌙";
+
+}
+
+themeBtn.addEventListener("click", function () {
+
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+
+        themeBtn.textContent = "🌙";
+
+        localStorage.setItem(
+            "fixmate-theme",
+            "dark"
+        );
+
+    } else {
+
+        themeBtn.textContent = "☀️";
+
+        localStorage.setItem(
+            "fixmate-theme",
+            "light"
+        );
+
+    }
+
+});
+
+
+/* =====================================================
+   SERVICE DATA
+===================================================== */
+
+const selectedService =
+    localStorage.getItem(
+        "fixmate-selected-service"
+    );
+
+const selectedPrice =
+    localStorage.getItem(
+        "fixmate-service-price"
+    );
+
+
+const serviceData = {
+
+    "Electrical Repair": {
+        icon: "⚡",
+        description: "Professional electrical service"
+    },
+
+    "Fan Installation": {
+        icon: "🌀",
+        description: "Professional electrical service"
+    },
+
+    "Switch Repair": {
+        icon: "🔌",
+        description: "Professional electrical service"
+    },
+
+    "Wiring & Rewiring": {
+        icon: "🔌",
+        description: "Professional electrical service"
+    },
+
+    "Tap Repair": {
+        icon: "🚰",
+        description: "Professional plumbing service"
+    },
+
+    "Pipe Leakage Repair": {
+        icon: "🔧",
+        description: "Professional plumbing service"
+    },
+
+    "Drain Cleaning": {
+        icon: "🧹",
+        description: "Professional plumbing service"
+    },
+
+    "Toilet Repair": {
+        icon: "🚽",
+        description: "Professional plumbing service"
+    },
+
+    "Water Tank Repair": {
+        icon: "💧",
+        description: "Professional plumbing service"
+    },
+
+    "Shower Installation": {
+        icon: "🚿",
+        description: "Professional plumbing service"
+    },
+
+    "Full Home Cleaning": {
+        icon: "🧹",
+        description: "Professional home cleaning service"
+    },
+
+    "Bathroom Cleaning": {
+        icon: "🧽",
+        description: "Professional cleaning service"
+    },
+
+    "Kitchen Cleaning": {
+        icon: "🧼",
+        description: "Professional cleaning service"
+    },
+
+    "Sofa Cleaning": {
+        icon: "🛋️",
+        description: "Professional cleaning service"
+    },
+
+    "Carpet Cleaning": {
+        icon: "🧹",
+        description: "Professional cleaning service"
+    },
+
+    "Deep Cleaning": {
+        icon: "✨",
+        description: "Professional deep cleaning service"
+    },
+
+    "Furniture Repair": {
+        icon: "🪚",
+        description: "Professional carpentry service"
+    },
+
+    "Door Repair": {
+        icon: "🚪",
+        description: "Professional carpentry service"
+    },
+
+    "Custom Furniture": {
+        icon: "🪑",
+        description: "Professional carpentry service"
+    },
+
+    "Cabinet Repair": {
+        icon: "🗄️",
+        description: "Professional carpentry service"
+    },
+
+    "Wood Polishing": {
+        icon: "🪵",
+        description: "Professional carpentry service"
+    },
+
+    "Bed & Sofa Repair": {
+        icon: "🛏️",
+        description: "Professional carpentry service"
+    },
+
+    "Full Home Painting": {
+        icon: "🎨",
+        description: "Professional painting service"
+    },
+
+    "Room Painting": {
+        icon: "🖌️",
+        description: "Professional painting service"
+    },
+
+    "Wall Texture Painting": {
+        icon: "🎨",
+        description: "Professional painting service"
+    },
+
+    "Exterior Painting": {
+        icon: "🏠",
+        description: "Professional painting service"
+    },
+
+    "Wood Painting": {
+        icon: "🪵",
+        description: "Professional painting service"
+    },
+
+    "Wall Touch-up": {
+        icon: "🖌️",
+        description: "Professional painting service"
+    },
+
+    "AC Repair": {
+        icon: "❄️",
+        description: "Professional appliance repair service"
+    },
+
+    "Refrigerator Repair": {
+        icon: "🧊",
+        description: "Professional appliance repair service"
+    },
+
+    "Washing Machine Repair": {
+        icon: "🧺",
+        description: "Professional appliance repair service"
+    },
+
+    "Microwave Repair": {
+        icon: "📦",
+        description: "Professional appliance repair service"
+    },
+
+    "Geyser Repair": {
+        icon: "♨️",
+        description: "Professional appliance repair service"
+    },
+
+    "TV Repair": {
+        icon: "📺",
+        description: "Professional appliance repair service"
+    },
+
+    "Garden Maintenance": {
+        icon: "🌱",
+        description: "Professional gardening service"
+    },
+
+    "Lawn Care": {
+        icon: "🌿",
+        description: "Professional gardening service"
+    },
+
+    "Planting Service": {
+        icon: "🪴",
+        description: "Professional gardening service"
+    },
+
+    "Tree Trimming": {
+        icon: "🌳",
+        description: "Professional gardening service"
+    },
+
+    "Plant Health Check": {
+        icon: "🌿",
+        description: "Professional gardening service"
+    },
+
+    "Garden Cleanup": {
+        icon: "🍃",
+        description: "Professional gardening service"
+    }
+
+};
+
+
+const data =
+    serviceData[selectedService] || {
+        icon: "🛠️",
+        description: "Professional home service"
+    };
+
+
+document.getElementById("serviceName").textContent =
+    selectedService || "No service selected";
+
+document.getElementById("servicePrice").textContent =
+    selectedPrice
+        ? "₹" + selectedPrice
+        : "₹0";
+
+document.getElementById("serviceIcon").textContent =
+    data.icon;
+
+document.getElementById("serviceDescription").textContent =
+    data.description;
+
+
+/* =====================================================
+   ADDRESS ELEMENTS
+===================================================== */
+
+const locationSearch =
+    document.getElementById("locationSearch");
+
+const houseNumber =
+    document.getElementById("houseNumber");
+
+const street =
+    document.getElementById("street");
+
+const area =
+    document.getElementById("area");
+
+const city =
+    document.getElementById("city");
+
+const state =
+    document.getElementById("state");
+
+const pincode =
+    document.getElementById("pincode");
+
+const landmark =
+    document.getElementById("landmark");
+
+const locationDisplay =
+    document.getElementById("locationDisplay");
+
+const locationSubtext =
+    document.getElementById("locationSubtext");
+
+const savedAddressList =
+    document.getElementById("savedAddressList");
+
+const savedAddressCount =
+    document.getElementById("savedAddressCount");
+
+const savedAddressesSection =
+    document.getElementById("savedAddressesSection");
+
+
+const SAVED_ADDRESSES_KEY =
+    "fixmate-saved-addresses";
+
+
+/* =====================================================
+   GET SAVED ADDRESSES
+===================================================== */
+
+function getSavedAddresses() {
+
+    try {
+
+        const saved =
+            localStorage.getItem(
+                SAVED_ADDRESSES_KEY
+            );
+
+        if (!saved) {
+            return [];
+        }
+
+        const parsed =
+            JSON.parse(saved);
+
+        return Array.isArray(parsed)
+            ? parsed
+            : [];
+
+    } catch (error) {
+
+        console.error(error);
+        return [];
+
+    }
+
+}
+
+
+function saveSavedAddresses(addresses) {
+
+    localStorage.setItem(
+        SAVED_ADDRESSES_KEY,
+        JSON.stringify(addresses)
+    );
+
+}
+
+
+/* =====================================================
+   ADDRESS OBJECT
+===================================================== */
+
+function getAddressObject() {
+
+    return {
+
+        houseNumber:
+            houseNumber.value.trim(),
+
+        street:
+            street.value.trim(),
+
+        area:
+            area.value.trim(),
+
+        city:
+            city.value.trim(),
+
+        state:
+            state.value.trim(),
+
+        pincode:
+            pincode.value.trim(),
+
+        landmark:
+            landmark.value.trim()
+
+    };
+
+}
+
+
+function getFullAddress() {
+
+    const address =
+        getAddressObject();
+
+    const parts = [];
+
+    if (address.houseNumber)
+        parts.push(address.houseNumber);
+
+    if (address.street)
+        parts.push(address.street);
+
+    if (address.area)
+        parts.push(address.area);
+
+    if (address.city)
+        parts.push(address.city);
+
+    if (address.state)
+        parts.push(address.state);
+
+    if (address.pincode)
+        parts.push(address.pincode);
+
+    if (address.landmark)
+        parts.push("Near " + address.landmark);
+
+    return parts.join(", ");
+
+}
+
+
+/* =====================================================
+   SAVED ADDRESS UI
+===================================================== */
+
+function getAddressLabel(address) {
+
+    if (
+        address.houseNumber &&
+        address.street
+    ) {
+
+        return (
+            address.houseNumber +
+            ", " +
+            address.street
+        );
+
+    }
+
+    return address.houseNumber ||
+           address.street ||
+           "Saved Address";
+
+}
+
+
+function getAddressSecondary(address) {
+
+    const parts = [];
+
+    if (address.area)
+        parts.push(address.area);
+
+    if (address.city)
+        parts.push(address.city);
+
+    if (address.state)
+        parts.push(address.state);
+
+    if (address.pincode)
+        parts.push(address.pincode);
+
+    return parts.join(" • ");
+
+}
+
+
+function renderSavedAddresses() {
+
+    const addresses =
+        getSavedAddresses();
+
+    savedAddressList.innerHTML = "";
+
+    savedAddressCount.textContent =
+        addresses.length +
+        (addresses.length === 1
+            ? " saved"
+            : " saved");
+
+
+    if (addresses.length === 0) {
+
+        savedAddressesSection.style.display =
+            "none";
+
+        return;
+
+    }
+
+
+    savedAddressesSection.style.display =
+        "block";
+
+
+    addresses.forEach(function(address, index) {
+
+        const card =
+            document.createElement("div");
+
+        card.className =
+            "saved-address-item";
+
+
+        const details =
+            document.createElement("div");
+
+        details.className =
+            "saved-address-details";
+
+
+        const radio =
+            document.createElement("div");
+
+        radio.className =
+            "address-radio";
+
+
+        const icon =
+            document.createElement("div");
+
+        icon.className =
+            "saved-address-icon";
+
+        icon.textContent =
+            address.label === "Work"
+                ? "💼"
+                : "🏠";
+
+
+        const content =
+            document.createElement("div");
+
+        content.className =
+            "saved-address-content";
+
+
+        const title =
+            document.createElement("strong");
+
+        title.textContent =
+            address.label || "Home";
+
+
+        const primary =
+            document.createElement("p");
+
+        primary.textContent =
+            getAddressLabel(address);
+
+
+        const secondary =
+            document.createElement("small");
+
+        secondary.textContent =
+            getAddressSecondary(address);
+
+
+        content.appendChild(title);
+        content.appendChild(primary);
+
+        if (secondary.textContent)
+            content.appendChild(secondary);
+
+
+        details.appendChild(radio);
+        details.appendChild(icon);
+        details.appendChild(content);
+
+
+        const actions =
+            document.createElement("div");
+
+        actions.className =
+            "saved-address-actions";
+
+
+        const useButton =
+            document.createElement("button");
+
+        useButton.type = "button";
+
+        useButton.className =
+            "use-address-btn";
+
+        useButton.innerHTML =
+            "Use this address <span>→</span>";
+
+
+        useButton.addEventListener(
+            "click",
+            function() {
+
+                useSavedAddress(address);
+
+            }
+        );
+
+
+        const deleteButton =
+            document.createElement("button");
+
+        deleteButton.type = "button";
+
+        deleteButton.className =
+            "delete-address-btn";
+
+        deleteButton.title =
+            "Delete address";
+
+        deleteButton.textContent =
+            "×";
+
+
+        deleteButton.addEventListener(
+            "click",
+            function(event) {
+
+                event.stopPropagation();
+
+                deleteSavedAddress(index);
+
+            }
+        );
+
+
+        actions.appendChild(useButton);
+        actions.appendChild(deleteButton);
+
+        card.appendChild(details);
+        card.appendChild(actions);
+
+        card.addEventListener(
+            "click",
+            function() {
+
+                useSavedAddress(address);
+
+            }
+        );
+
+
+        savedAddressList.appendChild(card);
+
+    });
+
+}
+
+
+/* =====================================================
+   USE SAVED ADDRESS
+===================================================== */
+
+function useSavedAddress(address) {
+
+    houseNumber.value =
+        address.houseNumber || "";
+
+    street.value =
+        address.street || "";
+
+    area.value =
+        address.area || "";
+
+    city.value =
+        address.city || "";
+
+    state.value =
+        address.state || "";
+
+    pincode.value =
+        address.pincode || "";
+
+    landmark.value =
+        address.landmark || "";
+
+    locationSearch.value =
+        address.area || "";
+
+
+    updateAddressPreview();
+
+
+    const fullAddress =
+        getFullAddress();
+
+
+    if (fullAddress) {
+
+        localStorage.setItem(
+            "fixmate-location",
+            fullAddress
+        );
+
+    }
+
+
+    document
+        .querySelectorAll(".saved-address-item")
+        .forEach(item =>
+            item.classList.remove("selected")
+        );
+
+
+    event?.currentTarget
+        ?.classList.add("selected");
+
+
+    locationDisplay.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+}
+
+
+/* =====================================================
+   DELETE
+===================================================== */
+
+function deleteSavedAddress(index) {
+
+    const addresses =
+        getSavedAddresses();
+
+    if (!addresses[index])
+        return;
+
+
+    const shouldDelete =
+        confirm(
+            "Do you want to delete this saved address?"
+        );
+
+
+    if (!shouldDelete)
+        return;
+
+
+    addresses.splice(index, 1);
+
+    saveSavedAddresses(addresses);
+
+    renderSavedAddresses();
+
+}
+
+
+/* =====================================================
+   SAVE CURRENT ADDRESS
+===================================================== */
+
+function saveCurrentAddress() {
+
+    const address =
+        getAddressObject();
+
+
+    if (
+        !address.houseNumber ||
+        !address.street ||
+        !address.area ||
+        !address.city ||
+        !address.state ||
+        !address.pincode
+    ) {
+
+        return;
+
+    }
+
+
+    const addresses =
+        getSavedAddresses();
+
+
+    const duplicate =
+        addresses.some(function(item) {
+
+            return (
+                item.houseNumber?.toLowerCase() ===
+                    address.houseNumber.toLowerCase() &&
+
+                item.street?.toLowerCase() ===
+                    address.street.toLowerCase() &&
+
+                item.area?.toLowerCase() ===
+                    address.area.toLowerCase() &&
+
+                item.city?.toLowerCase() ===
+                    address.city.toLowerCase() &&
+
+                item.pincode ===
+                    address.pincode
+            );
+
+        });
+
+
+    if (!duplicate) {
+
+        address.label = "Home";
+
+        address.createdAt =
+            new Date().toISOString();
+
+        addresses.unshift(address);
+
+        saveSavedAddresses(addresses);
+
+    }
+
+}
+
+
+/* =====================================================
+   LOAD SAVED LOCATION
+===================================================== */
+
+const savedLocation =
+    localStorage.getItem(
+        "fixmate-location"
+    );
+
+
+if (savedLocation) {
+
+    locationDisplay.textContent =
+        savedLocation;
+
+    locationSubtext.textContent =
+        "Saved service location";
+
+}
+
+
+/* =====================================================
+   LIVE ADDRESS PREVIEW
+===================================================== */
+
+function updateAddressPreview() {
+
+    const address =
+        getFullAddress();
+
+
+    if (address) {
+
+        locationDisplay.textContent =
+            address;
+
+        locationSubtext.textContent =
+            "This address will be used for your booking.";
+
+    } else {
+
+        locationDisplay.textContent =
+            "No address added yet";
+
+        locationSubtext.textContent =
+            "Fill in your address details above.";
+
+    }
+
+}
+
+
+[
+    houseNumber,
+    street,
+    area,
+    city,
+    state,
+    pincode,
+    landmark
+].forEach(function(input) {
+
+    input.addEventListener(
+        "input",
+        updateAddressPreview
+    );
+
+});
+
+
+/* =====================================================
+   LOCATION SEARCH
+===================================================== */
+
+locationSearch.addEventListener(
+    "keypress",
+    function(event) {
+
+        if (event.key !== "Enter")
+            return;
+
+        const value =
+            locationSearch.value.trim();
+
+        if (!value)
+            return;
+
+        area.value = value;
+
+        updateAddressPreview();
+
+        locationSearch.blur();
+
+    }
+);
+
+
+/* =====================================================
+   MAP SEARCH
+===================================================== */
+
+const mapSearchInput =
+    document.getElementById(
+        "mapSearchInput"
+    );
+
+
+mapSearchInput.addEventListener(
+    "keypress",
+    function(event) {
+
+        if (event.key !== "Enter")
+            return;
+
+        const value =
+            this.value.trim();
+
+        if (!value)
+            return;
+
+        locationSearch.value =
+            value;
+
+        area.value =
+            value;
+
+        updateAddressPreview();
+
+    }
+);
+
+
+/* =====================================================
+   PIN CODE
+===================================================== */
+
+pincode.addEventListener(
+    "input",
+    function() {
+
+        this.value =
+            this.value.replace(
+                /\D/g,
+                ""
+            );
+
+    }
+);
+
+
+/* =====================================================
+   CURRENT LOCATION
+===================================================== */
+
+function useCurrentLocation() {
+
+    if (!navigator.geolocation) {
+
+        alert(
+            "Location services are not supported by your browser."
+        );
+
+        return;
+
+    }
+
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position) {
+
+            console.log(
+                "Latitude:",
+                position.coords.latitude
+            );
+
+            console.log(
+                "Longitude:",
+                position.coords.longitude
+            );
+
+
+            alert(
+                "Current location detected. Please enter or confirm your complete address."
+            );
+
+            locationSearch.focus();
+
+        },
+
+        function() {
+
+            alert(
+                "Unable to access your current location. Please enter your address manually."
+            );
+
+        }
+
+    );
+
+}
+
+
+document
+    .getElementById("currentLocationBtn")
+    .addEventListener(
+        "click",
+        useCurrentLocation
+    );
+
+
+document
+    .getElementById("useLocationBtn")
+    .addEventListener(
+        "click",
+        useCurrentLocation
+    );
+
+
+/* =====================================================
+   NEW ADDRESS
+===================================================== */
+
+document
+    .getElementById("newAddressBtn")
+    .addEventListener(
+        "click",
+        function() {
+
+            [
+                houseNumber,
+                street,
+                area,
+                city,
+                state,
+                pincode,
+                landmark
+            ].forEach(
+                input => input.value = ""
+            );
+
+            locationSearch.value = "";
+
+            updateAddressPreview();
+
+            houseNumber.focus();
+
+            document
+                .querySelector(".address-form")
+                .scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+        }
+    );
+
+
+/* =====================================================
+   EDIT ADDRESS
+===================================================== */
+
+document
+    .getElementById("changeLocationBtn")
+    .addEventListener(
+        "click",
+        function() {
+
+            houseNumber.focus();
+
+            document
+                .querySelector(".address-card")
+                .scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+        }
+    );
+
+
+/* =====================================================
+   EDIT SERVICE
+===================================================== */
+
+document
+    .getElementById("editServiceBtn")
+    .addEventListener(
+        "click",
+        function() {
+
+            history.back();
+
+        }
+    );
+
+
+/* =====================================================
+   CONTINUE
+===================================================== */
+
+function continueToWorker() {
+
+    const address =
+        getFullAddress();
+
+
+    if (!selectedService) {
+
+        alert(
+            "Please select a service first."
+        );
+
+        return;
+
+    }
+
+
+    if (
+        !houseNumber.value.trim() ||
+        !street.value.trim() ||
+        !area.value.trim() ||
+        !city.value.trim() ||
+        !state.value.trim() ||
+        !pincode.value.trim()
+    ) {
+
+        alert(
+            "Please complete all required address fields."
+        );
+
+        return;
+
+    }
+
+
+    if (
+        pincode.value.trim().length !== 6
+    ) {
+
+        alert(
+            "Please enter a valid 6-digit PIN code."
+        );
+
+        pincode.focus();
+
+        return;
+
+    }
+
+
+    localStorage.setItem(
+        "fixmate-location",
+        address
+    );
+
+
+    saveCurrentAddress();
+
+
+    window.location.href =
+        "index5.html";
+
+}
+
+
+document
+    .getElementById("continueBtn")
+    .addEventListener(
+        "click",
+        continueToWorker
+    );
+
+
+document
+    .getElementById("mobileContinueBtn")
+    .addEventListener(
+        "click",
+        continueToWorker
+    );
+
+
+/* =====================================================
+   REFRESH
+===================================================== */
+
+document
+    .getElementById("refreshLocationBtn")
+    .addEventListener(
+        "click",
+        function() {
+
+            updateAddressPreview();
+
+            renderSavedAddresses();
+
+        }
+    );
+
+
+/* =====================================================
+   MAP ZOOM
+===================================================== */
+
+let mapZoom = 1;
+
+const map =
+    document.querySelector(".map");
+
+
+document
+    .getElementById("zoomInBtn")
+    .addEventListener(
+        "click",
+        function() {
+
+            mapZoom =
+                Math.min(
+                    mapZoom + 0.1,
+                    1.5
+                );
+
+            map.style.transform =
+                `scale(${mapZoom})`;
+
+        }
+    );
+
+
+document
+    .getElementById("zoomOutBtn")
+    .addEventListener(
+        "click",
+        function() {
+
+            mapZoom =
+                Math.max(
+                    mapZoom - 0.1,
+                    0.8
+                );
+
+            map.style.transform =
+                `scale(${mapZoom})`;
+
+        }
+    );
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+renderSavedAddresses();
+
+</script>
+
+</body>
+</html>

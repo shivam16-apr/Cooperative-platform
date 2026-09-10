@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>FixMate - Track Service</title>
+
+    <link
+        rel="stylesheet"
+        href="style7.css">
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="top-header">
+
+      <div class="brand">
+    <img src="fixmate-logo.jpg" alt="FixMate Logo" class="logo-img">
+</div>
+
+
+        <div class="header-right">
+
+            <div
+                class="booking-status"
+                id="bookingStatus">
+
+                BOOKING #FM00000
+
+            </div>
+
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                aria-label="Toggle theme">
+
+                <span
+                    class="sun"
+                    id="sun">
+                    ☀
+                </span>
+
+                <span
+                    class="moon"
+                    id="moon">
+                    ☾
+                </span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- SUCCESS -->
+
+        <section class="success-section">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <span class="success-label">
+                BOOKING CONFIRMED
+            </span>
+
+
+            <h2>
+                Your technician is
+                <span>on the way!</span>
+            </h2>
+
+
+            <p id="successMessage">
+
+                Your professional has accepted
+                your request and is heading towards
+                your location.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =====================================
+             ETA
+        ====================================== -->
+
+        <section class="eta-card">
+
+            <div class="eta-content">
+
+                <span class="eta-label">
+                    ESTIMATED ARRIVAL
+                </span>
+
+
+                <div class="eta-time">
+
+                    <span id="etaMinutes">
+                        12
+                    </span>
+
+                    <small>
+                        min
+                    </small>
+
+                </div>
+
+
+                <p>
+
+                    <span id="workerEtaName">
+                        Your technician
+                    </span>
+
+                    should arrive around
+
+                    <strong id="etaTime">
+                        Soon
+                    </strong>
+
+                </p>
+
+            </div>
+
+
+            <div class="live-indicator">
+
+                <span class="live-dot"></span>
+
+                LIVE
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             TRACKING
+        ====================================== -->
+
+        <section class="tracking-card">
+
+
+            <div class="tracking-header">
+
+                <div>
+
+                    <span class="section-label">
+                        LIVE TRACKING
+                    </span>
+
+
+                    <h3 id="trackingHeading">
+
+                        Your technician is heading to you
+
+                    </h3>
+
+                </div>
+
+
+                <span
+                    class="distance"
+                    id="workerDistance">
+
+                    -- km
+
+                </span>
+
+            </div>
+
+
+
+            <div class="route">
+
+                <div class="route-line">
+
+                    <div class="route-progress"></div>
+
+                </div>
+
+
+
+                <!-- WORKER -->
+
+                <div class="route-point worker-point">
+
+                    <div class="point-circle worker-circle">
+                        🔧
+                    </div>
+
+
+                    <div class="point-text">
+
+                        <strong id="routeWorkerName">
+                            Your technician
+                        </strong>
+
+                        <small>
+                            On the way
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DESTINATION -->
+
+                <div class="route-point destination-point">
+
+                    <div class="point-circle destination-circle">
+                        📍
+                    </div>
+
+
+                    <div class="point-text">
+
+                        <strong>
+                            Your location
+                        </strong>
+
+                        <small>
+                            Destination
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             WORKER
+        ====================================== -->
+
+        <section class="worker-card">
+
+
+            <div
+                class="worker-avatar"
+                id="workerAvatar">
+
+                FM
+
+            </div>
+
+
+            <div class="worker-info">
+
+
+                <div class="name-row">
+
+                    <h3 id="workerName">
+                        Your Technician
+                    </h3>
+
+
+                    <span class="verified">
+                        ✓ Verified
+                    </span>
+
+                </div>
+
+
+                <p id="workerProfession">
+                    Verified Service Professional
+                </p>
+
+
+                <div class="rating">
+
+                    <span class="star">
+                        ★
+                    </span>
+
+
+                    <strong id="workerRating">
+                        --
+                    </strong>
+
+
+                    <span>
+                        ·
+                        <span id="workerServices">
+                            Trusted professional
+                        </span>
+                    </span>
+
+                </div>
+
+
+                <div class="worker-extra">
+
+                    <span id="workerExperience">
+                        Experience: --
+                    </span>
+
+
+                    <span class="dot-separator">
+                        •
+                    </span>
+
+
+                    <span id="workerDistanceSmall">
+                        -- km away
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="call-btn"
+                id="callButton">
+
+                <span>
+                    ☎
+                </span>
+
+                Contact
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =====================================
+             SERVICE DETAILS
+        ====================================== -->
+
+        <section class="service-details">
+
+
+            <!-- SERVICE -->
+
+            <div class="service-item">
+
+                <span
+                    class="detail-icon"
+                    id="serviceIcon">
+
+                    🔧
+
+                </span>
+
+
+                <div>
+
+                    <span>
+                        SERVICE
+                    </span>
+
+
+                    <strong id="serviceName">
+                        Selected Service
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="vertical-divider"></div>
+
+
+
+            <!-- SCHEDULE -->
+
+            <div class="service-item">
+
+                <span class="detail-icon">
+                    🕕
+                </span>
+
+
+                <div>
+
+                    <span>
+                        SCHEDULED
+                    </span>
+
+
+                    <strong id="scheduleDetails">
+                        Today · Flexible
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="vertical-divider"></div>
+
+
+
+            <!-- PRICE -->
+
+            <div class="service-item">
+
+                <span class="detail-icon">
+                    ₹
+                </span>
+
+
+                <div>
+
+                    <span>
+                        ESTIMATED
+                    </span>
+
+
+                    <strong id="servicePrice">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             LOCATION
+        ====================================== -->
+
+        <section class="location-summary">
+
+            <div class="location-icon">
+                📍
+            </div>
+
+
+            <div class="location-text">
+
+                <span>
+                    SERVICE LOCATION
+                </span>
+
+
+                <strong id="addressPrimary">
+                    Confirmed service location
+                </strong>
+
+
+                <small id="addressSecondary">
+                    Your selected address
+                </small>
+
+
+                <small id="addressMeta">
+                    Location confirmed
+                </small>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             BOTTOM MESSAGE
+        ====================================== -->
+
+        <div class="bottom-info">
+
+            <span class="shield">
+                🛡️
+            </span>
+
+
+            <p id="bottomMessage">
+
+                Stay available at your location.
+                You'll receive an update when
+                your technician arrives.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =====================================
+             PROGRESS
+        ====================================== -->
+
+        <div class="progress-section">
+
+            <span>
+                SERVICE IN PROGRESS
+            </span>
+
+
+            <div class="progress-bar">
+
+                <div class="progress-fill"></div>
+
+            </div>
+
+
+            <strong>
+                4 / 4
+            </strong>
+
+        </div>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+
+    /* =========================================
+       GET CONFIRMED BOOKING FROM INDEX 6
+    ========================================== */
+
+    let booking = null;
+
+
+    try {
+
+        booking =
+            JSON.parse(
+                localStorage.getItem(
+                    "fixmate-booking"
+                )
+            );
+
+    } catch (error) {
+
+        booking = null;
+
+    }
+
+
+
+    /*
+        If user opens index7 directly
+        without confirming index6.
+    */
+
+    if (!booking) {
+
+        document.getElementById("successMessage")
+            .textContent =
+            "No confirmed booking was found. Please complete your booking first.";
+
+    }
+
+
+
+    /* =========================================
+       THEME
+    ========================================== */
+
+    const themeToggle =
+        document.getElementById(
+            "themeToggle"
+        );
+
+
+    const sun =
+        document.getElementById("sun");
+
+
+    const moon =
+        document.getElementById("moon");
+
+
+    function applyTheme() {
+
+        const savedTheme =
+            localStorage.getItem(
+                "fixmate-theme"
+            );
+
+
+        if (savedTheme === "dark") {
+
+            document.body.classList.add("dark");
+
+            sun.style.display = "none";
+
+            moon.style.display = "block";
+
+        } else {
+
+            document.body.classList.remove("dark");
+
+            sun.style.display = "block";
+
+            moon.style.display = "none";
+
+        }
+
+    }
+
+
+    applyTheme();
+
+
+    themeToggle.addEventListener(
+        "click",
+        () => {
+
+            document.body.classList.toggle(
+                "dark"
+            );
+
+
+            const dark =
+                document.body.classList.contains(
+                    "dark"
+                );
+
+
+            localStorage.setItem(
+                "fixmate-theme",
+                dark ? "dark" : "light"
+            );
+
+
+            sun.style.display =
+                dark ? "none" : "block";
+
+
+            moon.style.display =
+                dark ? "block" : "none";
+
+        }
+    );
+
+
+
+    /* =========================================
+       STOP HERE IF NO BOOKING
+    ========================================== */
+
+    if (!booking) {
+
+        console.warn(
+            "No fixmate-booking found."
+        );
+
+    } else {
+
+
+        /* =====================================
+           BOOKING ID
+        ====================================== */
+
+        document.getElementById(
+            "bookingStatus"
+        ).textContent =
+            "BOOKING #" +
+            booking.bookingId;
+
+
+
+        /* =====================================
+           SERVICE
+        ====================================== */
+
+        document.getElementById(
+            "serviceName"
+        ).textContent =
+            booking.service;
+
+
+        document.getElementById(
+            "serviceIcon"
+        ).textContent =
+            booking.serviceIcon || "🔧";
+
+
+        document.getElementById(
+            "servicePrice"
+        ).textContent =
+            "₹" +
+            Number(
+                booking.price || 0
+            ).toLocaleString("en-IN");
+
+
+
+        /* =====================================
+           WORKER
+        ====================================== */
+
+        document.getElementById(
+            "workerName"
+        ).textContent =
+            booking.worker;
+
+
+        document.getElementById(
+            "routeWorkerName"
+        ).textContent =
+            booking.worker;
+
+
+        document.getElementById(
+            "workerEtaName"
+        ).textContent =
+            booking.worker;
+
+
+        document.getElementById(
+            "trackingHeading"
+        ).textContent =
+            booking.worker +
+            " is heading to you";
+
+
+        document.getElementById(
+            "successMessage"
+        ).textContent =
+            booking.worker +
+            " has accepted your request and is heading towards your location.";
+
+
+        document.getElementById(
+            "workerRating"
+        ).textContent =
+            booking.rating;
+
+
+        document.getElementById(
+            "workerExperience"
+        ).textContent =
+            "Experience: " +
+            booking.experience;
+
+
+        document.getElementById(
+            "workerDistance"
+        ).textContent =
+            booking.distance;
+
+
+        document.getElementById(
+            "workerDistanceSmall"
+        ).textContent =
+            booking.distance;
+
+
+        document.getElementById(
+            "workerServices"
+        ).textContent =
+            booking.servicesCompleted +
+            " services";
+
+
+        document.getElementById(
+            "workerProfession"
+        ).textContent =
+            booking.category +
+            " Specialist";
+
+
+        document.getElementById(
+            "workerAvatar"
+        ).textContent =
+            getInitials(
+                booking.worker
+            );
+
+
+
+        /* =====================================
+           SCHEDULE
+        ====================================== */
+
+        let schedule = "Today · Flexible";
+
+
+        if (booking.date && booking.time) {
+
+            schedule =
+                formatDate(booking.date) +
+                " · " +
+                formatTime(booking.time);
+
+        } else if (booking.date) {
+
+            schedule =
+                formatDate(booking.date) +
+                " · Flexible";
+
+        }
+
+
+        document.getElementById(
+            "scheduleDetails"
+        ).textContent =
+            schedule;
+
+
+
+        /* =====================================
+           ADDRESS
+        ====================================== */
+
+        displayAddress(
+            booking.address
+        );
+
+
+
+        /* =====================================
+           ETA
+        ====================================== */
+
+        const eta =
+            calculateETA(
+                booking.distance
+            );
+
+
+        document.getElementById(
+            "etaMinutes"
+        ).textContent =
+            eta;
+
+
+        document.getElementById(
+            "etaTime"
+        ).textContent =
+            getArrivalTime(eta);
+
+
+        /*
+            Update tracking object.
+        */
+
+        booking.status =
+            "Service in progress";
+
+
+        booking.etaMinutes =
+            eta;
+
+
+        localStorage.setItem(
+            "fixmate-booking",
+            JSON.stringify(booking)
+        );
+
+    }
+
+
+
+    /* =========================================
+       CONTACT BUTTON
+    ========================================== */
+
+    const callButton =
+        document.getElementById(
+            "callButton"
+        );
+
+
+    callButton.addEventListener(
+        "click",
+        () => {
+
+            callButton.classList.add(
+                "active"
+            );
+
+
+            callButton.innerHTML =
+                "<span>✓</span> Contacting...";
+
+
+            setTimeout(() => {
+
+                callButton.innerHTML =
+                    "<span>☎</span> Contact";
+
+                callButton.classList.remove(
+                    "active"
+                );
+
+            }, 2500);
+
+        }
+    );
+
+
+
+    /* =========================================
+       FUNCTIONS
+    ========================================== */
+
+    function getInitials(name) {
+
+        if (!name) {
+            return "FM";
+        }
+
+
+        const words =
+            name.trim().split(/\s+/);
+
+
+        if (words.length === 1) {
+
+            return words[0]
+                .substring(0, 2)
+                .toUpperCase();
+
+        }
+
+
+        return (
+            words[0][0] +
+            words[words.length - 1][0]
+        ).toUpperCase();
+
+    }
+
+
+
+    function displayAddress(address) {
+
+        if (!address) {
+
+            document.getElementById(
+                "addressPrimary"
+            ).textContent =
+                "Confirmed service location";
+
+
+            document.getElementById(
+                "addressSecondary"
+            ).textContent =
+                "Your selected address";
+
+
+            document.getElementById(
+                "addressMeta"
+            ).textContent =
+                "Location confirmed";
+
+            return;
+
+        }
+
+
+        const parts =
+            address
+                .split(",")
+                .map(
+                    part => part.trim()
+                )
+                .filter(Boolean);
+
+
+        const house =
+            parts[0] ||
+            "Confirmed location";
+
+
+        const street =
+            parts[1] || "";
+
+
+        const area =
+            parts[2] || "";
+
+
+        const city =
+            parts[3] || "";
+
+
+        const state =
+            parts[4] || "";
+
+
+        const pincode =
+            parts[5] || "";
+
+
+        const landmark =
+            parts.slice(6).join(", ");
+
+
+        document.getElementById(
+            "addressPrimary"
+        ).textContent =
+            house;
+
+
+        const secondary = [];
+
+
+        if (street) {
+            secondary.push(street);
+        }
+
+
+        if (area) {
+            secondary.push(area);
+        }
+
+
+        if (landmark) {
+            secondary.push(landmark);
+        }
+
+
+        document.getElementById(
+            "addressSecondary"
+        ).textContent =
+            secondary.join(" • ") ||
+            "Service location";
+
+
+        const meta = [];
+
+
+        if (city) {
+            meta.push(city);
+        }
+
+
+        if (state) {
+            meta.push(state);
+        }
+
+
+        let metaText =
+            meta.join(" • ");
+
+
+        if (pincode) {
+
+            metaText +=
+                metaText
+                    ? " · " + pincode
+                    : pincode;
+
+        }
+
+
+        document.getElementById(
+            "addressMeta"
+        ).textContent =
+            metaText ||
+            "Confirmed address";
+
+    }
+
+
+
+    function formatDate(dateString) {
+
+        if (!dateString) {
+            return "Today";
+        }
+
+
+        const date =
+            new Date(dateString);
+
+
+        if (isNaN(date.getTime())) {
+            return dateString;
+        }
+
+
+        return date.toLocaleDateString(
+            "en-IN",
+            {
+                day: "numeric",
+                month: "short",
+                year: "numeric"
+            }
+        );
+
+    }
+
+
+
+    function formatTime(timeString) {
+
+        if (!timeString) {
+            return "Flexible";
+        }
+
+
+        if (/am|pm/i.test(timeString)) {
+            return timeString;
+        }
+
+
+        const parts =
+            timeString.split(":");
+
+
+        if (parts.length !== 2) {
+            return timeString;
+        }
+
+
+        let hours =
+            Number(parts[0]);
+
+
+        const minutes =
+            parts[1];
+
+
+        const period =
+            hours >= 12
+                ? "PM"
+                : "AM";
+
+
+        hours =
+            hours % 12 || 12;
+
+
+        return (
+            hours +
+            ":" +
+            minutes +
+            " " +
+            period
+        );
+
+    }
+
+
+
+    function calculateETA(distance) {
+
+        const number =
+            parseFloat(
+                String(distance)
+                    .replace(/[^\d.]/g, "")
+            );
+
+
+        if (isNaN(number)) {
+            return 12;
+        }
+
+
+        if (number <= 1.5) {
+            return 12;
+        }
+
+
+        if (number <= 2.5) {
+            return 18;
+        }
+
+
+        return 24;
+
+    }
+
+
+
+    function getArrivalTime(minutes) {
+
+        const arrival =
+            new Date(
+                Date.now() +
+                minutes * 60000
+            );
+
+
+        let hours =
+            arrival.getHours();
+
+
+        const mins =
+            String(
+                arrival.getMinutes()
+            ).padStart(2, "0");
+
+
+        const period =
+            hours >= 12
+                ? "PM"
+                : "AM";
+
+
+        hours =
+            hours % 12 || 12;
+
+
+        return (
+            hours +
+            ":" +
+            mins +
+            " " +
+            period
+        );
+
+    }
+
+</script>
+
+</body>
+</html>

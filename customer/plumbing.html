@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FixMate - Plumbing Services</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="plumbing.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <nav class="navbar">
+
+     <div class="brand">
+    <img src="fixmate-logo.jpg" alt="FixMate Logo" class="logo-img">
+</div>
+
+
+        <div class="nav-right">
+
+            <button class="location-btn">
+                <i data-lucide="map-pin"></i>
+                <span>Delhi, India</span>
+            </button>
+
+            <button class="theme-toggle" id="themeToggle">
+                <i data-lucide="moon"></i>
+            </button>
+
+            <button class="notification">
+                <i data-lucide="bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+
+            <div class="profile">
+
+                <div class="profile-avatar">
+                    A
+                </div>
+
+                <div class="profile-name">
+                    <strong>Abhishek</strong>
+                    <span>Customer</span>
+                </div>
+
+                <i data-lucide="chevron-down"></i>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main>
+
+        <!-- Breadcrumb -->
+
+        <div class="breadcrumb">
+
+            <span>Home</span>
+
+            <i data-lucide="chevron-right"></i>
+
+            <span>Services</span>
+
+            <i data-lucide="chevron-right"></i>
+
+            <strong>Plumbing</strong>
+
+        </div>
+
+
+        <!-- =====================================================
+             STEPS
+             ===================================================== -->
+
+        <div class="steps">
+
+            <div class="step completed">
+
+                <div class="step-circle">
+                    <i data-lucide="check"></i>
+                </div>
+
+                <span>Home</span>
+
+            </div>
+
+
+            <div class="step-line active"></div>
+
+
+            <div class="step active">
+
+                <div class="step-circle">
+                    2
+                </div>
+
+                <span>Service</span>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="step">
+
+                <div class="step-circle">
+                    3
+                </div>
+
+                <span>Location</span>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="step">
+
+                <div class="step-circle">
+                    4
+                </div>
+
+                <span>Book</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             PAGE HEADER
+             ===================================================== -->
+
+        <section class="page-header">
+
+            <div class="header-left">
+
+                <div class="category-icon">
+                    <i data-lucide="droplets"></i>
+                </div>
+
+                <div>
+
+                    <span class="small-label">
+                        HOME SERVICES
+                    </span>
+
+                    <h2>
+                        Plumbing Services
+                    </h2>
+
+                    <p>
+                        Choose the plumbing service you need.
+                        Our verified professionals are ready to help.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="trust-badge">
+
+                <i data-lucide="shield-check"></i>
+
+                <div>
+
+                    <strong>
+                        Verified Professionals
+                    </strong>
+
+                    <span>
+                        100% background checked
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SEARCH / FILTER / SORT
+             ===================================================== -->
+
+        <section class="tools">
+
+            <div class="search-box">
+
+                <i data-lucide="search"></i>
+
+                <input
+                    type="text"
+                    id="serviceSearch"
+                    placeholder="Search plumbing services..."
+                >
+
+            </div>
+
+
+            <button class="filter-btn" id="filterBtn">
+
+                <i data-lucide="sliders-horizontal"></i>
+
+                Filters
+
+            </button>
+
+
+            <button class="sort-btn" id="sortBtn">
+
+                <i data-lucide="arrow-down-up"></i>
+
+                Popular
+
+            </button>
+
+        </section>
+
+
+        <!-- =====================================================
+             SERVICE TITLE
+             ===================================================== -->
+
+        <div class="service-title">
+
+            <div>
+
+                <span>
+                    RECOMMENDED FOR YOU
+                </span>
+
+                <h3>
+                    Popular Plumbing Services
+                </h3>
+
+            </div>
+
+            <p>
+
+                <i data-lucide="sparkles"></i>
+
+                AI-powered recommendations
+
+            </p>
+
+        </div>
+
+
+        <!-- =====================================================
+             SERVICE GRID
+             ===================================================== -->
+
+        <section class="service-grid" id="serviceGrid">
+
+
+            <!-- TAP REPAIR -->
+
+            <div
+                class="service-card"
+                data-name="Tap Repair"
+                data-price="199"
+            >
+
+                <div class="service-top">
+
+                    <div class="service-icon">
+                        <i data-lucide="faucet"></i>
+                    </div>
+
+                    <span class="popular-badge">
+
+                        <i data-lucide="flame"></i>
+
+                        Most booked
+
+                    </span>
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h4>
+                        Tap Repair
+                    </h4>
+
+                    <p>
+                        Repair leaking taps, faucets and
+                        bathroom fittings.
+                    </p>
+
+
+                    <div class="service-meta">
+
+                        <span>
+
+                            <i data-lucide="star"></i>
+
+                            4.9
+
+                        </span>
+
+
+                        <span>
+
+                            <i data-lucide="clock-3"></i>
+
+                            20–40 min
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="price-row">
+
+                        <div>
+
+                            <small>
+                                Starting from
+                            </small>
+
+                            <strong>
+                                ₹199
+                            </strong>
+
+                        </div>
+
+
+                        <button class="select-btn">
+
+                            Select
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PIPE REPAIR -->
+
+            <div
+                class="service-card"
+                data-name="Pipe Repair"
+                data-price="299"
+            >
+
+                <div class="service-top">
+
+                    <div class="service-icon">
+
+                        <i data-lucide="pipette"></i>
+
+                    </div>
+
+
+                    <span class="fast-badge">
+
+                        <i data-lucide="zap"></i>
+
+                        Quick fix
+
+                    </span>
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h4>
+                        Pipe Repair
+                    </h4>
+
+                    <p>
+                        Fix leaking, damaged and blocked
+                        water pipes.
+                    </p>
+
+
+                    <div class="service-meta">
+
+                        <span>
+
+                            <i data-lucide="star"></i>
+
+                            4.8
+
+                        </span>
+
+
+                        <span>
+
+                            <i data-lucide="clock-3"></i>
+
+                            30–60 min
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="price-row">
+
+                        <div>
+
+                            <small>
+                                Starting from
+                            </small>
+
+                            <strong>
+                                ₹299
+                            </strong>
+
+                        </div>
+
+
+                        <button class="select-btn">
+
+                            Select
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DRAIN CLEANING -->
+
+            <div
+                class="service-card"
+                data-name="Drain Cleaning"
+                data-price="249"
+            >
+
+                <div class="service-top">
+
+                    <div class="service-icon">
+
+                        <i data-lucide="waves"></i>
+
+                    </div>
+
+
+                    <span class="recommended-badge">
+
+                        Recommended
+
+                    </span>
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h4>
+                        Drain Cleaning
+                    </h4>
+
+                    <p>
+                        Remove clogged drains and restore
+                        smooth water flow.
+                    </p>
+
+
+                    <div class="service-meta">
+
+                        <span>
+
+                            <i data-lucide="star"></i>
+
+                            4.9
+
+                        </span>
+
+
+                        <span>
+
+                            <i data-lucide="clock-3"></i>
+
+                            30–60 min
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="price-row">
+
+                        <div>
+
+                            <small>
+                                Starting from
+                            </small>
+
+                            <strong>
+                                ₹249
+                            </strong>
+
+                        </div>
+
+
+                        <button class="select-btn">
+
+                            Select
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BATHROOM PLUMBING -->
+
+            <div
+                class="service-card"
+                data-name="Bathroom Plumbing"
+                data-price="399"
+            >
+
+                <div class="service-top">
+
+                    <div class="service-icon">
+
+                        <i data-lucide="bath"></i>
+
+                    </div>
+
+
+                    <span class="recommended-badge">
+
+                        Popular
+
+                    </span>
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h4>
+                        Bathroom Plumbing
+                    </h4>
+
+                    <p>
+                        Complete plumbing repair for bathroom
+                        fixtures and fittings.
+                    </p>
+
+
+                    <div class="service-meta">
+
+                        <span>
+
+                            <i data-lucide="star"></i>
+
+                            4.8
+
+                        </span>
+
+
+                        <span>
+
+                            <i data-lucide="clock-3"></i>
+
+                            45–90 min
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="price-row">
+
+                        <div>
+
+                            <small>
+                                Starting from
+                            </small>
+
+                            <strong>
+                                ₹399
+                            </strong>
+
+                        </div>
+
+
+                        <button class="select-btn">
+
+                            Select
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- WATER TANK SERVICE -->
+
+            <div
+                class="service-card"
+                data-name="Water Tank Service"
+                data-price="499"
+            >
+
+                <div class="service-top">
+
+                    <div class="service-icon">
+
+                        <i data-lucide="container"></i>
+
+                    </div>
+
+
+                    <span class="recommended-badge">
+
+                        Popular
+
+                    </span>
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h4>
+                        Water Tank Service
+                    </h4>
+
+                    <p>
+                        Water tank pipe connections and
+                        plumbing maintenance.
+                    </p>
+
+
+                    <div class="service-meta">
+
+                        <span>
+
+                            <i data-lucide="star"></i>
+
+                            4.7
+
+                        </span>
+
+
+                        <span>
+
+                            <i data-lucide="clock-3"></i>
+
+                            1–2 hrs
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="price-row">
+
+                        <div>
+
+                            <small>
+                                Starting from
+                            </small>
+
+                            <strong>
+                                ₹499
+                            </strong>
+
+                        </div>
+
+
+                        <button class="select-btn">
+
+                            Select
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PLUMBING INSPECTION -->
+
+            <div
+                class="service-card"
+                data-name="Plumbing Inspection"
+                data-price="299"
+            >
+
+                <div class="service-top">
+
+                    <div class="service-icon">
+
+                        <i data-lucide="search-check"></i>
+
+                    </div>
+
+
+                    <span class="recommended-badge">
+
+                        Safe choice
+
+                    </span>
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h4>
+                        Plumbing Inspection
+                    </h4>
+
+                    <p>
+                        Inspect leaks, pipes, taps and
+                        plumbing connections.
+                    </p>
+
+
+                    <div class="service-meta">
+
+                        <span>
+
+                            <i data-lucide="star"></i>
+
+                            4.9
+
+                        </span>
+
+
+                        <span>
+
+                            <i data-lucide="clock-3"></i>
+
+                            30–60 min
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="price-row">
+
+                        <div>
+
+                            <small>
+                                Starting from
+                            </small>
+
+                            <strong>
+                                ₹299
+                            </strong>
+
+                        </div>
+
+
+                        <button class="select-btn">
+
+                            Select
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- NO RESULT -->
+
+        <div class="no-result" id="noResult">
+
+            <i data-lucide="search-x"></i>
+
+            <h3>
+                No service found
+            </h3>
+
+            <p>
+                Try searching for another service.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         BOOKING BAR
+         ===================================================== -->
+
+    <div class="booking-bar">
+
+        <div class="selected-service">
+
+            <div class="selected-icon">
+
+                <i data-lucide="droplets"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    SELECTED SERVICE
+                </span>
+
+                <strong id="selectedService">
+                    No service selected
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="booking-info">
+
+            <i data-lucide="shield-check"></i>
+
+            Verified professional
+
+        </div>
+
+
+        <button
+            class="continue-btn"
+            id="continueBtn"
+            disabled
+        >
+
+            Continue
+
+            <i data-lucide="arrow-right"></i>
+
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         EMERGENCY BUTTON
+         ===================================================== -->
+
+    <button
+        class="floating-emergency"
+        id="emergencyBtn"
+    >
+
+        <i data-lucide="siren"></i>
+
+        Emergency
+
+    </button>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script>
+
+        /* =====================================================
+           LUCIDE ICONS
+           ===================================================== */
+
+        lucide.createIcons();
+
+
+        /* =====================================================
+           THEME
+           ===================================================== */
+
+        const themeToggle =
+            document.getElementById("themeToggle");
+
+        const savedTheme =
+            localStorage.getItem("fixmate-theme");
+
+
+        if (savedTheme === "dark") {
+
+            document.body.classList.add("dark-mode");
+
+            themeToggle.innerHTML =
+                '<i data-lucide="sun"></i>';
+
+            lucide.createIcons();
+
+        }
+
+
+        themeToggle.addEventListener(
+            "click",
+            function () {
+
+                document.body.classList.toggle(
+                    "dark-mode"
+                );
+
+                const isDark =
+                    document.body.classList.contains(
+                        "dark-mode"
+                    );
+
+
+                if (isDark) {
+
+                    themeToggle.innerHTML =
+                        '<i data-lucide="sun"></i>';
+
+                    localStorage.setItem(
+                        "fixmate-theme",
+                        "dark"
+                    );
+
+                }
+
+                else {
+
+                    themeToggle.innerHTML =
+                        '<i data-lucide="moon"></i>';
+
+                    localStorage.setItem(
+                        "fixmate-theme",
+                        "light"
+                    );
+
+                }
+
+
+                lucide.createIcons();
+
+            }
+        );
+
+
+        /* =====================================================
+           SERVICE SELECTION
+           ===================================================== */
+
+        const cards =
+            document.querySelectorAll(
+                ".service-card"
+            );
+
+        const selectedText =
+            document.getElementById(
+                "selectedService"
+            );
+
+        const continueBtn =
+            document.getElementById(
+                "continueBtn"
+            );
+
+
+        let selectedService = null;
+
+
+        cards.forEach(function (card) {
+
+            card.addEventListener(
+                "click",
+                function () {
+
+                    /* Remove previous selection */
+
+                    cards.forEach(
+                        function (c) {
+
+                            c.classList.remove(
+                                "selected"
+                            );
+
+                        }
+                    );
+
+
+                    /* Select current card */
+
+                    card.classList.add(
+                        "selected"
+                    );
+
+
+                    /* Get service name */
+
+                    selectedService =
+                        card.dataset.name;
+
+
+                    /* Show service name */
+
+                    selectedText.textContent =
+                        selectedService;
+
+
+                    /* Enable continue */
+
+                    continueBtn.disabled =
+                        false;
+
+                }
+            );
+
+        });
+
+
+        /* =====================================================
+           CONTINUE
+           ===================================================== */
+
+        continueBtn.addEventListener(
+            "click",
+            function () {
+
+                if (!selectedService) {
+
+                    return;
+
+                }
+
+
+                /* Get selected card */
+
+                const selectedCard =
+                    document.querySelector(
+                        ".service-card.selected"
+                    );
+
+
+                if (!selectedCard) {
+
+                    return;
+
+                }
+
+
+                /* Get price */
+
+                const selectedPrice =
+                    selectedCard.dataset.price;
+
+
+                /* Save selected service */
+
+                localStorage.setItem(
+                    "fixmate-selected-service",
+                    selectedService
+                );
+
+
+                /* Save selected price */
+
+                localStorage.setItem(
+                    "fixmate-service-price",
+                    selectedPrice
+                );
+
+
+                /* Go to common location page */
+
+                window.location.href =
+                    "index4.html";
+
+            }
+        );
+
+
+        /* =====================================================
+           EMERGENCY
+           ===================================================== */
+
+        const emergencyBtn =
+            document.getElementById(
+                "emergencyBtn"
+            );
+
+
+        emergencyBtn.addEventListener(
+            "click",
+            function () {
+
+                window.location.href =
+                    "emergency.html";
+
+            }
+        );
+
+
+        /* =====================================================
+           SEARCH
+           ===================================================== */
+
+        const searchInput =
+            document.getElementById(
+                "serviceSearch"
+            );
+
+        const noResult =
+            document.getElementById(
+                "noResult"
+            );
+
+
+        searchInput.addEventListener(
+            "input",
+            function () {
+
+                const search =
+                    this.value
+                        .toLowerCase()
+                        .trim();
+
+
+                let found = false;
+
+
+                cards.forEach(
+                    function (card) {
+
+                        const name =
+                            card.dataset.name
+                                .toLowerCase();
+
+
+                        if (
+                            name.includes(search)
+                        ) {
+
+                            card.style.display =
+                                "flex";
+
+                            found = true;
+
+                        }
+
+                        else {
+
+                            card.style.display =
+                                "none";
+
+                        }
+
+                    }
+                );
+
+
+                noResult.style.display =
+                    found ? "none" : "flex";
+
+            }
+        );
+
+
+        /* =====================================================
+           FILTER
+           ===================================================== */
+
+        const filterBtn =
+            document.getElementById(
+                "filterBtn"
+            );
+
+
+        filterBtn.addEventListener(
+            "click",
+            function () {
+
+                alert(
+                    "Filter options will be available soon."
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           SORT
+           ===================================================== */
+
+        const sortBtn =
+            document.getElementById(
+                "sortBtn"
+            );
+
+
+        let sortAscending = true;
+
+
+        sortBtn.addEventListener(
+            "click",
+            function () {
+
+                const grid =
+                    document.getElementById(
+                        "serviceGrid"
+                    );
+
+
+                const cardArray =
+                    Array.from(cards);
+
+
+                cardArray.sort(
+                    function (a, b) {
+
+                        const priceA =
+                            Number(
+                                a.dataset.price
+                            );
+
+                        const priceB =
+                            Number(
+                                b.dataset.price
+                            );
+
+
+                        return sortAscending
+                            ? priceA - priceB
+                            : priceB - priceA;
+
+                    }
+                );
+
+
+                cardArray.forEach(
+                    function (card) {
+
+                        grid.appendChild(card);
+
+                    }
+                );
+
+
+                sortAscending =
+                    !sortAscending;
+
+
+                sortBtn.innerHTML =
+                    sortAscending
+                        ? '<i data-lucide="arrow-down-up"></i> Low to High'
+                        : '<i data-lucide="arrow-down-up"></i> High to Low';
+
+
+                lucide.createIcons();
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

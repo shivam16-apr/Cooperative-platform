@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FixMate - Login</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         THEME TOGGLE
+    ========================================== -->
+
+    <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Toggle day and night mode"
+        title="Toggle theme"
+    >
+        <span id="themeIcon">🌙</span>
+    </button>
+
+
+    <!-- =========================================
+         MAIN PAGE
+    ========================================== -->
+
+    <div class="page">
+
+
+        <!-- =====================================
+             LEFT BRANDING SECTION
+        ====================================== -->
+
+        <section class="brand-section">
+
+            <!-- Logo -->
+
+           <div class="brand">
+    <img src="fixmate-logo.jpg" alt="FixMate Logo" class="logo-img">
+</div>
+
+
+            <!-- Welcome Content -->
+
+            <div class="welcome-text">
+
+                <div class="small-heading">
+                    YOUR HOME, OUR CARE
+                </div>
+
+                <h2>
+                    Reliable help.<br>
+                    <span>Right when you need it.</span>
+                </h2>
+
+                <p class="description">
+                    Book trusted professionals for all your home
+                    service needs. From repairs to maintenance,
+                    FixMate makes getting help simple, safe and
+                    convenient.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             RIGHT LOGIN SECTION
+        ====================================== -->
+
+        <section class="login-container">
+
+            <div class="login-card">
+
+
+                <!-- Mobile Logo -->
+
+                <div class="mobile-logo">
+
+                    <div class="mobile-logo-icon">
+                        🔧
+                    </div>
+
+                    <h2>
+                        FixMate
+                    </h2>
+
+                </div>
+
+
+                <!-- Login Header -->
+
+                <div class="login-header">
+
+                    <h2>
+                        Welcome back
+                        <span class="wave-hand">👋</span>
+                    </h2>
+
+                    <p>
+                        Login to book your service
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================
+                     LOGIN FORM
+                ================================== -->
+
+                <form id="loginForm">
+
+
+                    <!-- Email -->
+
+                    <div class="input-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <div class="input-box">
+
+                            <span class="input-icon">
+                                ✉
+                            </span>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Password -->
+
+                    <div class="input-group">
+
+                        <div class="label-row">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <a
+                                href="#"
+                                class="forgot"
+                                id="forgotPassword"
+                            >
+                                Forgot password?
+                            </a>
+
+                        </div>
+
+
+                        <div class="input-box">
+
+                            <span class="input-icon">
+                                🔒
+                            </span>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                class="show-password"
+                                id="showPassword"
+                                aria-label="Show password"
+                            >
+                                👁
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         ERROR MESSAGE
+                    ================================== -->
+
+                    <div
+                        class="login-error"
+                        id="loginError"
+                        role="alert"
+                        aria-live="polite"
+                    >
+                    </div>
+
+
+
+                    <!-- Login Button -->
+
+                    <button
+                        type="submit"
+                        class="login-btn"
+                        id="loginBtn"
+                    >
+
+                        <span class="login-text">
+                            LOGIN
+                        </span>
+
+                        <span class="arrow">
+                            →
+                        </span>
+
+                    </button>
+
+                </form>
+
+
+
+                <!-- Register -->
+
+                <div class="register">
+
+                    <span>
+                        Don't have an account?
+                    </span>
+
+                    <a href="register.html">
+                        Register
+                    </a>
+
+                </div>
+
+
+
+                <!-- Divider -->
+
+                <div class="divider">
+
+                    <span>
+                        Trusted by homeowners
+                    </span>
+
+                </div>
+
+
+
+                <!-- Trust Section -->
+
+                <div class="trust-section">
+
+                    <div class="trust-item">
+
+                        <span>✓</span>
+
+                        <span>
+                            Verified Workers
+                        </span>
+
+                    </div>
+
+
+                    <div class="trust-item">
+
+                        <span>★</span>
+
+                        <span>
+                            Rated Professionals
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+        /* =========================================
+           DAY / NIGHT THEME
+        ========================================== */
+
+        const themeToggle =
+            document.getElementById("themeToggle");
+
+        const themeIcon =
+            document.getElementById("themeIcon");
+
+
+        /* Load saved theme */
+
+        const savedTheme =
+            localStorage.getItem("fixmate-theme");
+
+
+        if (savedTheme === "dark") {
+
+            document.body.classList.add("dark-mode");
+
+            themeIcon.textContent = "☀️";
+
+        } else {
+
+            themeIcon.textContent = "🌙";
+
+        }
+
+
+        /* Change theme */
+
+        themeToggle.addEventListener(
+            "click",
+            function () {
+
+                document.body.classList.toggle(
+                    "dark-mode"
+                );
+
+
+                const isDark =
+                    document.body.classList.contains(
+                        "dark-mode"
+                    );
+
+
+                localStorage.setItem(
+                    "fixmate-theme",
+                    isDark ? "dark" : "light"
+                );
+
+
+                themeIcon.textContent =
+                    isDark ? "☀️" : "🌙";
+
+            }
+        );
+
+
+
+        /* =========================================
+           SHOW / HIDE PASSWORD
+        ========================================== */
+
+        const password =
+            document.getElementById("password");
+
+        const showPassword =
+            document.getElementById("showPassword");
+
+
+        showPassword.addEventListener(
+            "click",
+            function () {
+
+                if (password.type === "password") {
+
+                    password.type = "text";
+
+                    showPassword.textContent = "🙈";
+
+                    showPassword.setAttribute(
+                        "aria-label",
+                        "Hide password"
+                    );
+
+                } else {
+
+                    password.type = "password";
+
+                    showPassword.textContent = "👁";
+
+                    showPassword.setAttribute(
+                        "aria-label",
+                        "Show password"
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================================
+           ERROR MESSAGE FUNCTION
+        ========================================== */
+
+        const loginError =
+            document.getElementById("loginError");
+
+
+        function showError(message) {
+
+            loginError.textContent = message;
+
+            loginError.classList.add("show");
+
+        }
+
+
+        function hideError() {
+
+            loginError.textContent = "";
+
+            loginError.classList.remove("show");
+
+        }
+
+
+
+        /* =========================================
+           CLEAR ERROR WHEN USER STARTS TYPING
+        ========================================== */
+
+        document
+            .getElementById("email")
+            .addEventListener(
+                "input",
+                function () {
+
+                    hideError();
+
+                }
+            );
+
+
+        document
+            .getElementById("password")
+            .addEventListener(
+                "input",
+                function () {
+
+                    hideError();
+
+                }
+            );
+
+
+
+        /* =========================================
+           FORGOT PASSWORD
+        ========================================== */
+
+        document
+            .getElementById("forgotPassword")
+            .addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    showError(
+                        "Password reset feature will be available soon."
+                    );
+
+                }
+            );
+
+
+
+        /* =========================================
+           LOGIN
+        ========================================== */
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        const loginBtn =
+            document.getElementById("loginBtn");
+
+
+        loginForm.addEventListener(
+            "submit",
+            async function (event) {
+
+                event.preventDefault();
+
+
+                hideError();
+
+
+                /* Get values */
+
+                const email =
+                    document
+                        .getElementById("email")
+                        .value
+                        .trim();
+
+
+                const passwordValue =
+                    document
+                        .getElementById("password")
+                        .value;
+
+
+                /* =================================
+                   BASIC VALIDATION
+                ================================= */
+
+                if (!email || !passwordValue) {
+
+                    showError(
+                        "Please enter your email and password."
+                    );
+
+                    return;
+                }
+
+
+                /* =================================
+                   EMAIL VALIDATION
+                ================================= */
+
+                const emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+                if (!emailPattern.test(email)) {
+
+                    showError(
+                        "Please enter a valid email address."
+                    );
+
+                    return;
+                }
+
+
+
+                /* =================================
+                   DISABLE LOGIN BUTTON
+                ================================= */
+
+                loginBtn.disabled = true;
+
+                loginBtn.innerHTML = `
+                    <span class="loading-spinner"></span>
+                    <span>Logging in...</span>
+                `;
+
+
+
+                try {
+
+                    /* =================================
+                       BACKEND LOGIN REQUEST
+                    ================================= */
+
+                    const response =
+                        await fetch(
+                            "http://localhost:5000/api/auth/login",
+                            {
+                                method: "POST",
+
+                                headers: {
+                                    "Content-Type":
+                                        "application/json"
+                                },
+
+                                body: JSON.stringify({
+
+                                    email: email,
+
+                                    password: passwordValue
+
+                                })
+                            }
+                        );
+
+
+
+                    /* Try to read backend response */
+
+                    let data = {};
+
+                    try {
+
+                        data =
+                            await response.json();
+
+                    } catch (jsonError) {
+
+                        data = {};
+
+                    }
+
+
+
+                    /* =================================
+                       WRONG LOGIN INFORMATION
+                    ================================= */
+
+                    if (!response.ok) {
+
+                        const backendMessage =
+                            data.message || "";
+
+
+                        /* Email / password related error */
+
+                        if (
+                            response.status === 401 ||
+                            response.status === 400
+                        ) {
+
+                            showError(
+                                "Your email or password is incorrect. Please try again."
+                            );
+
+                        } else {
+
+                            showError(
+                                backendMessage ||
+                                "Unable to login. Please try again."
+                            );
+
+                        }
+
+
+                        /* Restore button */
+
+                        loginBtn.disabled = false;
+
+                        loginBtn.innerHTML = `
+                            <span class="login-text">
+                                LOGIN
+                            </span>
+
+                            <span class="arrow">
+                                →
+                            </span>
+                        `;
+
+                        return;
+                    }
+
+
+
+                    /* =================================
+                       SAVE LOGIN INFORMATION
+                    ================================= */
+
+                    if (data.token) {
+
+                        localStorage.setItem(
+                            "token",
+                            data.token
+                        );
+
+                    }
+
+
+                    if (data.user) {
+
+                        localStorage.setItem(
+                            "user",
+                            JSON.stringify(data.user)
+                        );
+
+                    }
+
+
+
+                    /* =================================
+                       SUCCESS
+                       NO ALERT
+                       DIRECT REDIRECT
+                    ================================= */
+
+                    window.location.href =
+                        "index2.html";
+
+                }
+
+
+                /* =================================
+                   NETWORK / SERVER ERROR
+                ================================= */
+
+                catch (error) {
+
+                    console.error(
+                        "Login error:",
+                        error
+                    );
+
+
+                    showError(
+                        "Unable to connect to the server. Please try again."
+                    );
+
+
+                    /* Restore button */
+
+                    loginBtn.disabled = false;
+
+                    loginBtn.innerHTML = `
+                        <span class="login-text">
+                            LOGIN
+                        </span>
+
+                        <span class="arrow">
+                            →
+                        </span>
+                    `;
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

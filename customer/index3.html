@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FixMate - Electrical Services</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="style3.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+  <div class="brand">
+    <img src="fixmate-logo.jpg" alt="FixMate Logo" class="logo-img">
+</div>
+
+    <div class="nav-right">
+
+        <button class="location-btn">
+            <i data-lucide="map-pin"></i>
+            <span>Delhi, India</span>
+        </button>
+
+        <button class="theme-toggle" id="themeToggle">
+            <i data-lucide="moon"></i>
+        </button>
+
+        <button class="notification">
+            <i data-lucide="bell"></i>
+            <span class="notification-dot"></span>
+        </button>
+
+        <div class="profile">
+            <div class="profile-avatar">A</div>
+
+            <div class="profile-name">
+                <strong>Abhishek</strong>
+                <span>Customer</span>
+            </div>
+
+            <i data-lucide="chevron-down"></i>
+        </div>
+
+    </div>
+
+</nav>
+
+
+<main>
+
+    <div class="breadcrumb">
+        <span>Home</span>
+        <i data-lucide="chevron-right"></i>
+        <span>Services</span>
+        <i data-lucide="chevron-right"></i>
+        <strong>Electrical</strong>
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step completed">
+            <div class="step-circle">
+                <i data-lucide="check"></i>
+            </div>
+            <span>Home</span>
+        </div>
+
+        <div class="step-line active"></div>
+
+        <div class="step active">
+            <div class="step-circle">2</div>
+            <span>Service</span>
+        </div>
+
+        <div class="step-line"></div>
+
+        <div class="step">
+            <div class="step-circle">3</div>
+            <span>Location</span>
+        </div>
+
+        <div class="step-line"></div>
+
+        <div class="step">
+            <div class="step-circle">4</div>
+            <span>Book</span>
+        </div>
+
+    </div>
+
+
+    <section class="page-header">
+
+        <div class="header-left">
+
+            <div class="category-icon">
+                <i data-lucide="zap"></i>
+            </div>
+
+            <div>
+                <span class="small-label">HOME SERVICES</span>
+
+                <h2>Electrical Services</h2>
+
+                <p>
+                    Choose the electrical service you need.
+                    Our verified professionals are ready to help.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="trust-badge">
+
+            <i data-lucide="shield-check"></i>
+
+            <div>
+                <strong>Verified Professionals</strong>
+                <span>100% background checked</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="tools">
+
+        <div class="search-box">
+
+            <i data-lucide="search"></i>
+
+            <input
+                type="text"
+                id="serviceSearch"
+                placeholder="Search electrical services..."
+            >
+
+        </div>
+
+        <button class="filter-btn" id="filterBtn">
+            <i data-lucide="sliders-horizontal"></i>
+            Filters
+        </button>
+
+        <button class="sort-btn" id="sortBtn">
+            <i data-lucide="arrow-down-up"></i>
+            Popular
+        </button>
+
+    </section>
+
+
+    <div class="service-title">
+
+        <div>
+            <span>RECOMMENDED FOR YOU</span>
+            <h3>Popular Electrical Services</h3>
+        </div>
+
+        <p>
+            <i data-lucide="sparkles"></i>
+            AI-powered recommendations
+        </p>
+
+    </div>
+
+
+    <section class="service-grid" id="serviceGrid">
+
+
+        <div class="service-card" data-name="Fan Installation" data-price="299">
+
+            <div class="service-top">
+
+                <div class="service-icon">
+                    <i data-lucide="fan"></i>
+                </div>
+
+                <span class="popular-badge">
+                    <i data-lucide="flame"></i>
+                    Most booked
+                </span>
+
+            </div>
+
+            <div class="service-content">
+
+                <h4>Fan Installation</h4>
+
+                <p>
+                    Professional ceiling and wall fan installation.
+                </p>
+
+                <div class="service-meta">
+                    <span>
+                        <i data-lucide="star"></i>
+                        4.9
+                    </span>
+
+                    <span>
+                        <i data-lucide="clock-3"></i>
+                        30–60 min
+                    </span>
+                </div>
+
+                <div class="price-row">
+
+                    <div>
+                        <small>Starting from</small>
+                        <strong>₹299</strong>
+                    </div>
+
+                    <button class="select-btn">
+                        Select
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="service-card" data-name="Switch Repair" data-price="149">
+
+            <div class="service-top">
+
+                <div class="service-icon">
+                    <i data-lucide="toggle-left"></i>
+                </div>
+
+                <span class="fast-badge">
+                    <i data-lucide="zap"></i>
+                    Quick fix
+                </span>
+
+            </div>
+
+            <div class="service-content">
+
+                <h4>Switch Repair</h4>
+
+                <p>
+                    Repair faulty switches and electrical sockets.
+                </p>
+
+                <div class="service-meta">
+                    <span>
+                        <i data-lucide="star"></i>
+                        4.8
+                    </span>
+
+                    <span>
+                        <i data-lucide="clock-3"></i>
+                        20–40 min
+                    </span>
+                </div>
+
+                <div class="price-row">
+
+                    <div>
+                        <small>Starting from</small>
+                        <strong>₹149</strong>
+                    </div>
+
+                    <button class="select-btn">
+                        Select
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="service-card" data-name="Wiring & Rewiring" data-price="599">
+
+            <div class="service-top">
+
+                <div class="service-icon">
+                    <i data-lucide="cable"></i>
+                </div>
+
+                <span class="recommended-badge">
+                    Recommended
+                </span>
+
+            </div>
+
+            <div class="service-content">
+
+                <h4>Wiring & Rewiring</h4>
+
+                <p>
+                    Complete home wiring and rewiring services.
+                </p>
+
+                <div class="service-meta">
+                    <span>
+                        <i data-lucide="star"></i>
+                        4.9
+                    </span>
+
+                    <span>
+                        <i data-lucide="clock-3"></i>
+                        2–4 hrs
+                    </span>
+                </div>
+
+                <div class="price-row">
+
+                    <div>
+                        <small>Starting from</small>
+                        <strong>₹599</strong>
+                    </div>
+
+                    <button class="select-btn">
+                        Select
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="service-card" data-name="Appliance Repair" data-price="249">
+
+            <div class="service-top">
+
+                <div class="service-icon">
+                    <i data-lucide="settings"></i>
+                </div>
+
+                <span class="recommended-badge">
+                    Popular
+                </span>
+
+            </div>
+
+            <div class="service-content">
+
+                <h4>Appliance Repair</h4>
+
+                <p>
+                    Electrical repair for home appliances.
+                </p>
+
+                <div class="service-meta">
+                    <span>
+                        <i data-lucide="star"></i>
+                        4.8
+                    </span>
+
+                    <span>
+                        <i data-lucide="clock-3"></i>
+                        1–2 hrs
+                    </span>
+                </div>
+
+                <div class="price-row">
+
+                    <div>
+                        <small>Starting from</small>
+                        <strong>₹249</strong>
+                    </div>
+
+                    <button class="select-btn">
+                        Select
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="service-card" data-name="Light Installation" data-price="199">
+
+            <div class="service-top">
+
+                <div class="service-icon">
+                    <i data-lucide="lightbulb"></i>
+                </div>
+
+                <span class="recommended-badge">
+                    Popular
+                </span>
+
+            </div>
+
+            <div class="service-content">
+
+                <h4>Light Installation</h4>
+
+                <p>
+                    Install ceiling lights, lamps and fixtures.
+                </p>
+
+                <div class="service-meta">
+                    <span>
+                        <i data-lucide="star"></i>
+                        4.8
+                    </span>
+
+                    <span>
+                        <i data-lucide="clock-3"></i>
+                        30–60 min
+                    </span>
+                </div>
+
+                <div class="price-row">
+
+                    <div>
+                        <small>Starting from</small>
+                        <strong>₹199</strong>
+                    </div>
+
+                    <button class="select-btn">
+                        Select
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="service-card" data-name="Electrical Inspection" data-price="299">
+
+            <div class="service-top">
+
+                <div class="service-icon">
+                    <i data-lucide="search-check"></i>
+                </div>
+
+                <span class="recommended-badge">
+                    Safe choice
+                </span>
+
+            </div>
+
+            <div class="service-content">
+
+                <h4>Electrical Inspection</h4>
+
+                <p>
+                    Inspect wiring, switches and electrical connections.
+                </p>
+
+                <div class="service-meta">
+                    <span>
+                        <i data-lucide="star"></i>
+                        4.9
+                    </span>
+
+                    <span>
+                        <i data-lucide="clock-3"></i>
+                        30–60 min
+                    </span>
+                </div>
+
+                <div class="price-row">
+
+                    <div>
+                        <small>Starting from</small>
+                        <strong>₹299</strong>
+                    </div>
+
+                    <button class="select-btn">
+                        Select
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="no-result" id="noResult">
+
+        <i data-lucide="search-x"></i>
+
+        <h3>No service found</h3>
+
+        <p>Try searching for another service.</p>
+
+    </div>
+
+</main>
+
+
+<div class="booking-bar">
+
+    <div class="selected-service">
+
+        <div class="selected-icon">
+            <i data-lucide="zap"></i>
+        </div>
+
+        <div>
+            <span>SELECTED SERVICE</span>
+
+            <strong id="selectedService">
+                No service selected
+            </strong>
+        </div>
+
+    </div>
+
+
+    <div class="booking-info">
+
+        <i data-lucide="shield-check"></i>
+
+        Verified professional
+
+    </div>
+
+
+    <button
+        class="continue-btn"
+        id="continueBtn"
+        disabled
+    >
+
+        Continue
+
+        <i data-lucide="arrow-right"></i>
+
+    </button>
+
+</div>
+
+
+<button
+    class="floating-emergency"
+    id="emergencyBtn"
+>
+
+    <i data-lucide="siren"></i>
+
+    Emergency
+
+</button>
+
+
+<script>
+
+lucide.createIcons();
+
+
+/* THEME */
+
+const themeToggle =
+    document.getElementById("themeToggle");
+
+const savedTheme =
+    localStorage.getItem("fixmate-theme");
+
+if (savedTheme === "dark") {
+
+    document.body.classList.add("dark-mode");
+
+    themeToggle.innerHTML =
+        '<i data-lucide="sun"></i>';
+
+    lucide.createIcons();
+
+}
+
+
+themeToggle.addEventListener("click", function () {
+
+    document.body.classList.toggle("dark-mode");
+
+    const isDark =
+        document.body.classList.contains("dark-mode");
+
+    if (isDark) {
+
+        themeToggle.innerHTML =
+            '<i data-lucide="sun"></i>';
+
+        localStorage.setItem(
+            "fixmate-theme",
+            "dark"
+        );
+
+    } else {
+
+        themeToggle.innerHTML =
+            '<i data-lucide="moon"></i>';
+
+        localStorage.setItem(
+            "fixmate-theme",
+            "light"
+        );
+
+    }
+
+    lucide.createIcons();
+
+});
+
+
+/* SERVICE SELECTION */
+
+const cards =
+    document.querySelectorAll(".service-card");
+
+const selectedText =
+    document.getElementById("selectedService");
+
+const continueBtn =
+    document.getElementById("continueBtn");
+
+let selectedService = null;
+
+
+cards.forEach(function (card) {
+
+    card.addEventListener("click", function () {
+
+        cards.forEach(function (c) {
+            c.classList.remove("selected");
+        });
+
+        card.classList.add("selected");
+
+        selectedService =
+            card.dataset.name;
+
+        selectedText.textContent =
+            selectedService;
+
+        continueBtn.disabled = false;
+
+    });
+
+});
+
+
+/* CONTINUE → INDEX4 */
+
+continueBtn.addEventListener("click", function () {
+
+    if (!selectedService) {
+        return;
+    }
+
+    const selectedCard =
+        document.querySelector(
+            ".service-card.selected"
+        );
+
+    if (!selectedCard) {
+        return;
+    }
+
+    const selectedPrice =
+        selectedCard.dataset.price;
+
+    localStorage.setItem(
+        "fixmate-selected-service",
+        selectedService
+    );
+
+    localStorage.setItem(
+        "fixmate-service-price",
+        selectedPrice
+    );
+
+    window.location.href =
+        "index4.html";
+
+});
+
+
+/* EMERGENCY */
+
+document.getElementById("emergencyBtn")
+    .addEventListener("click", function () {
+
+        window.location.href =
+            "emergency.html";
+
+    });
+
+
+/* SEARCH */
+
+const searchInput =
+    document.getElementById("serviceSearch");
+
+const noResult =
+    document.getElementById("noResult");
+
+
+searchInput.addEventListener("input", function () {
+
+    const search =
+        this.value.toLowerCase().trim();
+
+    let found = false;
+
+    cards.forEach(function (card) {
+
+        const name =
+            card.dataset.name.toLowerCase();
+
+        if (name.includes(search)) {
+
+            card.style.display = "flex";
+            found = true;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    noResult.style.display =
+        found ? "none" : "flex";
+
+});
+
+
+/* FILTER */
+
+document.getElementById("filterBtn")
+    .addEventListener("click", function () {
+
+        alert(
+            "Filter options will be available soon."
+        );
+
+    });
+
+
+/* SORT */
+
+const sortBtn =
+    document.getElementById("sortBtn");
+
+let sortAscending = true;
+
+
+sortBtn.addEventListener("click", function () {
+
+    const grid =
+        document.getElementById("serviceGrid");
+
+    const cardArray =
+        Array.from(cards);
+
+    cardArray.sort(function (a, b) {
+
+        return sortAscending
+            ? Number(a.dataset.price) -
+              Number(b.dataset.price)
+            : Number(b.dataset.price) -
+              Number(a.dataset.price);
+
+    });
+
+    cardArray.forEach(function (card) {
+        grid.appendChild(card);
+    });
+
+    sortAscending = !sortAscending;
+
+    sortBtn.innerHTML =
+        sortAscending
+            ? '<i data-lucide="arrow-down-up"></i> Low to High'
+            : '<i data-lucide="arrow-down-up"></i> High to Low';
+
+    lucide.createIcons();
+
+});
+
+</script>
+
+</body>
+</html>
