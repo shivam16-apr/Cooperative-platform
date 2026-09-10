@@ -462,7 +462,78 @@ Workers can view and track their earnings through the dedicated Earnings interfa
 
 ![Worker Earnings](assets/screenshots/worker/workerEarningpage.png)
 
-> Screenshots for the Customer and Admin interfaces will be added as those modules are finalized.
+## 👤 Customer Interface
+
+The Customer Interface enables users to discover and book skilled professionals for different services. It provides a simple workflow from registration and service selection to worker selection, booking confirmation, location sharing, and tracking.
+
+### Customer Dashboard
+
+![Customer Dashboard](assets/screenshots/customer/Dashboard.png)
+
+### Service Selection
+
+![Electrical Services](assets/screenshots/customer/ElectricServices_Selection.png)
+
+![All Electrical Services](assets/screenshots/customer/All_electrical_services.png)
+
+### Choosing a Professional
+
+![Choosing Worker](assets/screenshots/customer/ChoosingWorker.png)
+
+### Booking Confirmation
+
+![Confirm Booking](assets/screenshots/customer/ConfirmBooking.png)
+
+### Booking & Worker Tracking
+
+![Location Sharing](assets/screenshots/customer/LocationGiving.png)
+
+![Worker On The Way](assets/screenshots/customer/OnTheWay.png)
+
+### Customer Authentication
+
+![Customer Login](assets/screenshots/customer/CustomerLoginPage.png)
+
+![Customer Registration](assets/screenshots/customer/SignUp_for_NewCustomer.png)
+
+
+## 🛡️ Admin Interface
+
+The Admin Interface provides centralized management and monitoring of the platform. Administrators can monitor customers, workers, bookings, workforce allocation, demand forecasts, and worker welfare and insurance information.
+
+### Admin Dashboard
+
+![Admin Dashboard](assets/screenshots/admin/AdminDashboard.png)
+
+### Worker Management
+
+![Workers](assets/screenshots/admin/Workers.png)
+
+### Customer Management
+
+![Customers](assets/screenshots/admin/Customers.png)
+
+### Booking Management
+
+![Bookings](assets/screenshots/admin/Bookings.png)
+
+### Demand Forecasting
+
+![Demand Forecast](assets/screenshots/admin/DemandForecast.png)
+
+### Workforce Allocation
+
+![Workforce Allocation](assets/screenshots/admin/WorkforceAllocation.png)
+
+### Worker Welfare & Insurance
+
+![Worker Welfare](assets/screenshots/admin/Worker'sWelfare.png)
+
+![Worker Insurance](assets/screenshots/admin/Worker'sInsurance.png)
+
+### Admin Login
+
+![Admin Login](assets/screenshots/admin/AdminLogin.png)
 
 
 # Project Vision
