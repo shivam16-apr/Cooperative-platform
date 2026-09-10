@@ -60,17 +60,15 @@ export default function SettingsSection({ worker, onUpdateWorker, onLogout }) {
           </h3>
 
           <div className="flex items-center gap-4 py-2">
-            <img src={worker.avatar} alt={worker.name} className="w-16 h-16 rounded-2xl object-cover border-2 border-amber-500 shadow-md" />
+            <div className="w-16 h-16 rounded-2xl bg-blue-100 dark:bg-blue-900/40 border-2 border-amber-500 shadow-md flex items-center justify-center">
+              <User className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+            </div>
             <div>
               <div className="text-sm font-bold text-slate-900 dark:text-white">{worker.name}</div>
               <div className="text-xs text-slate-400">{worker.expertiseTitle}</div>
-              <button 
-                type="button" 
-                onClick={() => alert('Photo change feature...')}
-                className="mt-1 text-xs text-blue-500 hover:underline font-semibold"
-              >
-                Change Avatar Photo
-              </button>
+              <div className="mt-1 text-xs text-slate-400">
+                  Default worker avatar
+              </div>
             </div>
           </div>
 

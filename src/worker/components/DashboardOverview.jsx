@@ -87,12 +87,12 @@ export default function DashboardOverview({
           </div>
           <div className="mt-3">
             <div className="text-2xl font-extrabold text-slate-900 dark:text-white">
-              ₹{worker.totalEarnings.toLocaleString('en-IN')}
+              ₹{(worker.totalEarnings || 0).toLocaleString('en-IN')}
             </div>
             <div className="flex items-center gap-1 mt-1 text-xs text-emerald-600 dark:text-emerald-400 font-semibold">
               <TrendingUp className="w-3.5 h-3.5" />
               <span>+18.4% this week</span>
-              <span className="text-slate-400 font-normal ml-auto">Wallet: ₹{worker.walletBalance.toLocaleString('en-IN')}</span>
+              <span className="text-slate-400 font-normal ml-auto">Wallet: ₹{(worker.walletBalance || 0).toLocaleString('en-IN')}</span>
             </div>
           </div>
         </div>

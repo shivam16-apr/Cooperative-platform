@@ -1,6 +1,6 @@
 import React from 'react';
 import { 
-  LayoutDashboard, Briefcase, Zap, CheckCircle2, IndianRupee, 
+  LayoutDashboard, Briefcase, User, Zap, CheckCircle2, IndianRupee, 
   ShieldCheck, Star, HeartPulse, Settings, LogOut, Award, AlertCircle
 } from 'lucide-react';
 
@@ -36,7 +36,7 @@ export default function Sidebar({ activeTab, setActiveTab, activeJobsCount, avai
       id: 'earnings',
       label: 'Total Earnings',
       icon: IndianRupee,
-      badge: `₹${worker.walletBalance.toLocaleString('en-IN')}`,
+      badge: `₹${(worker.walletBalance || 0).toLocaleString('en-IN')}`,
       badgeColor: 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400'
     },
     {
@@ -109,7 +109,9 @@ export default function Sidebar({ activeTab, setActiveTab, activeJobsCount, avai
       <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 space-y-3">
         <div className="px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 flex items-center justify-between">
           <div className="flex items-center gap-2 min-w-0">
-            <img src={worker.avatar} alt={worker.name} className="w-8 h-8 rounded-full object-cover border border-amber-500" />
+            <div className="w-9 h-9 rounded-lg bg-blue-100 dark:bg-blue-900/40 border border-blue-500/40 flex items-center justify-center">
+              <User className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+            </div>
             <div className="min-w-0">
               <div className="text-xs font-bold text-slate-800 dark:text-slate-200 truncate">{worker.name}</div>
               <div className="text-[10px] text-slate-500 dark:text-slate-400 truncate">{worker.expertiseTitle}</div>

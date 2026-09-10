@@ -48,18 +48,18 @@ export default function LoginPage({ onLogin }) {
   const [regStep, setRegStep] = useState(1);
 
   // Form State
-  const [selectedBranch, setSelectedBranch] = useState('electrician');
-  const [fullName, setFullName] = useState('Ramesh Kumar');
-  const [email, setEmail] = useState('ramesh.kumar@fixmate.in');
-  const [phone, setPhone] = useState('9876543210');
-  const [selectedCity, setSelectedCity] = useState('Noida / Greater Noida (Delhi NCR)');
-  const [experience, setExperience] = useState('5 - 8 Years (Senior Craftsman)');
-  const [hourlyRate, setHourlyRate] = useState(450);
-  const [serviceRadius, setServiceRadius] = useState(15);
-  const [aadhaarNumber, setAadhaarNumber] = useState('5421 8934 1092');
-  const [securityPin, setSecurityPin] = useState('1234');
-  const [confirmPin, setConfirmPin] = useState('1234');
-  const [termsAccepted, setTermsAccepted] = useState(true);
+  const [selectedBranch, setSelectedBranch] = useState('');
+const [fullName, setFullName] = useState('');
+const [email, setEmail] = useState('');
+const [phone, setPhone] = useState('');
+const [selectedCity, setSelectedCity] = useState('');
+const [experience, setExperience] = useState('');
+const [hourlyRate, setHourlyRate] = useState(400);
+const [serviceRadius, setServiceRadius] = useState(15);
+const [aadhaarNumber, setAadhaarNumber] = useState('');
+const [securityPin, setSecurityPin] = useState('');
+const [confirmPin, setConfirmPin] = useState('');
+const [termsAccepted, setTermsAccepted] = useState(false);
 
   // Login Mode State
   const [loginIdentifier, setLoginIdentifier] = useState('');
@@ -82,36 +82,135 @@ export default function LoginPage({ onLogin }) {
     });
   };
 
-  const handleRegisterSubmit = (e) => {
-    e.preventDefault();
-    const branchObj = EXPERTISE_BRANCHES.find(b => b.id === selectedBranch) || EXPERTISE_BRANCHES[0];
-    
+  const handleRegisterSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    // Get selected skill/branch information
+    const branchObj = EXPERTISE_BRANCHES.find(
+      (branch) => branch.id === selectedBranch
+    );
+
+    if (!branchObj) {
+      alert("Please select a skill.");
+      return;
+    }
+
+    // Basic validation
+    if (!fullName || !email || !phone || !selectedCity || !experience) {
+      alert("Please fill all required fields.");
+      return;
+    }
+
+    if (!securityPin || securityPin !== confirmPin) {
+      alert("PINs do not match.");
+      return;
+    }
+
+    if (!termsAccepted) {
+      alert("Please accept the terms and conditions.");
+      return;
+    }
+
+    // Convert experience text into a number
+    const experienceNumber = parseInt(experience) || 0;
+
+    // STEP 1: Create the user account
+    const registerResponse = await fetch(
+      "http://localhost:5000/api/auth/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: fullName,
+          email: email,
+          password: securityPin,
+          phone: phone,
+          role: "WORKER",
+        }),
+      }
+    );
+
+    const registerData = await registerResponse.json();
+
+    if (!registerResponse.ok) {
+      alert(registerData.message || "Registration failed.");
+      return;
+    }
+
+    // STEP 2: Create the worker profile
+    const workerResponse = await fetch(
+      "http://localhost:5000/api/workers",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userId: registerData.user.id,
+          skills: branchObj.name,
+          experience: experienceNumber,
+          location: selectedCity,
+        }),
+      }
+    );
+
+    const workerData = await workerResponse.json();
+
+    if (!workerResponse.ok) {
+      alert(
+        workerData.message ||
+        "Account created, but worker profile could not be created."
+      );
+      return;
+    }
+
+    // Save login token
+    localStorage.setItem("token", registerData.token);
+
+    // Create the frontend worker object for the dashboard
     const newWorker = {
-      id: 'w_' + Math.floor(1000 + Math.random() * 9000),
-      name: fullName.trim() || 'Verified Indian Worker',
-      phone: phone.startsWith('+91') ? phone : `+91 ${phone.replace(/[^0-9]/g, '').slice(-10)}`,
-      email: email.trim() || 'worker@fixmate.in',
+      id: workerData.id || registerData.user.id,
+      userId: registerData.user.id,
+      name: registerData.user.name,
+      email: registerData.user.email,
+      phone: phone,
+
       expertiseId: selectedBranch,
       expertiseTitle: `Master ${branchObj.name}`,
-      rating: 5.0,
-      totalReviews: 1,
+
+      rating: 0,
+      totalReviews: 0,
       completedJobsCount: 0,
       totalEarnings: 0,
-      walletBalance: 500,
+      walletBalance: 0,
+
       serviceRadiusKm: serviceRadius,
       hourlyRate: hourlyRate,
       city: selectedCity,
-      avatar: selectedBranch === 'electrician'
-        ? 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80'
-        : 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
-      verificationLevel: 3,
-      verificationStatus: 'Level 3 - Gold Verified Pro (Aadhaar & PAN Linked)',
+
+      avatar: null,
+
+      verificationLevel: 1,
+      verificationStatus: "Verification Pending",
+
       isOnline: true,
-      badges: ['Skill India Certified', 'Aadhaar Verified', 'Fast Responder']
+
+      badges: [],
     };
 
+    alert("Registration successful!");
+
+    // Go to worker dashboard
     onLogin(newWorker);
-  };
+
+  } catch (error) {
+    console.error("Registration error:", error);
+    alert("Unable to connect to the server. Please make sure the backend is running.");
+  }
+};
 
   const handleLoginSubmit = async (e) => {
   e.preventDefault();
@@ -154,9 +253,9 @@ export default function LoginPage({ onLogin }) {
   });
 
   } catch (error) {
-    console.error("Login error:", error);
-    alert("Cannot connect to server. Make sure the backend is running.");
-  }
+  console.error("REGISTRATION ERROR:", error);
+  alert("Registration error: " + error.message);
+}
 };
 
   return (

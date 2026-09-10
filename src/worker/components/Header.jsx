@@ -117,11 +117,9 @@ export default function Header({
               onClick={() => setShowProfileMenu(!showProfileMenu)}
               className="flex items-center gap-2 p-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700/80 border border-slate-200 dark:border-slate-700 transition-all"
             >
-              <img
-                src={worker.avatar}
-                alt={worker.name}
-                className="w-7 h-7 rounded-lg object-cover border border-blue-500/40"
-              />
+              <div className="w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-900/40 border border-blue-500/40 flex items-center justify-center">
+                  <User className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+              </div>
               <span className="hidden md:inline text-xs font-bold text-slate-800 dark:text-slate-200 max-w-[100px] truncate">
                 {worker.name}
               </span>
