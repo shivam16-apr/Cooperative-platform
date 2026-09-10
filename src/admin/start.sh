@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# SevaPulse Admin Dashboard - Startup Script for Linux / macOS
+# FixMate Admin Dashboard - Startup Script for Linux / macOS
 
 set -e
 
 echo "========================================================"
-echo "      Starting SevaPulse Admin Dashboard (Vite/React)   "
+echo "      Starting FixMate Admin Dashboard (Vite/React)   "
 echo "========================================================"
 echo ""
 

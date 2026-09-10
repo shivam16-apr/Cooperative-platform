@@ -26,11 +26,10 @@ export default function AddWorkerModal({ isOpen, onClose, onAdd }) {
       rating: 5.0,
       reviews: 1,
       status: 'Active',
-      avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=120&auto=format&fit=crop&q=80',
       languages: languages.trim(),
       badge: 'Background Checked 🛡️',
       tips: 0,
-      bio: bio.trim() || 'New technician onboarded to SevaPulse family'
+      bio: bio.trim() || 'New technician onboarded to FixMate family'
     });
 
     onClose();
@@ -104,7 +103,7 @@ export default function AddWorkerModal({ isOpen, onClose, onAdd }) {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="vikram.shinde@sevapulse.in"
+                placeholder="vikram.shinde@FixMate.in"
                 className="w-full px-3 py-2 text-xs sm:text-sm rounded-xl bg-slate-50 dark:bg-charcoal-850 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-charcoal-700 focus:border-blue-500 focus:outline-none"
               />
             </div>

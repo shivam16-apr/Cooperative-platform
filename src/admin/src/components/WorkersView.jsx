@@ -136,26 +136,20 @@ export default function WorkersView({
 
                   return (
                     <tr key={w.id} className="hover:bg-slate-50 dark:hover:bg-charcoal-850 transition-colors">
-                      {/* Profile */}
-                      <td className="py-3.5 px-4">
-                        <div className="flex items-start gap-3">
-                          <img
-                            src={w.avatar}
-                            alt={w.name}
-                            className="w-10 h-10 rounded-xl object-cover border border-slate-200 dark:border-charcoal-700 flex-shrink-0"
-                          />
+                     {/* Profile */}
+                        <td className="py-3.5 px-4">
                           <div>
-                            <span className="font-bold text-slate-900 dark:text-white block">{w.name}</span>
-                            <div className="flex items-center gap-2 mt-1 flex-wrap">
+                            <span className="font-bold text-slate-900 dark:text-white block">
+                              {w.name}
+                            </span>
 
-
-                            </div>
                             {w.bio && (
-                              <p className="text-[11px] text-slate-400 mt-1 max-w-xs line-clamp-1">{w.bio}</p>
+                              <p className="text-[11px] text-slate-400 mt-1 max-w-xs line-clamp-1">
+                                {w.bio}
+                              </p>
                             )}
                           </div>
-                        </div>
-                      </td>
+                        </td>
 
                       {/* Category */}
                       <td className="py-3.5 px-4">

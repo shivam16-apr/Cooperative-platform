@@ -298,7 +298,7 @@ export default function OverviewView({
 
       {/* Operational Spotlight Pillars (AI Operations & Worker Welfare) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-        
+
         {/* 🤖 AI Demand & Workforce Allocation Spotlight Card */}
         <div className="p-5 rounded-2xl bg-gradient-to-br from-blue-900/10 via-indigo-900/10 to-slate-900/10 dark:from-blue-950/30 dark:via-indigo-950/20 dark:to-charcoal-900 border border-blue-500/20 dark:border-blue-500/30 shadow-sm flex flex-col justify-between">
           <div>
@@ -543,11 +543,6 @@ export default function OverviewView({
                 "{r.comment}"
               </p>
               <div className="flex items-center gap-3 pt-3 border-t border-slate-200/50 dark:border-charcoal-700">
-                <img
-                  src={r.avatar}
-                  alt={r.name}
-                  className="w-9 h-9 rounded-full object-cover border border-slate-300 dark:border-charcoal-600"
-                />
                 <div>
                   <h4 className="text-xs font-bold text-slate-900 dark:text-white">{r.name}</h4>
                   <span className="text-[11px] text-slate-500 dark:text-slate-400 block">{r.locality}</span>

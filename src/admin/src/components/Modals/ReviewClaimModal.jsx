@@ -39,7 +39,7 @@ export default function ReviewClaimModal({ isOpen, claim, onClose, onApprove, on
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm overflow-y-auto">
       <div className="bg-white dark:bg-charcoal-900 border border-slate-200 dark:border-charcoal-800 rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden my-8 animate-in fade-in zoom-in-95 duration-200">
-        
+
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-charcoal-800 bg-slate-50/50 dark:bg-charcoal-950/50">
           <div className="flex items-center gap-3">
@@ -56,7 +56,7 @@ export default function ReviewClaimModal({ isOpen, claim, onClose, onApprove, on
                 </span>
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400">
-                SevaPulse Worker Welfare & Emergency Social Security Board
+                FixMate Worker Welfare & Emergency Social Security Board
               </p>
             </div>
           </div>
@@ -70,15 +70,11 @@ export default function ReviewClaimModal({ isOpen, claim, onClose, onApprove, on
 
         {/* Modal Body */}
         <div className="p-6 space-y-5 max-h-[75vh] overflow-y-auto">
-          
+
           {/* Worker Snapshot Banner */}
           <div className="flex items-center justify-between p-4 rounded-xl bg-slate-50 dark:bg-charcoal-850 border border-slate-200 dark:border-charcoal-750">
             <div className="flex items-center gap-3.5">
-              <img
-                src={claim.workerAvatar}
-                alt={claim.workerName}
-                className="w-12 h-12 rounded-xl object-cover border border-slate-200 dark:border-charcoal-700"
-              />
+              
               <div>
                 <h4 className="font-bold text-slate-900 dark:text-white text-sm">
                   {claim.workerName}

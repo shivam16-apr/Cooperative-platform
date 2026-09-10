@@ -20,7 +20,7 @@ export default function WorkerWelfareModal({ isOpen, worker, onClose, onToggleWe
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm overflow-y-auto">
       <div className="bg-white dark:bg-charcoal-900 border border-slate-200 dark:border-charcoal-800 rounded-2xl max-w-xl w-full shadow-2xl overflow-hidden my-8 animate-in fade-in zoom-in-95 duration-200">
-        
+
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-charcoal-800 bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white">
           <div className="flex items-center gap-3">
@@ -37,7 +37,7 @@ export default function WorkerWelfareModal({ isOpen, worker, onClose, onToggleWe
                 </span>
               </div>
               <p className="text-xs text-blue-200">
-                SevaPulse Worker Welfare & Social Protection Directorate
+                FixMate Worker Welfare & Social Protection Directorate
               </p>
             </div>
           </div>
@@ -51,15 +51,10 @@ export default function WorkerWelfareModal({ isOpen, worker, onClose, onToggleWe
 
         {/* Body Content */}
         <div className="p-6 space-y-5 max-h-[75vh] overflow-y-auto">
-          
+
           {/* Worker Bio Card */}
           <div className="flex items-center justify-between p-4 rounded-xl bg-slate-50 dark:bg-charcoal-850 border border-slate-200 dark:border-charcoal-750">
             <div className="flex items-center gap-3.5">
-              <img
-                src={worker.avatar}
-                alt={worker.name}
-                className="w-14 h-14 rounded-2xl object-cover border-2 border-blue-500/40 shadow"
-              />
               <div>
                 <h4 className="font-bold text-slate-900 dark:text-white text-base">
                   {worker.name}

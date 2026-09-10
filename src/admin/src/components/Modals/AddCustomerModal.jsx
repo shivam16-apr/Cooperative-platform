@@ -25,7 +25,6 @@ export default function AddCustomerModal({ isOpen, onClose, onAdd }) {
       spend: 0,
       tier,
       joined: 'Sep 2026',
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80',
       houseNotes: houseNotes.trim() || 'Please call mobile before arrival'
     });
 

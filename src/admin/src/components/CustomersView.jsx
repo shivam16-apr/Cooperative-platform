@@ -52,7 +52,7 @@ export default function CustomersView({
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Customer Management 
+            Customer Management
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
             View registered households across India, addresses, cultural preferences, and lifetime spend.
@@ -126,25 +126,24 @@ export default function CustomersView({
                   return (
                     <tr key={c.id} className="hover:bg-slate-50 dark:hover:bg-charcoal-850 transition-colors">
                       {/* Customer Profile */}
-                      <td className="py-3.5 px-4">
-                        <div className="flex items-start gap-3">
-                          <img
-                            src={c.avatar}
-                            alt={c.name}
-                            className="w-10 h-10 rounded-xl object-cover border border-slate-200 dark:border-charcoal-700 flex-shrink-0"
-                          />
-                          <div>
-                            <span className="font-bold text-slate-900 dark:text-white block">{c.name}</span>
-                            <span className="text-[11px] text-slate-400 block">Joined {c.joined}</span>
-                            {c.houseNotes && (
-                              <div className="mt-1 flex items-start gap-1 p-1.5 rounded-lg bg-blue-50 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900/40 text-[11px] text-blue-900 dark:text-blue-300 max-w-xs leading-tight">
-                                <Home className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
-                                <span>{c.houseNotes}</span>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      </td>
+                          <td className="py-3.5 px-4">
+                            <div>
+                              <span className="font-bold text-slate-900 dark:text-white block">
+                                {c.name}
+                              </span>
+
+                              <span className="text-[11px] text-slate-400 block">
+                                Joined {c.joined}
+                              </span>
+
+                              {c.houseNotes && (
+                                <div className="mt-1 flex items-start gap-1 p-1.5 rounded-lg bg-blue-50 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900/40 text-[11px] text-blue-900 dark:text-blue-300 max-w-xs leading-tight">
+                                  <Home className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+                                  <span>{c.houseNotes}</span>
+                                </div>
+                              )}
+                            </div>
+                          </td>
 
                       {/* Contact */}
                       <td className="py-3.5 px-4">

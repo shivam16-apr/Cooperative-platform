@@ -20,7 +20,7 @@ export default function SettingsView({
   onRevokeSessions
 }) {
   const [activeSubTab, setActiveSubTab] = useState('profile');
-  const [email, setEmail] = useState('rajeshwar.rao@sevapulse.in');
+  const [email, setEmail] = useState('rajeshwar.rao@FixMate.in');
   const [phone, setPhone] = useState('+91 98200 88123');
   const [whatsappAlerts, setWhatsappAlerts] = useState(true);
   const [complaintAlerts, setComplaintAlerts] = useState(true);
@@ -79,14 +79,9 @@ export default function SettingsView({
         {activeSubTab === 'profile' && (
           <form onSubmit={handleSave} className="space-y-5">
             <div className="flex items-center gap-4 pb-5 border-b border-slate-100 dark:border-charcoal-800">
-              <img
-                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&auto=format&fit=crop&q=80"
-                alt="Profile"
-                className="w-16 h-16 rounded-2xl object-cover border-2 border-blue-600"
-              />
               <div>
                 <h3 className="font-bold text-sm sm:text-base text-slate-900 dark:text-white">{adminName}</h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400">Head of Operations • SevaPulse India HQ</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400">Head of Operations • FixMate India HQ</p>
                 <span className="inline-block mt-1 text-[11px] font-bold text-emerald-600 dark:text-emerald-400">
                   Role: Super Administrator
                 </span>

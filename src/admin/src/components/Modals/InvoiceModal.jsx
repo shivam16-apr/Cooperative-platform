@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Printer, Wrench } from 'lucide-react';
+import { X, Printer } from 'lucide-react';
 
 export default function InvoiceModal({ isOpen, payment, onClose }) {
   if (!isOpen || !payment) return null;
@@ -16,13 +16,13 @@ export default function InvoiceModal({ isOpen, payment, onClose }) {
       <div className="w-full max-w-lg rounded-2xl bg-white dark:bg-charcoal-900 border border-slate-200 dark:border-charcoal-700 shadow-2xl overflow-hidden">
         {/* Header */}
         <div className="flex items-center justify-between p-5 border-b border-slate-100 dark:border-charcoal-800 bg-slate-50 dark:bg-charcoal-850">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center">
-              <Wrench className="w-4 h-4" />
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-white p-1 border border-slate-200 dark:border-charcoal-700 shadow-sm flex items-center justify-center shrink-0">
+              <img src="/logo-icon.png" alt="FixMate Logo" className="w-full h-full object-contain" />
             </div>
             <div>
-              <h3 className="font-bold text-sm text-slate-900 dark:text-white">Tax Invoice & Receipt</h3>
-              <p className="text-[11px] text-slate-400">Official GST Compliance Copy</p>
+              <h3 className="font-bold text-sm text-slate-900 dark:text-white">Tax Invoice &amp; Receipt</h3>
+              <p className="text-[11px] text-slate-400">FixMate Technologies • Official GST Compliance Copy</p>
             </div>
           </div>
           <button
@@ -38,7 +38,7 @@ export default function InvoiceModal({ isOpen, payment, onClose }) {
           {/* Company & Customer Info */}
           <div className="flex justify-between items-start text-xs border-b border-slate-100 dark:border-charcoal-800 pb-4">
             <div>
-              <h4 className="font-bold text-slate-900 dark:text-white text-sm">SevaPulse Bharat Pvt. Ltd.</h4>
+              <h4 className="font-bold text-slate-900 dark:text-white text-sm">FixMate Bharat Pvt. Ltd.</h4>
               <p className="text-slate-500 dark:text-slate-400 mt-0.5">BKC, Bandra East, Mumbai - 400051</p>
               <p className="text-slate-500 dark:text-slate-400">GSTIN: 27AABCS1429B1Z4</p>
             </div>
@@ -94,7 +94,7 @@ export default function InvoiceModal({ isOpen, payment, onClose }) {
           </div>
 
           <p className="text-[10px] text-center text-slate-400 italic">
-            This is a computer-generated tax invoice. Authorized by SevaPulse Bharat Financial Operations.
+            This is a computer-generated tax invoice. Authorized by FixMate Bharat Financial Operations.
           </p>
         </div>
 

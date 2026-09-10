@@ -65,7 +65,7 @@ export default function WorkerWelfareView({
 
   return (
     <div className="space-y-6 animate-in fade-in duration-200">
-      
+
       {/* Executive Hero Banner */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-gradient-to-r from-emerald-950 via-teal-950 to-slate-900 p-6 rounded-2xl text-white shadow-xl border border-emerald-500/20">
         <div>
@@ -76,9 +76,6 @@ export default function WorkerWelfareView({
             <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight">
               Worker Insurance, Social Security & Welfare
             </h1>
-            <span className="text-[10px] uppercase tracking-wider font-extrabold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
-              Bharat Gig Protection
-            </span>
           </div>
           <p className="text-xs sm:text-sm text-emerald-200/90 max-w-2xl">
             Active tracking of technician healthcare, accidental coverage (PMSBY & Ayushman Bharat), social welfare grants, and rapid grievance claim settlements.
@@ -127,7 +124,7 @@ export default function WorkerWelfareView({
 
       {/* 3 Major Operational Pillar Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        
+
         {/* Insurance Coverage */}
         <div className="p-5 rounded-2xl bg-white dark:bg-charcoal-900 border border-slate-200 dark:border-charcoal-800 shadow-sm space-y-3">
           <div className="flex items-center justify-between">
@@ -264,7 +261,7 @@ export default function WorkerWelfareView({
       {/* TAB 1: INSURANCE & POLICIES */}
       {activeTab === 'insurance' && (
         <div className="space-y-6 animate-in fade-in duration-150">
-          
+
           {/* Active Partner Policies Cards */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
@@ -369,20 +366,13 @@ export default function WorkerWelfareView({
                   {filteredWorkers.map((worker) => (
                     <tr key={worker.id} className="hover:bg-slate-50 dark:hover:bg-charcoal-850/50 transition-colors">
                       <td className="py-3">
-                        <div className="flex items-center gap-3">
-                          <img
-                            src={worker.avatar}
-                            alt={worker.name}
-                            className="w-9 h-9 rounded-xl object-cover border border-slate-200 dark:border-charcoal-700"
-                          />
-                          <div>
-                            <p className="font-bold text-slate-900 dark:text-white text-xs">
-                              {worker.name}
-                            </p>
-                            <p className="text-[11px] text-slate-400">
-                              {worker.role} • <span className="font-mono">{worker.id}</span>
-                            </p>
-                          </div>
+                        <div>
+                          <p className="font-bold text-slate-900 dark:text-white text-xs">
+                            {worker.name}
+                          </p>
+                          <p className="text-[11px] text-slate-400">
+                            {worker.role} • <span className="font-mono">{worker.id}</span>
+                          </p>
                         </div>
                       </td>
 
@@ -440,7 +430,7 @@ export default function WorkerWelfareView({
       {/* TAB 2: WELFARE BENEFITS */}
       {activeTab === 'benefits' && (
         <div className="space-y-6 animate-in fade-in duration-150">
-          
+
           {/* Active Welfare Benefits Schemes */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {welfareBenefits.map((ben) => (
@@ -498,9 +488,9 @@ export default function WorkerWelfareView({
       {/* TAB 3: CLAIMS TRACKER */}
       {activeTab === 'claims' && (
         <div className="space-y-6 animate-in fade-in duration-150">
-          
+
           <div className="p-6 rounded-2xl bg-white dark:bg-charcoal-900 border border-slate-200 dark:border-charcoal-800 shadow-sm space-y-4">
-            
+
             {/* Header & Filter */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
@@ -552,18 +542,11 @@ export default function WorkerWelfareView({
                       </td>
 
                       <td className="py-3.5">
-                        <div className="flex items-center gap-2.5">
-                          <img
-                            src={claim.workerAvatar}
-                            alt={claim.workerName}
-                            className="w-8 h-8 rounded-lg object-cover"
-                          />
-                          <div>
-                            <p className="font-bold text-slate-900 dark:text-white text-xs">
-                              {claim.workerName}
-                            </p>
-                            <p className="text-[11px] text-slate-400">{claim.workerRole}</p>
-                          </div>
+                        <div>
+                          <p className="font-bold text-slate-900 dark:text-white text-xs">
+                            {claim.workerName}
+                          </p>
+                          <p className="text-[11px] text-slate-400">{claim.workerRole}</p>
                         </div>
                       </td>
 

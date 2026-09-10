@@ -1,7 +1,7 @@
 @echo off
-title SevaPulse Admin Dashboard - Startup Script
+title FixMate Admin Dashboard - Startup Script
 echo ========================================================
-echo       Starting SevaPulse Admin Dashboard (Vite/React)
+echo       Starting FixMate Admin Dashboard (Vite/React)
 echo ========================================================
 echo.
 

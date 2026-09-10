@@ -23,11 +23,26 @@ export default function Header({
   markAllNotificationsRead,
   onNewBookingClick,
   globalSearch,
-  setGlobalSearch
+  setGlobalSearch,
+  backendStatus = 'fallback',
+  onRefreshData,
+  adminUser
 }) {
   const navigate = useNavigate();
   const [notifOpen, setNotifOpen] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
   const notifRef = useRef(null);
+
+  const handleRefresh = async () => {
+    if (onRefreshData) {
+      setIsRefreshing(true);
+      try {
+        await onRefreshData();
+      } finally {
+        setTimeout(() => setIsRefreshing(false), 500);
+      }
+    }
+  };
 
   const unreadCount = notifications.filter(n => n.unread).length;
 
@@ -53,7 +68,38 @@ export default function Header({
           <Menu className="w-5 h-5" />
         </button>
 
-        
+        {/* Mobile Brand Logo */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <div className="w-8 h-8 rounded-lg bg-white p-0.5 border border-slate-200 dark:border-charcoal-700 shadow-sm flex items-center justify-center shrink-0">
+            <img src="/logo-icon.png" alt="FixMate Logo" className="w-full h-full object-contain" />
+          </div>
+          <span className="font-extrabold text-slate-900 dark:text-white text-base tracking-tight">FixMate</span>
+        </div>
+
+        {/* Backend Connectivity Status Pill */}
+        <div className="hidden sm:flex items-center gap-2">
+          {backendStatus === 'connected' ? (
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              Live Backend API
+            </span>
+          ) : (
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20" title="Running in offline mock mode. Start backend on port 5000 to sync real PostgreSQL data.">
+              <span className="w-2 h-2 rounded-full bg-amber-500" />
+              Mock Fallback Mode
+            </span>
+          )}
+
+          {onRefreshData && (
+            <button
+              onClick={handleRefresh}
+              className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-charcoal-800 transition-colors"
+              title="Sync with Backend"
+            >
+              <span className={`inline-block text-xs ${isRefreshing ? 'animate-spin' : ''}`}>🔄</span>
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Right side: Theme + Notifications + Quick Action */}

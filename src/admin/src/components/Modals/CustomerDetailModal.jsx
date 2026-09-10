@@ -20,11 +20,6 @@ export default function CustomerDetailModal({ isOpen, customer, onClose }) {
         {/* Profile Avatar & Info */}
         <div className="px-6 pb-6 pt-0 relative">
           <div className="-mt-12 mb-3 flex justify-between items-end">
-            <img
-              src={customer.avatar}
-              alt={customer.name}
-              className="w-20 h-20 rounded-2xl object-cover border-4 border-white dark:border-charcoal-900 shadow-lg"
-            />
             <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-950/50 dark:text-blue-300">
               {customer.tier} Tier
             </span>

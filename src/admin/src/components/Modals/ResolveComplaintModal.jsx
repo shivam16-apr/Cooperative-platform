@@ -70,7 +70,7 @@ export default function ResolveComplaintModal({
                   className="text-blue-600"
                 />
                 <span className="font-semibold text-slate-800 dark:text-slate-200">
-                  ₹200 SevaPulse Apology Voucher (SMS to customer)
+                  ₹200 FixMate Apology Voucher (SMS to customer)
                 </span>
               </label>
 

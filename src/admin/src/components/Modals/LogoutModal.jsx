@@ -13,7 +13,7 @@ export default function LogoutModal({ isOpen, onClose, onConfirm }) {
 
         <h3 className="font-bold text-base text-slate-900 dark:text-white">Sign Out of Session?</h3>
         <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">
-          Are you sure you want to lock the SevaPulse Admin Operations console?
+          Are you sure you want to lock the FixMate Admin Operations console?
         </p>
 
         <div className="flex items-center justify-center gap-3 mt-6">
